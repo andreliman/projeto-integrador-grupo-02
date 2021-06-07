@@ -2,9 +2,14 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 html,body{
     height: 100%;
+}
+
+.clear{
+    clear: both;
 }
 
 .container{
@@ -18,7 +23,7 @@ html,body{
     background-position: center;
     background-image: url(/projeto-integrador-grupo-02/img/pets.jpg);
     display: block;
-    border: 2px solid #ccc;
+    border: 2px solid #bdbdbd;
     margin:auto;
 }
 
@@ -33,7 +38,7 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #bdbdbd;
     border-radius: 4px;
     font-size: 20px;
     text-align: center;
@@ -43,21 +48,23 @@ input[type=password], select {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #bdbdbd;
     border-radius: 4px;
     font-size: 20px;
     text-align: center;
+    
   }
   input[type=submit] {
     width: 80%;
-    background-color: #3d0335;
-    color:white;
+    background-color: #03A9F4;
+    color: #fff;
     font-size: 20px;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
   }
     
 .container p{
@@ -67,6 +74,7 @@ input[type=password], select {
 }
 .container a{
     color: red;
+    font-weight: bold;
 }
 footer{
     margin-top: 10px;
@@ -76,10 +84,68 @@ footer div.novaConta{
 }
 footer p{
     font-size: 20px;
-    color: #808080ec;
+    color: #757575;
 }
 footer a{
     font-size: 20px;
     font-style: italic;
+    font-weight: bold;
     color: red;
+}
+
+/**Media Queries**/
+
+@media(min-width:768px){
+    header{
+        width: 100%;
+        padding: 20px 30px;
+    }
+    header .container{
+        width: 50%;
+        padding: 10px 2%;
+        float: right;
+    }
+    .logo{
+      display: none;
+    }
+    .logo-desktop{
+        width: 50%;
+        height: 300px;
+        background-size: 100% 100%;
+        background-image: url(/projeto-integrador-grupo-02/img/pets.jpg);
+        display: inline-block;
+        position:relative;
+        left: 150px;
+        border: 2px solid #bdbdbd;
+        margin:auto;
+    }
+    section .container{
+        width: 50%;
+        padding: 10px 2%;
+        float: right;
+    }
+    section .wrapper-img-desktop{
+        width: 30%;
+        height: 500px;
+        padding: 10px 2%;
+        float: left;
+    }
+    .wrapper-img-desktop{
+        width: 30%;
+        height: 500px;
+        background-size: 100% 100%;
+        background-image: url(/projeto-integrador-grupo-02/img/pets.jpg);
+        background-position: center;
+        display: inline-block;
+        border: 2px solid #bdbdbd;
+        padding: 10px 20px;
+        margin:auto;
+        float: left;
+    }
+ 
+   
+    footer{
+        margin:auto;
+        float: right;
+    }
 }

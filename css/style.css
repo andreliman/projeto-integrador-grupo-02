@@ -12,7 +12,7 @@ html,body{
     padding: 10px 2%;
 }
 .logo{
-    width: 600px;
+    width: 100%;
     height: 350px;
     background-size: 100% 100%;
     background-position: center;
@@ -21,13 +21,11 @@ html,body{
     border: 2px solid #ccc;
     margin:auto;
 }
-section{
-    
-}
+
 form{
     display:block;
     padding: 10px auto;
-    margin-top: 50px;
+    margin-top: 10px;
     text-align: center;
 }
 input[type=text] {
@@ -78,7 +76,7 @@ footer div.novaConta{
 }
 footer p{
     font-size: 20px;
-    color: #8080806c;
+    color: #808080ec;
 }
 footer a{
     font-size: 20px;

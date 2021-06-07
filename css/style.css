@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+
+.container{
+    width: 100%;
+    padding: 10px 2%;
+}
+.logo{
+    width: 600px;
+    height: 350px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url(/projeto-integrador-grupo-02/img/pets.jpg);
+    display: block;
+    border: 2px solid #ccc;
+    margin:auto;
+}
+section{
+    
+}
+form{
+    display:block;
+    padding: 10px auto;
+    margin-top: 50px;
+    text-align: center;
+}
+input[type=text] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: center;
+}
+input[type=password], select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: center;
+  }
+  input[type=submit] {
+    width: 80%;
+    background-color: #3d0335;
+    color:white;
+    font-size: 20px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+    
+.container p{
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+}
+.container a{
+    color: red;
+}
+footer{
+    margin-top: 10px;
+}
+footer div.novaConta{
+    text-align: center;
+}
+footer p{
+    font-size: 20px;
+    color: #8080806c;
+}
+footer a{
+    font-size: 20px;
+    font-style: italic;
+    color: red;
+}

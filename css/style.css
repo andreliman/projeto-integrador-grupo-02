@@ -96,15 +96,7 @@ footer a{
 /**Media Queries**/
 
 @media(min-width:768px){
-    header{
-        width: 100%;
-        padding: 20px 30px;
-    }
-    header .container{
-        width: 50%;
-        padding: 10px 2%;
-        float: right;
-    }
+  
     .logo{
       display: none;
     }
@@ -119,33 +111,36 @@ footer a{
         border: 2px solid #bdbdbd;
         margin:auto;
     }
+    section{
+        padding: 20px 30px;
+        
+    }
     section .container{
         width: 50%;
         padding: 10px 2%;
         float: right;
+        border: 2px solid #bdbdbd;
     }
     section .wrapper-img-desktop{
-        width: 30%;
-        height: 500px;
-        padding: 10px 2%;
+        width: 50%;
+        padding: 0 2%;
         float: left;
+        
     }
-    .wrapper-img-desktop{
-        width: 30%;
-        height: 500px;
+    .img-desktop{
+        width: 100%;
+        height: 625px;
         background-size: 100% 100%;
         background-image: url(/projeto-integrador-grupo-02/img/pets.jpg);
         background-position: center;
         display: inline-block;
         border: 2px solid #bdbdbd;
-        padding: 10px 20px;
         margin:auto;
-        float: left;
+        
     }
- 
-   
-    footer{
-        margin:auto;
-        float: right;
-    }
+   footer{
+    padding: 10px 2%;
+    border: 2px solid #bdbdbd;
+   }
+
 }

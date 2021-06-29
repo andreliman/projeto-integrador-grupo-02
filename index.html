@@ -1,17 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/reset.css">
-<link rel="stylesheet" href="./css/padrao.css">
-<title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/padrao.css" />
+    <title>Página Padrão</title>
+  </head>
+  <body class="body">
+    <div class="container">
+      <header class="header">
+        <nav class="nav">
+          <div class="nav__logo"></div>
+          <div class="nav_icons">
+            <a href=""
+              ><i class="fa fa-paw nav__icons__notify" aria-hidden="true"></i
+            ></a>
+            <i class="fa fa-bars nav__icons__menu" aria-hidden="true"></i>
+          </div>
+        </nav>
+        <div class="menu__mobile">
+          <ul class="menu__mobile__lista">
+            <li><i class="fa fa-plus" aria-hidden="true"></i></li>
+            <li><i class="fa fa-search" aria-hidden="true"></i></li>
+            <li><i class="fa fa-telegram" aria-hidden="true"></i></li>
+            <li><i class="fa fa-comment" aria-hidden="true"></i></li>
+            <li><i class="fa fa-calendar-o" aria-hidden="true"></i></li>
+            <li><i class="fa fa-cogs" aria-hidden="true"></i></li>
+          </ul>
+        </div>
+      </header>
+      <main class="main">
+        <div class="perfil__wrapper">
+          <div class="foto__perfil"></div>
+          <div class="descricao__wrapper">
+            <h4>Polenta</h4>
+            <span>São Paulo</span>
+          </div>
+        </div>
+        <section class="post">
+            <div class="post__foto"></div>
+            <ul class="post__lista_icons">
+                <li><i class="fa fa-paw nav__icons__notify" aria-hidden="true"></i></li>
+                <li><i class="fa fa-comment" aria-hidden="true"></i></li>
+                <li><i class="fa fa-telegram" aria-hidden="true"></i></li>
+            </ul>
+            <div class="post__legenda">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint consequuntur nesciunt eos.</p>
+            </div>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

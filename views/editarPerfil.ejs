@@ -1,0 +1,43 @@
+<%- include('./partials/head')%>
+<link rel="stylesheet" href="/stylesheets/editarPerfil.css">
+</head>
+<body class=".body">
+    <div class="container">
+        <%- include('./partials/somenteHeader')%>
+    </div>
+    <div class="container__total">
+    <section class="section__info">
+        <div class="info__foto">
+            <img src="/images/1 (181).jpg" alt="" class="info__foto__perfil">
+        </div>
+        <div class="info__wrapper">
+        <div class="box__nome__aniversario">
+            <span class="info">Dollynho</span>
+            <span class="info">29/05/2019</span>
+        </div>
+        <div class="box__especie__raca">
+            <span class="info">Cachorro</span>
+            <span class="info">Shih Tzu</span>
+        </div>
+     
+        </div>
+        
+    </section>
+    <div class="info__loc">
+        <i class="fa fa-map-marker info__localizacao" aria-hidden="true"><span class="info__localizacao__span">São Paulo - SP</span></i>
+    </div>
+    <form action="" class="formulario" method="POST">
+        <label for="petName" class="label__form" >Nome do pet</label>
+        <input type="text" class="form__text" name="Name" id="petName" >
+        <label for="subtitulo" class="label__form">Subtítulo</label>
+        <input type="text" class="form__text" name="subtitulo" id="subtitulo">
+        <label for="email" class="label__form">E-mail</label>
+        <input type="email" class="form__email" name="email" id="email">
+        <label for="tel" class="label__form" >Telefone</label>
+        <input type="tel" class="form__tel"name="tel" id="tel">
+        <label for="bio" class="label__form" >Biografia</label>
+        <textarea name="" id="" cols="30" rows="10 " class="form__textarea" nome="bio" id="bio"></textarea>
+        <button type="submit" class="form__btn">Enviar</button>
+    </form>
+</div>
+</body>

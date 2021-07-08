@@ -1,6 +1,4 @@
-body{
-    position: relative;
-}
+
 .header{
     position: sticky;
     top: 0;
@@ -11,8 +9,6 @@ body{
 .main{
     width: 100%;
     background-color: #e5e5e5;
-
-
 }
 .mural{
     display: flex;
@@ -51,7 +47,5 @@ body{
 @media (min-width:1080px){
     .header{
         position: relative;
-      
     }
 }
-    

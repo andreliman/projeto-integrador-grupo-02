@@ -4,7 +4,6 @@
 .principal{
     display: flex;
     flex-direction: column;
-    height: 89.5vh;
     padding: 0 20px;
 }
 .previa{
@@ -36,12 +35,13 @@ max-width: 500px;
     border-radius: 10px;
     margin-left: 10px;
     filter: brightness(50%);
+   margin: 20px 10px;
 }
 .previa__icon{
     font-size: 40px;
     color:#663AB7;
+    cursor: pointer;
 }
-
 
 .modelos{
     padding-left: 10px;
@@ -69,10 +69,12 @@ max-width: 500px;
     font-size: 20px;
     color:#663AB7;
     margin-right: 20px;
+    cursor: pointer;
 }
 .options__label{
     text-align: justify;
     font-size: 20px;
+    cursor: pointer;
 }
 .options__icon__span{
     display: flex;
@@ -90,39 +92,49 @@ max-width: 500px;
 }
 @media(min-width:768px){
     .principal{
-    
-        max-width: 1200px;
+        width: 100%;
+        height:80vh;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        margin: auto;
+        margin: 20px auto;
+        background-color: #e5e5e5;
     }
     .previa{
         padding: 0 30px;
-        height: 87vh;
+        width: 100%;
+        height: 100%;
+        margin-right: 20px;
     }
     .previa__img{
         max-width: 700px;
         height: 50vh;
-    
         }
     .modelos{
        margin-top: 20px;
+       width: 100%;
+       height: 100%;
+       position: relative;
     }
     .modelos__labels{
         font-size:40px;
+        text-align: center;
+        position: absolute;
+        top: 10px;
+        right: 300px;
     }
     .options__icon{
         font-size: 30px;
         color:#663AB7;
-        margin-right: 20px;
+        margin: 50px 10px;
     }
     .options__label{
-        text-align: justify;
+        text-align: center;
         font-size: 30px;
+        margin: 50px 10px;
     }
     .principal__button{
-        margin-top: 100px;
+        margin-top: 80px;
     }
     .previa__escolhidas__amostras{
         width: 100px;
@@ -131,18 +143,24 @@ max-width: 500px;
         margin-left: 10px;
         filter: brightness(50%);
     }
+    .previa__escolhidas__amostras:hover{
+        filter: none;
+    }
     .previa__icon{
         font-size: 100px;
         color:#663AB7;
     }
+    .previa__icon:hover{
+        color: #F46B73;
+    }
     .principal__button{
-        margin-top: 350px;
         color: white;
         width: 300px;
         font-size: 30px;
         font-weight: bold;
         background-color: #663AB7;
         border-radius: 20px;
+        text-align: center;
     }
     
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css" />
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/header.css" />
+    <link rel="stylesheet" href="/stylesheets/newAlbum.css" />
+    <title>Criar Evento</title>
+  </head>
+  <body>
+    <div class="container">
+      <%- include('./partials/somenteHeader')%>
+      <section class="principal">
+        <div class="previa">
+          <img src="/public/images/arraia canino.jpg" alt="" class="previa__img" />
+          <i class="fa fa-plus-square-o previa__icon" aria-hidden="true"></i>
+          <div class="previa__escolhidas">
+              <img src="/public/images/aniversario-cachorro.png" alt="" class="previa__escolhidas__amostras">
+              <img src="/public/images/passeio.png" alt="" class="previa__escolhidas__amostras">
+          </div>
+        </div>
+        <div class="modelos">
+          <label class="modelos__labels" for="">Descrição do Evento</label>
+          <div class="modelos__wrapper">
+            <div class="options">
+                <div class="options__icon__span">
+              <i class="fa fa-file-image-o options__icon" aria-hidden="true"></i>
+                </div>
+              <form class= "descricao-eventos" action="" method="GET">
+                  Titulo: <input type="text" name="titulo">
+                  <br>
+                  Data: <input type="date" name="data">
+                  <br>
+                  Local: <input type="text" name="local">
+                  <br>
+                  Descrição: <input type="text" name="descricao">
+              </form>
+            <button type="submit" class="principal__button">Criar</button>
+            <button type="submit" class="principal__button">Convidar Amigos</button>
+          </div>
+            </div>
+    
+      </section>
+    </div>
+  </body>
+</html>

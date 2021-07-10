@@ -12,8 +12,30 @@ body{
     width: 100%;
     background-color: #e5e5e5;
 
-
 }
+
+.eventos{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(190, 149, 228);
+    
+}
+
+.descricao-eventos{
+    max-width: 320px;
+}
+
+.principal__button{
+    margin-top: 20px;
+    color: white;
+    width: 120px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #663AB7;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
 .mural{
     display: flex;
     flex-wrap: wrap;

@@ -120,6 +120,17 @@
   display: none;
 }
 
+.principal__button{
+  margin-top: 20px;
+  color: white;
+  width: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #663AB7;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
 /*Tratamento Responsivo*/
 
 @media (min-width: 321px){

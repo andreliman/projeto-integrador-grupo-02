@@ -1,55 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css" />
-    <link rel="stylesheet" href="/stylesheets/reset.css" />
-    <link rel="stylesheet" href="/stylesheets/header.css" />
-    <link rel="stylesheet" href="/stylesheets/newAlbum.css" />
-    <title>Criar Evento</title>
-  </head>
-  <body>
+<%- include('./partials/head')%>
+<link rel="stylesheet" href="/stylesheets/criarEventos.css">
+</head>
+<body class=".body">
     <div class="container">
-      <%- include('./partials/somenteHeader')%>
-      <section class="principal">
-        <div class="previa">
-          <img src="/public/images/arraia canino.jpg" alt="" class="previa__img" />
-          <i class="fa fa-plus-square-o previa__icon" aria-hidden="true"></i>
-          <div class="previa__escolhidas">
-              <img src="/public/images/aniversario-cachorro.png" alt="" class="previa__escolhidas__amostras">
-              <img src="/public/images/passeio.png" alt="" class="previa__escolhidas__amostras">
-          </div>
-        </div>
-        <div class="modelos">
-          <label class="modelos__labels" for="">Descrição do Evento</label>
-          <div class="modelos__wrapper">
-            <div class="options">
-                <div class="options__icon__span">
-              <i class="fa fa-file-image-o options__icon" aria-hidden="true"></i>
-                </div>
-              <form class= "descricao-eventos" action="" method="GET">
-                  Titulo: <input type="text" name="titulo">
-                  <br>
-                  Data: <input type="date" name="data">
-                  <br>
-                  Local: <input type="text" name="local">
-                  <br>
-                  Descrição: <input type="text" name="descricao">
-              </form>
-            <button type="submit" class="principal__button">Criar</button>
-            <button type="submit" class="principal__button">Convidar Amigos</button>
-          </div>
-            </div>
-    
-      </section>
+        <%- include('./partials/somenteHeader')%>
     </div>
-  </body>
-</html>
+    <div class="container__total">
+      <section class="section__info">
+        <div class="info__foto">
+            <img src="/images/1 (181).jpg" alt="" class="info__foto__perfil">
+        </div>
+        <div class="info__wrapper">
+        <div class="box__nome__aniversario">
+            <span class="info">Dollynho</span>
+            <span class="info">29/05/2019</span>
+        </div>  
+        </div>
+        
+      </section>
+    <div class="info__loc">
+        <i class="fa fa-map-marker info__localizacao" aria-hidden="true"><span class="info__localizacao__span">São Paulo - SP</span></i>
+    </div>
+
+    <section class="criar-evento">
+      <div class="nome-evento">
+        <form action="" class="nome-evento-form" method="POST">
+          <label for="eventName" class="label__form" >Nome do Evento</label>
+          <input type="text" class="form__text" name="Name" id="eventName" >
+        </form>
+      </div>
+      <div class="data-e-hora">
+        <div class="data-evento">
+          <form action="" class="data-evento-form">
+            <label for="eventDate" class="laber_form">Data Inicial</label>
+            <input type="date" name="eventDate">
+            <br>
+            <label for="eventDate" class="laber_form">Data Final</label>
+            <input type="date" name="eventDate">
+         </form>
+        </div>
+        <div class="hora-evento">
+          <form action="" class="hora-evento-form">
+            <label for="eventHour" class="label_form">Hora Inicial</label>
+            <input type="time" name="eventHour">
+            <br>
+            <label for="eventDate" class="label_form">Hora Final</label>
+            <input type="time" name="eventHour">
+          </form>
+        </div>
+        <div >
+          <button type="submit" class="botao-dia-todo">Dia Todo</button>
+        </div>
+      </div>
+      <div class="local-evento-convite">
+        <form action="" class="local-evento-form" method="POST">
+          <label for="eventAdress" class="label__form" >Local do Evento</label>
+          <input type="text" class="form__text" name="Name" id="eventAdress" >
+        </form>
+        <button type="submit" class="convidarform_btn">Convidar Amigos</button>
+      </div>
+      <div class="descricao-evento">
+        <form action="" class="descricao-evento-form" method="POST">
+          <label for="eventDescrition" class="label__form" >Descricao do Evento</label>
+          <input type="text" class="form__text" name="Name" id="eventDescription" style="height: 200px;">
+        </form>
+        <form action="" method="POST" enctype="multipart/form-data">
+          Adicionar Foto do Evento <input type="file" name="file">
+          <button type="submit" class="form_btn">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+</div>
+</body>

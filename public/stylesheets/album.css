@@ -15,10 +15,21 @@ body{
 }
 
 .eventos{
-    text-align: center;
+    display: flex;
+    text-align: left;
     padding: 10px;
+    color: white;
     background-color: rgb(190, 149, 228);
     
+}
+
+.eventos-outros {
+    padding-right: 10px;
+}
+
+.evento-escolhido {
+    color: red;
+    padding-right: 5px;
 }
 
 .descricao-eventos{
@@ -36,6 +47,24 @@ body{
     margin-bottom: 10px;
 }
 
+.convidar__button{
+    margin-top: 20px;
+    color: white;
+    width: 180px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #663AB7;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.post__lista_icons li{
+    display: inline-block;
+    margin-top: 5px;
+    justify-content: right;
+    
+}
+
 .mural{
     display: flex;
     flex-wrap: wrap;
@@ -51,7 +80,20 @@ body{
     margin-bottom: 15px;
     border:2px solid #663AB7;
     border-radius: 5px;
+    
 }
+
+.album-evento {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 15px;
+    border:2px solid #663AB7;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: whitesmoke;
+}
+
 .album__capa{
     width: 320px;
     height: 320px;

@@ -90,6 +90,10 @@ max-width: 500px;
     border-radius: 20px;
     margin-bottom: 10px;
 }
+
+    
+
+
 @media(min-width:768px){
     .principal{
         width: 100%;

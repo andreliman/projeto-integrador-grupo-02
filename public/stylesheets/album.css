@@ -1,6 +1,4 @@
-body{
-    position: relative;
-}
+
 .header{
     position: sticky;
     top: 0;
@@ -115,7 +113,5 @@ body{
 @media (min-width:1080px){
     .header{
         position: relative;
-      
     }
 }
-    

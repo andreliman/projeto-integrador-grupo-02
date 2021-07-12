@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
+/**Rotas Ed**/
 router.get('/inicial', function(req, res, next) {
     res.render('inicial');
   });
-  
-  module.exports = router;
 router.get('/album', function(req,res,next){
   res.render('album');
 })
@@ -31,3 +30,5 @@ router.get('/eventos/aceitos', function(req,res,next){
 router.get('/eventos', function(req,res,next){
   res.render('eventosDisponiveis');
 })
+
+module.exports = router;

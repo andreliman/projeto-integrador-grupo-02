@@ -18,8 +18,9 @@ body{
     display: flex;
     text-align: left;
     padding: 10px;
-    color: white;
-    background-color: rgb(190, 149, 228);
+    color: #663AB7;
+    border: #663AB7 solid 3 px;
+    
     
 }
 
@@ -36,6 +37,16 @@ body{
     max-width: 320px;
 }
 
+.descricao-eventos span {
+    font-weight: bold;
+}
+
+.info_eventos {
+    background-color: rgb(247, 235, 235);
+}
+
+
+
 .principal__button{
     margin-top: 20px;
     color: white;
@@ -50,12 +61,17 @@ body{
 .convidar__button{
     margin-top: 20px;
     color: white;
-    width: 180px;
+    width: 120px;
     font-size: 18px;
     font-weight: bold;
     background-color: #663AB7;
     border-radius: 20px;
     margin-bottom: 10px;
+}
+
+.button_disponiveis {
+    display: flex;
+    justify-content: space-between;
 }
 
 .post__lista_icons li{

@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     padding: 0 20px;
+    background-color: #e5e5e5;
 }
 .previa{
     border: 1px solid #663AB7;
@@ -20,7 +21,7 @@
 .previa__img{
 max-width: 500px;
   width: 100%;
-  height: 250px;
+  height: 350px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -53,17 +54,19 @@ max-width: 500px;
     font-size: 20px;
     text-decoration: underline;
     color:#663AB7;
+    
 }
 .modelos__wrapper{
     display: flex;
     flex-direction: column;
+    padding: 10px 20px;
 }
 .options{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    margin-top: 20px;
+    padding: 0 10px;
+  
 }
 .options__icon{
     font-size: 20px;
@@ -78,21 +81,17 @@ max-width: 500px;
 }
 .options__icon__span{
     display: flex;
-    flex-grow: 2;
+    flex-grow: 1;
 }
 .principal__button{
-    margin-top: 20px;
     color: white;
-    width: 120px;
+    width: 100px;
     font-size: 18px;
     font-weight: bold;
     background-color: #663AB7;
     border-radius: 20px;
-    margin-bottom: 10px;
+    margin:10px auto;
 }
-
-    
-
 
 @media(min-width:768px){
     .principal{
@@ -118,14 +117,10 @@ max-width: 500px;
        margin-top: 20px;
        width: 100%;
        height: 100%;
-       position: relative;
+       padding:10px 40px;
     }
     .modelos__labels{
-        font-size:40px;
-        text-align: center;
-        position: absolute;
-        top: 10px;
-        right: 300px;
+        font-size:30px;
     }
     .options__icon{
         font-size: 30px;
@@ -141,8 +136,8 @@ max-width: 500px;
         margin-top: 80px;
     }
     .previa__escolhidas__amostras{
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
         border-radius: 10px;
         margin-left: 10px;
         filter: brightness(50%);
@@ -159,12 +154,11 @@ max-width: 500px;
     }
     .principal__button{
         color: white;
-        width: 300px;
+        width: 200px;
         font-size: 30px;
         font-weight: bold;
         background-color: #663AB7;
         border-radius: 20px;
         text-align: center;
     }
-    
 }

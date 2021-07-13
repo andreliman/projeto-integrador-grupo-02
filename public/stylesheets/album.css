@@ -1,117 +1,113 @@
-
-.header{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: #e5e5e5;
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #e5e5e5;
 }
-.main{
-    width: 100%;
-    background-color: #e5e5e5;
-
+.main {
+  width: 100%;
+  background-color: #e5e5e5;
 }
-
-.eventos{
-    display: flex;
-    text-align: left;
-    padding: 10px;
-    color: white;
-    background-color: rgb(190, 149, 228);
-    
+.eventos {
+  display: flex;
+  text-align: left;
+  padding: 10px;
+  color: white;
+  background-color: rgb(190, 149, 228);
 }
-
 .eventos-outros {
-    padding-right: 10px;
+  padding-right: 10px;
 }
-
 .evento-escolhido {
-    color: red;
-    padding-right: 5px;
+  color: red;
+  padding-right: 5px;
 }
-
-.descricao-eventos{
-    max-width: 320px;
+.descricao-eventos {
+  max-width: 320px;
 }
-
-.principal__button{
-    margin-top: 20px;
-    color: white;
-    width: 120px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #663AB7;
-    border-radius: 20px;
-    margin-bottom: 10px;
+.principal__button {
+  margin-top: 20px;
+  color: white;
+  width: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #663ab7;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
-
-.convidar__button{
-    margin-top: 20px;
-    color: white;
-    width: 180px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #663AB7;
-    border-radius: 20px;
-    margin-bottom: 10px;
+.convidar__button {
+  margin-top: 20px;
+  color: white;
+  width: 180px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #663ab7;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
-
-.post__lista_icons li{
-    display: inline-block;
-    margin-top: 5px;
-    justify-content: right;
-    
+.post__lista_icons li {
+  display: inline-block;
+  margin-top: 5px;
+  justify-content: right;
 }
-
-.mural{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px;
-    ;
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
 }
-.album{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
-    border:2px solid #663AB7;
-    border-radius: 5px;
-    
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 2px solid #663ab7;
+  border-radius: 5px;
 }
-
 .album-evento {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-bottom: 15px;
-    border:2px solid #663AB7;
-    border-radius: 5px;
-    padding: 3px;
-    background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 15px;
+  border: 2px solid #663ab7;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: whitesmoke;
+}
+.album__capa {
+  width: 320px;
+  height: 320px;
+  cursor: pointer;
+  filter: brightness(50%);
+}
+.album__capa:hover {
+  filter: none;
+}
+.album__nome {
+  font-size: 20px;
+  color: #663ab7;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.album__capa{
-    width: 320px;
-    height: 320px;
-    cursor: pointer;
-    filter: brightness(50%);
+@media (min-width: 1080px) {
+  .header {
+    position: relative;
+  }
 }
-.album__capa:hover{
-    filter: none;
-}
-.album__nome{
-    font-size: 20px;
-    color:#663AB7;
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
-@media (min-width:1080px){
-    .header{
-        position: relative;
-    }
+@media(min-width:1800px){
+    .mural {
+        justify-content: flex-start;
+        padding: 30px;
+        margin: auto;
+      }
+      .album {
+        margin-bottom: 20px;
+        margin-right: 40px;
+     
+      }
 }

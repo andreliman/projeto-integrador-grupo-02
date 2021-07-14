@@ -35,6 +35,8 @@ router.get('/eventos/aceitos', function(req,res,next){
 router.get('/eventos', function(req,res,next){
   res.render('eventosDisponiveis');
 })
+
+/**Rotas Alan**/
 router.get('/perfilUser', function(req,res,next){
   res.render('perfilUser');
 })

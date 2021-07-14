@@ -51,26 +51,26 @@ router.get('/cadastro', function(req,res,next){
 });
 
 router.post('/cadastro', function(req, res, next) {
-  res.redirect('/manimals/login');
+  res.redirect('/manimals');
 });  
 
-router.get('/login', function(req,res,next){
+router.get('/', function(req,res,next){
   res.render('login');
 });
 
-router.post('/login', function(req,res,next){
+router.post('/', function(req,res,next){
   res.redirect('/manimals/inicial');
 });
 
-router.get('/login/ajuda', function(req,res,next){
+router.get('/ajuda', function(req,res,next){
   res.render('ajudaLogin');
 });
 
-router.post('/login/ajuda', function(req,res,next){
-  res.redirect('/manimals/login/ajuda/confirmacao');
+router.post('/ajuda', function(req,res,next){
+  res.redirect('/manimals/ajuda/confirmacao');
 });
 
-router.get('/login/ajuda/confirmacao', function(req,res,next){
+router.get('/ajuda/confirmacao', function(req,res,next){
   res.render('confirmaAjudaLogin');
 });
 

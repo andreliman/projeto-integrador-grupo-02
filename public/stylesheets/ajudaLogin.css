@@ -1,0 +1,121 @@
+.container {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main {
+    padding: 0;
+    margin: 0 15px;
+}
+
+.main .ajudaLogar {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 25vh;
+    font-size: 15px;
+    color: #212121;
+}
+
+.main h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5vh;
+    color: #212121
+}
+
+.main h3 {
+    font-size: 14px;
+    margin-bottom: 5vh;
+    color:#212121;
+}
+
+.main .forms {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main .forms div {
+    margin-top: 10px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.main .forms input {
+    height: 40px;
+    width: 96%;
+    padding: 0;
+    padding-left: 8px;
+    background-color: rgba(189, 189, 189, 0.7);
+    border: 1px solid #D1C4E9;
+    border-radius: 5.5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.main .forms input::-webkit-input-placeholder {
+    color:#fff;
+    font: 400 14px 'Roboto';
+}
+
+.main .forms .submit {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.main .forms .submit input{
+    height: 40px;
+    max-width: 300px;
+    width: 100%;
+    background-color: #663AB7;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main .login {
+    margin-top: 27vh;
+    margin-bottom: 10px;
+}
+
+.main .login p {
+    font-size: 13px;
+    color: #212121;
+}
+
+.main .login a {
+    font-style: italic;
+    color: #448AFF;
+    text-decoration: none;
+}
+
+/*responsividade*/
+
+@media(min-width:1080px) {
+    
+    .main .forms div {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .main .forms input {
+        height: 50px;
+    }
+
+    .main .forms .submit input {
+        height: 50px;
+        max-width: 500px;
+        width: 100%;
+    }
+}

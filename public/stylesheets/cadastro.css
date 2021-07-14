@@ -1,0 +1,130 @@
+.container {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main {
+    padding: 0;
+    padding-bottom: 25px;
+    margin: 0 8px;
+}
+
+.main img {
+    max-width: 600px;
+    width: 100%;
+}
+
+.main .forms {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main .forms div {
+    margin: 10px 0;
+    max-width: 250px;
+    width: 100%;
+}
+
+.main .forms input, select {
+    height: 30px;
+    width: 96%;
+    padding: 0;
+    padding-left: 8px;
+    background-color: rgba(189, 189, 189, 0.7);
+    border: 1px solid #D1C4E9;
+    border-radius: 5.5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.main .forms input::-webkit-input-placeholder {
+    color:#fff;
+    font: 400 14px 'Roboto';
+}
+
+.main .forms select{
+    max-width: 250px;
+    width: 100%;
+    cursor:pointer;
+}
+
+.main .forms .password{
+    position: relative;
+}
+
+.main .forms .password .fa-eye-slash {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.main .forms .submit {
+    margin: 10px 0;
+}
+
+.main .forms .submit input{
+    height: 40px;
+    width: 150px;
+    background-color: #663AB7;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main .login {
+    margin-bottom: 10px;
+}
+
+.main .login p {
+    font-size: 13px;
+}
+
+.main .login a {
+    font-style: italic;
+    color: #448AFF;
+    text-decoration: none;
+}
+
+/*responsividade*/
+
+@media(min-width:1080px) {
+    
+    .main .forms div {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .main .forms input, select {
+        height: 40px;
+    }
+
+    .main .forms select {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .main .forms .password .fa-eye-slash {
+        top: 12px;
+        right: 15px;
+    }
+
+    .main .forms .submit {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .main .login {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,42 @@
+<%- include('./partials/head')%>
+<link rel="stylesheet" href="/stylesheets/login.css">
+</head>
+<body class="container">
+    <main class="main">
+      <div class="languageForm">
+        <form action="" method="" class="">
+          <select name="lingua">
+              <option value="portugues" selected >português (Brasil)</option>
+              <option value="portuguesPort">português (Portugal)</option>
+              <option value="ingles">inglês</option>
+              <option value="espanhol">espanhol</option>
+          </select>
+        </form>
+      </div>
+        <img src="/images/Logo1.png" alt="Logo Manimal">
+        <div class="forms">
+          <div>
+            <form action="" method="" class="form">
+                <input type="text" name="email" placeholder="Número de telefone, e-mail ou nome de usuário">
+            </form>
+          </div>
+          <div class="password">
+            <form action="" method="" class="form">
+              <input type="password" name="senha" placeholder="Senha" encripted>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+            </form>
+          </div>
+          <div class="submit">
+            <form action="" method="POST" class="submit">
+              <input type="submit" name="submit" value="Entrar"> 
+          </div>               
+        </div>
+        <div class="help">
+          <p>Esqueceu seus dados de login? <a href="/manimals//login/ajuda">Obtenha ajuda para entrar</a></p>
+        </div>
+        <div class="cadastro">
+            <p>Não tem uma conta? <a href="/manimals/cadastro">Cadastre-se.</a></p>
+        </div>
+    </main>
+</body>
+</html>

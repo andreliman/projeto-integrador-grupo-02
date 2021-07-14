@@ -33,6 +33,14 @@
     padding: 0 10px;
     cursor: pointer;
   }
+
+  .evento_icon{
+    font-size: 25px;
+    color: #663ab7;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+
   .menu__desktop{
     display: none;
   }
@@ -84,10 +92,15 @@
     display: flex;
     padding: 0 20px;
   }
-
   .menu__icon{
     font-size: 40px;
-    
   }
+
+  .evento_icon{
+    font-size: 25px; 
   }
- 
+
+  .menu__icon{
+    font-size: 40px; 
+  }
+}

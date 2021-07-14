@@ -19,6 +19,10 @@ router.get('/eventos/criar', function(req,res,next){
   res.render('criarEventos');
 })
 
+router.post('/eventos/criar', function(req,res,next){
+  res.redirect('/manimals/eventos/criados');
+})
+
 router.get('/eventos/criados', function(req,res,next){
   res.render('eventosCriados');
 })

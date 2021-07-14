@@ -12,5 +12,18 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
-  }
+  },
+  "description": "---",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjesus1987/projeto-integrador-grupo-02.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjesus1987/projeto-integrador-grupo-02/issues"
+  },
+  "homepage": "https://github.com/arjesus1987/projeto-integrador-grupo-02#readme"
 }

@@ -1,0 +1,145 @@
+.container {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main {
+    padding: 0;
+    padding-bottom: 25px;
+    margin: 0 8px;
+}
+
+.main img {
+    max-width: 700px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.main .languageForm select {
+    height: 15px;
+    width: 150px;
+    font-size: 11px;
+    font-family: 'Roboto';
+    color: #212121;
+    background-color: #e5e5e5;
+    border: none;
+    padding: 0;
+    text-align-last: center;
+}
+
+.main .forms {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main .forms div {
+    margin: 10px 0;
+    max-width: 300px;
+    width: 100%;
+}
+
+.main .forms input {
+    height: 40px;
+    width: 96%;
+    padding: 0;
+    padding-left: 8px;
+    background-color: rgba(189, 189, 189, 0.7);
+    border: 1px solid #D1C4E9;
+    border-radius: 5.5px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.main .forms input::-webkit-input-placeholder {
+    color:#fff;
+    font: 400 13px 'Roboto';
+}
+
+.main .forms .password{
+    position: relative;
+}
+
+.main .forms .password .fa-eye-slash {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.main .forms .submit {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.main .forms .submit input{
+    height: 40px;
+    width: 175px;
+    background-color: #663AB7;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main .help{
+    margin-bottom: 70px;
+    font-size: 13px;
+}
+
+.main .help a {
+    font-weight: bold;
+    color: #212121;
+    text-decoration: none;
+}
+
+.main .cadastro {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.main .cadastro a {
+    font-style: italic;
+    color: #448AFF;
+    text-decoration: none;
+}
+
+/*responsividade*/
+
+@media(min-width:1080px) {
+
+    .main img {
+        margin-top: 0;
+    }
+    
+    .main .forms div {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .main .forms input {
+        height: 50px;
+        font-size: 14px;
+    }
+    
+    .main .forms input::-webkit-input-placeholder {
+        font-size: 14px;
+    }
+
+    .main .forms .password .fa-eye-slash {
+        top: 17px;
+        right: 15px;
+    }
+
+    .main .forms .submit {
+        margin-top: 20px;
+    }
+}

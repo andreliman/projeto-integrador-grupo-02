@@ -1,0 +1,69 @@
+<%- include('./partials/head')%>
+<link rel="stylesheet" href="/stylesheets/cadastro.css">
+</head>
+<body class="container">
+    <main class="main">
+        <img src="/images/Logo1.png" alt="Logo Manimal">
+        <div class="forms">
+          <div>
+            <form action="" method="" class="form">
+                <input type="text" name="email" placeholder="Número de telefone ou e-mail">
+            </form>
+          </div>
+          <div>
+            <form action="" method="" class="form">
+                <input type="text" name="nomeDono" placeholder="Nome do Dono">
+            </form>
+          </div>
+          <div>
+            <form action="" method="" class="form">
+                <input type="text" name="nomePet" placeholder="Nome do Pet">
+            </form>
+          </div>
+          <div>
+            <form action="" method="" class="form">
+                <select name="especie">
+                    <option value="" selected disabled hidden>Espécie</option>
+                    <option value="cao">Cão</option>
+                    <option value="gato">Gato</option>
+                    <option value="passaro">Pássaro</option>
+                    <option value="anfibio">Anfíbio</option>
+                    <option value="reptil">Réptil</option>
+                </select>
+            </form>
+          </div>
+          <div>
+            <form action="" method="" class="form">
+                <select name="racas">
+                    <option value="" selected disabled hidden>Raça</option>
+                    <option value="rnd">RND</option>
+                    <option value="labrador">Labrador</option>
+                    <option value="shihtzu">Shih-Tzu</option>
+                    <option value="bassethound">Basset Hound</option>
+                    <option value="dachshound">Dachshound</option>
+                </select>
+            </form>
+          </div>
+          <div class="password">
+            <form action="" method="" class="form">
+              <input type="password" name="senha" placeholder="Insira sua senha" encripted>
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+            </form>
+          </div>
+          <div class="password">
+            <form action="" method="" class="form">
+              <input type="password" name="confirmarSenha" placeholder="Insira sua senha">
+              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+            </form>
+          </div>
+          <div class="submit">
+            <form action="" method="POST" class="submit">
+              <input type="submit" name="submit" value="Registrar!">
+          </div>               
+        </div>
+        <div class="login">
+            <p>Já tem uma conta? <a href="/manimals/login">Faça login.</a></p>
+        </div>
+    </main>
+</body>
+</html>

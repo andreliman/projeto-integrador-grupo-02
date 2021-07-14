@@ -15,6 +15,7 @@ router.get('/editar/perfil', function(req,res,next){
   res.render('editarPerfil');
 })
 
+/**Rotas Neto**/
 router.get('/eventos/criar', function(req,res,next){
   res.render('criarEventos');
 })
@@ -34,5 +35,34 @@ router.get('/eventos/aceitos', function(req,res,next){
 router.get('/eventos', function(req,res,next){
   res.render('eventosDisponiveis');
 })
+
+/**Rotas André**/
+router.get('/cadastro', function(req,res,next){
+  res.render('cadastro');
+});
+
+router.post('/cadastro', function(req, res, next) {
+  res.redirect('/manimals/login');
+});  
+
+router.get('/login', function(req,res,next){
+  res.render('login');
+});
+
+router.post('/login', function(req,res,next){
+  res.redirect('/manimals/inicial');
+});
+
+router.get('/login/ajuda', function(req,res,next){
+  res.render('ajudaLogin');
+});
+
+router.post('/login/ajuda', function(req,res,next){
+  res.redirect('/manimals/login/ajuda/confirmacao');
+});
+
+router.get('/login/ajuda/confirmacao', function(req,res,next){
+  res.render('confirmaAjudaLogin');
+});
 
 module.exports = router;

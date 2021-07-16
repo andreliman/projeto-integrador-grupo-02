@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/stylesheets/criarEventos.css">
 </head>
 <body class="body">
-    <div class="container">
+    <div class="container_eventos">
         <%- include('./partials/somenteHeader')%>
     </div>
     <div class="container__total">
@@ -34,22 +34,22 @@
           <form action="" class="data-evento-form">
             <label for="eventDate" class="laber_form">Data Inicial</label>
             <br>
-            <input type="date" name="eventDate">
+            <input class="campo_data_hora" type="date" name="eventDate">
             <br>
             <label for="eventDate" class="laber_form">Data Final</label>
             <br>
-            <input type="date" name="eventDate">
+            <input class="campo_data_hora" type="date" name="eventDate">
          </form>
         </div>
         <div class="hora-evento">
           <form action="" class="hora-evento-form">
             <label for="eventHour" class="label_form">Hora Inicial</label>
             <br>
-            <input type="time" name="eventHour">
+            <input class="campo_data_hora" type="time" name="eventHour">
             <br>
             <label for="eventDate" class="label_form">Hora Final</label>
             <br>
-            <input type="time" name="eventHour">
+            <input class="campo_data_hora" type="time" name="eventHour">
           </form>
         </div>
         <div >
@@ -70,6 +70,7 @@
         </form>
         <form action="" method="" enctype="multipart/form-data">
           Adicionar Foto do Evento <input type="file" name="file">
+          <br>
           <button type="submit" class="form_btn" >Enviar</button>
                     
         </form>

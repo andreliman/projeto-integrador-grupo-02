@@ -14,12 +14,13 @@ body{
 
 }
 
-.eventos{
+.eventos {
     display: flex;
     text-align: left;
     padding: 10px;
     color: #663AB7;
     border: #663AB7 solid 3 px;
+}
     
 .header {
   position: sticky;
@@ -37,11 +38,12 @@ body{
   text-align: left;
   padding: 10px;
   color: white;
-  background-color: rgb(190, 149, 228);
+  
 
 }
 .eventos-outros {
   padding-right: 10px;
+  margin-left: 10px;
 }
 .evento-escolhido {
   
@@ -87,7 +89,7 @@ body{
 
 .button_disponiveis {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .post__lista_icons li{
@@ -134,7 +136,7 @@ body{
 .convidar__button {
   margin-top: 20px;
   color: white;
-  width: 180px;
+  width: 120px;
   font-size: 18px;
   font-weight: bold;
   background-color: #663ab7;

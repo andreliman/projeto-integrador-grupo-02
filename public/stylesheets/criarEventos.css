@@ -2,7 +2,15 @@
     height: 100%;
     background-color: #e5e5e5;
 }
+.container_eventos{
+    background-color: #e5e5e5;
+}
 
+.container__total{
+    padding: 0 20px;
+    max-width: 70%;
+    margin: auto;
+}
 
 .section__info{
     margin-top: 20px;
@@ -136,7 +144,7 @@ padding: 0 2px;
 }
 
 .form_btn{
-    margin: auto;
+    margin-top: 10px;
     width: 120px;
     border-radius: 20px;
     background-color: #663ab7;
@@ -157,16 +165,46 @@ padding: 0 2px;
     font-size: 20px;
 }
 
+.campo_data_hora {
+    margin: auto;
+    width: 120px;
+    border-radius: 20px;
+    background-color: #FDE0FF;
+    border: 1px solid black;
+    color: #663ab7;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
 @media(min-width:1080px){
     .container__total{
         padding: 0 20px;
-        max-width: 800px;
+        max-width: 70%;
         margin: auto;
-    }
+    }   
+    
     .form_btn{
         width: 120px;
         font-size: 20px;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
+    
+}
+
+@media(max-width:650px){
+    .data-e-hora{
+        display: inline;
+    }
+    .local-evento-convite{
+        display: inline;
+    }
+    .botao-dia-todo{
+        margin-top: 10px;
+    }
+    .form_btn{
+        margin-top: 10px;
+    }
 }

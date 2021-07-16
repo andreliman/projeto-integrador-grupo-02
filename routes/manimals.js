@@ -1,76 +1,77 @@
 const express = require('express');
+
 const router = express.Router();
 
-/**Rotas Ed**/
-router.get('/inicial', function(req, res, next) {
-    res.render('inicial');
-  });
-router.get('/album', function(req,res,next){
+/** Rotas Ed* */
+router.get('/inicial', (req, res) => {
+  res.render('inicial');
+});
+router.get('/album', (req, res) => {
   res.render('album');
-})
-router.get('/album/newalbum', function(req,res,next){
+});
+router.get('/album/newalbum', (req, res) => {
   res.render('newAlbum');
-})
-router.get('/editar/perfil', function(req,res,next){
+});
+router.get('/editar/perfil', (req, res) => {
   res.render('editarPerfil');
-})
+});
 
-/**Rotas Neto**/
-router.get('/eventos/criar', function(req,res,next){
+/** Rotas Neto* */
+router.get('/eventos/criar', (req, res) => {
   res.render('criarEventos');
-})
+});
 
-router.post('/eventos/criar', function(req,res,next){
+router.post('/eventos/criar', (req, res) => {
   res.redirect('/manimals/eventos/criados');
-})
+});
 
-router.get('/eventos/criados', function(req,res,next){
+router.get('/eventos/criados', (req, res) => {
   res.render('eventosCriados');
-})
+});
 
-router.get('/eventos/aceitos', function(req,res,next){
+router.get('/eventos/aceitos', (req, res) => {
   res.render('eventosAceitos');
-})
+});
 
-router.get('/eventos', function(req,res,next){
+router.get('/eventos', (req, res) => {
   res.render('eventosDisponiveis');
-})
+});
 
-/**Rotas Alan**/
-router.get('/perfilUser', function(req,res,next){
+/** Rotas Alan* */
+router.get('/perfilUser', (req, res) => {
   res.render('perfilUser');
-})
+});
 
-router.get('/perfilVisitante', function(req,res,next){
+router.get('/perfilVisitante', (req, res) => {
   res.render('perfilVisitante');
-})
+});
 
-/**Rotas André**/
-router.get('/cadastro', function(req,res,next){
+/** Rotas André* */
+router.get('/cadastro', (req, res) => {
   res.render('cadastro');
 });
 
-router.post('/cadastro', function(req, res, next) {
+router.post('/cadastro', (req, res) => {
   res.redirect('/manimals');
-});  
+});
 
-router.get('/', function(req,res,next){
+router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.post('/', function(req,res,next){
+router.post('/', (req, res) => {
   res.redirect('/manimals/inicial');
 });
 
-router.get('/ajuda', function(req,res,next){
+router.get('/ajuda', (req, res) => {
   res.render('ajudaLogin');
 });
 
-router.post('/ajuda', function(req,res,next){
+router.post('/ajuda', (req, res) => {
   res.redirect('/manimals/ajuda/confirmacao');
 });
 
-router.get('/ajuda/confirmacao', function(req,res,next){
+router.get('/ajuda/confirmacao', (req, res) => {
   res.render('confirmaAjudaLogin');
 });
 

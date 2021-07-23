@@ -5,7 +5,7 @@
 /* Cabeçalho */
 
 .cabecalho{
-  
+    
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -13,7 +13,7 @@
   }
 
 .cabecalho_1{
-
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -67,7 +67,7 @@
   font-size: 20px;
   color:#663AB7;
   font-weight: bolder;
-  margin-left: 35px;
+  margin-left: 50px;
 }
 
  
@@ -168,6 +168,10 @@
     color: #000;
  
   }
+
+ 
+
+
   
 /*Visualizar Publicação */
 
@@ -175,12 +179,20 @@
     padding: 20px;
   
 }
+
+ul.add_publicacao{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
    
 .texto_publicacao{
     font-size: 25px;
     font-weight: bold;
     color: #000;
-
+    
 }
 ul.add_publicacao li .img_amigo{
   background-color: #ddd;
@@ -216,6 +228,19 @@ ul.add_publicacao li .img_localizacao{
   
 }
 
+ul.add_publicacao li input, select {
+  height: 50px;
+  width: 500px;
+  padding: 0;
+  padding-left: 50px;
+  background-color: rgba(189, 189, 189, 0.7);
+  border: 1px solid #D1C4E9;
+  border-radius: 5.5px;
+  color: #fff;
+  font-size: 14px;
+
+}
+
 ul.add_publicacao li{
   display: inline-block;
   margin: 20px 10px;
@@ -232,9 +257,18 @@ ul.ver_timeline li .img_amigo{
   width: 100px; 
 }
 .timeline{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 30px;
+    margin-bottom: 70px;
 }
 
+ul.ver_timeline{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 ul.ver_timeline li .perfil_nome{
   font-size: 20px;

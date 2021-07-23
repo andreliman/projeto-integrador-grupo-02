@@ -1,7 +1,11 @@
+.container{
+  height: auto;
+  background-color: #e5e5e5;
+}
 /* Cabeçalho */
 
 .cabecalho{
-  
+    
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -9,7 +13,7 @@
   }
 
 .cabecalho_1{
-
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -20,9 +24,9 @@
 
 .menu_cabecalho_02{
   width: 38%;
-  display: inline-block;
-   padding-left: 300px;
-   padding-top: 40px; 
+  display: flex;
+  padding-left: 300px;
+  padding-top: 40px; 
      
 }
 .menu_cabecalho_02  .img_cabecalho{
@@ -45,9 +49,10 @@
   border-radius: 28px;
   font-family: Arial;
   font-size: 20px;
-  padding: 5px 20px 6px 20px;
+  padding: 2px 20px 3px 20px;
   text-decoration: none;
-  margin-left: 50px;
+  margin-left: 40px;
+  
 }
 .menu_cabecalho_02  .btn:hover {
   background: #3cb0fd;
@@ -63,7 +68,7 @@
   font-size: 20px;
   color:#663AB7;
   font-weight: bolder;
-  margin-left: 35px;
+  margin-left: 50px;
 }
 
  
@@ -164,6 +169,10 @@
     color: #000;
  
   }
+
+ 
+
+
   
 /*Visualizar Publicação */
 
@@ -171,12 +180,20 @@
     padding: 20px;
   
 }
+
+ul.add_publicacao{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
    
 .texto_publicacao{
     font-size: 25px;
     font-weight: bold;
     color: #000;
-
+    
 }
 ul.add_publicacao li .img_amigo{
   background-color: #ddd;
@@ -212,6 +229,19 @@ ul.add_publicacao li .img_localizacao{
   
 }
 
+ul.add_publicacao li input, select {
+  height: 50px;
+  width: 500px;
+  padding: 0;
+  padding-left: 50px;
+  background-color: rgba(189, 189, 189, 0.7);
+  border: 1px solid #D1C4E9;
+  border-radius: 5.5px;
+  color: #fff;
+  font-size: 14px;
+
+}
+
 ul.add_publicacao li{
   display: inline-block;
   margin: 20px 10px;
@@ -228,12 +258,21 @@ ul.ver_timeline li .img_amigo{
   width: 100px; 
 }
 .timeline{
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 30px;
+    margin-bottom: 70px;
+}
+
+ul.ver_timeline{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 ul.ver_timeline li .perfil_nome{
-    font-size: 20px;
+  font-size: 20px;
   font-weight: bold;
   color: #663ab7;
 }

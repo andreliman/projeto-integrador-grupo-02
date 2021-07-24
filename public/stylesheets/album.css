@@ -6,11 +6,11 @@ body{
     top: 0;
     width: 100%;
     z-index: 999;
-    background-color: #e5e5e5;
+    background-color: var(--bgSite)
 }
 .main{
     width: 100%;
-    background-color: #e5e5e5;
+    background-color: var(--bgSite)
 
 }
 
@@ -18,26 +18,15 @@ body{
     display: flex;
     text-align: left;
     padding: 10px;
-    color: #663AB7;
-    border: #663AB7 solid 3 px;
+    color:var(--destaque);
+    border:var(--borda);
 }
     
-.header {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  background-color: #e5e5e5;
-}
-.main {
-  width: 100%;
-  background-color: #e5e5e5;
-}
 .eventos {
   display: flex;
   text-align: left;
   padding: 10px;
-  color: white;
+  color: var(--white);
   
 
 }
@@ -47,7 +36,7 @@ body{
 }
 .evento-escolhido {
   
-    color: red;
+    color: var(--selected);
     padding-right: 5px;
 }
 
@@ -59,30 +48,24 @@ body{
     font-weight: bold;
 }
 
-.info_eventos {
-    background-color: rgb(247, 235, 235);
-}
-
-
-
 .principal__button{
     margin-top: 20px;
-    color: white;
+    color: var(--white);
     width: 120px;
     font-size: 18px;
     font-weight: bold;
-    background-color: #663AB7;
+    background-color:var(--buttonColor);
     border-radius: 20px;
     margin-bottom: 10px;
 }
 
 .convidar__button{
     margin-top: 20px;
-    color: white;
+    color: var(--white);
     width: 120px;
     font-size: 18px;
     font-weight: bold;
-    background-color: #663AB7;
+    background-color:var(--buttonColor);
     border-radius: 20px;
     margin-bottom: 10px;
 }
@@ -112,34 +95,31 @@ body{
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
-    border:2px solid #663AB7;
+    border:var(--borda);
     border-radius: 5px;
     
 }
 
-  color: red;
-  padding-right: 5px;
-}
 .descricao-eventos {
   max-width: 320px;
 }
 .principal__button {
   margin-top: 20px;
-  color: white;
+  color:var(--white);
   width: 120px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #663ab7;
+  background-color: var(--buttonColor);
   border-radius: 20px;
   margin-bottom: 10px;
 }
 .convidar__button {
   margin-top: 20px;
-  color: white;
+  color:var(--white);
   width: 120px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #663ab7;
+  background-color: var(--buttonColor);
   border-radius: 20px;
   margin-bottom: 10px;
 }
@@ -160,7 +140,7 @@ body{
   flex-direction: column;
   align-items: center;
   margin-bottom: 15px;
-  border: 2px solid #663ab7;
+  border: var(--borda);
   border-radius: 5px;
 }
 
@@ -169,10 +149,10 @@ body{
   flex-direction: column;
   align-items: left;
   margin-bottom: 15px;
-  border: 2px solid #663ab7;
+  border: var(--borda);
   border-radius: 5px;
   padding: 3px;
-  background-color: whitesmoke;
+  background-color: var(--cards);
 }
 .album__capa {
   width: 320px;
@@ -185,7 +165,7 @@ body{
 }
 .album__nome {
   font-size: 20px;
-  color: #663ab7;
+  color: var(--destaque);
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;

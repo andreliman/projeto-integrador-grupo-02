@@ -1,7 +1,12 @@
 
 .container{
     height: 100%;
-    background-color: #e5e5e5;
+    background-color:var(--bgSite);
+    width: 100%;
+}
+.container__total{
+    background-color:var(--bgSite);
+    width: 100%;
 }
 
 .section__info{
@@ -41,10 +46,10 @@
     position: relative;
     left: 50px;
     font-size: 20px;
-    color: #F46B73;
+    color: var(--localizacao);
 }
 .info__localizacao__span{
-color: black;
+color: var(--text);
 padding: 0 2px;
 }
 .formulario{
@@ -56,17 +61,17 @@ padding: 0 2px;
 }
 .label__form{
     margin-bottom: 5px;
-    color: #000;
-    font-size: 20px;
+    color:var(--text);
+    font-size: 18px;
     font-weight: bold;
 }
 .form__text, .form__email, .form__tel, .form__textarea{
     margin-bottom: 10px;
-    background-color: #FDE0FF;
-    color:#663ab7;
+    background-color: var(--input-forms);
+    color:var(--text);
     font-size: 16px;
     border-radius: 10px;
-    border-color: #663ab7;
+    border: var(--borda);
     outline: none; 
 }
 .form__textarea{
@@ -75,13 +80,13 @@ padding: 0 2px;
 }
 .form__btn{
     margin: auto;
-    width: 120px;
+    width: 100px;
     border-radius: 20px;
-    background-color: #663ab7;
-    border: 1px solid black;
-    color: #fff;
+    background-color: var(--buttonColor);
+    border: var(--borda);
+    color: var(--white);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
 @media(min-width:1080px){
     .container__total{

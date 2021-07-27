@@ -73,6 +73,11 @@ max-width: 500px;
     text-align: justify;
     font-size: 20px;
     cursor: pointer;
+    color: var(--text);
+}
+.options__radio:checked{
+    background-color:var(--buttonColor);
+    border-color: var(--buttonColor);
 }
 .options__icon__span{
     display: flex;

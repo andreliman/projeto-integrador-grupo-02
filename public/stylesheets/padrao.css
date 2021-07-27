@@ -233,7 +233,9 @@ width: 100%;
 }
 .sugestoes__nome{
   font-size: 27px;
+  color:var(--text);
 }
+
 .sugestoes__foto{
   width: 65px;
   height: 65px;

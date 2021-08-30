@@ -9,6 +9,33 @@ module.exports = (sequelize, DataTypes)=>{
         tableName:'comments', 
         timestamps:false
     })
+    Comment.associate = models=>{
+        Comment.belongsToMany(models.Event,{
+          through:'comments_has_event',
+          as:'post',
+          foreignKey:'id_comment',
+          otherKey:'id_event',
+          timestamps:false
+        });
+      },
+      Comment.associate = models=>{
+        Comment.belongsToMany(models.Post,{
+          through:'post_has_comments',
+          as:'post',
+          foreignKey:'comments_id',
+          otherKey:'post_id',
+          timestamps:false
+        });
+      },
+      Comment.associate = models=>{
+        Comment.belongsToMany(models.Profile,{
+          through:'profile_has_comments',
+          as:'profile',
+          foreignKey:'id_comment',
+          otherKey:'id_profile',
+          timestamps:false
+        });
+      }
    
  
      

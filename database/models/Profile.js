@@ -33,6 +33,24 @@ module.exports = (sequelize, DataTypes)=>{
             foreignKey:'id_profile',
             as:'profile'
         })
+      },
+      Profile.associate = models=>{
+        Profile.belongsToMany(models.Comment,{
+          through:'profile_has_comments',
+          as:'comentario',
+          foreignKey:'id_profile',
+          otherKey:'id_comment',
+          timestamps:false
+        });
+      }
+      Profile.associate = models=>{
+        Profile.belongsToMany(models.Event,{
+          through:'profile_has_event',
+          as:'evento',
+          foreignKey:'id_profile',
+          otherKey:'event_id',
+          timestamps:false
+        });
       }
      
     return Profile

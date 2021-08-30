@@ -15,6 +15,24 @@ module.exports = (sequelize, DataTypes)=>{
             foreignKey:'id_profile',
             as:'profile'
         })
+      },
+      Share.associate = models=>{
+        Share.belongsToMany(models.Post,{
+          through:'post_has_share',
+          as:'post',
+          foreignKey:'id_share',
+          otherKey:'id_post',
+          timestamps:false
+        });
+      },
+      Share.associate = models=>{
+        Share.belongsToMany(models.Event,{
+          through:'event_has_share',
+          as:'evento',
+          foreignKey:'id_share',
+          otherKey:'id_event',
+          timestamps:false
+        });
       }
  
      

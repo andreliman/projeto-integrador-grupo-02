@@ -19,18 +19,50 @@ module.exports = (sequelize, DataTypes)=>{
         tableName:'event', 
         timestamps:false
     })
+  
     Event.associate = (models)=>{
-        Event.hasOne(models.Profile,{
-            foreignKey:'id_profile',
-            as:'profile'
-        })
-    }
-    New_Event.associate = (models)=>{
-        New_Event.hasOne(models.Event, {
+        Event.hasOne(models.New_Event, {
             foreignKey:'id_new_event',
             as:'new_event'
         })
+      },
+      Event.associate = models=>{
+        Event.belongsToMany(models.Profile,{
+          through:'profile_has_event',
+          as:'profile',
+          foreignKey:'evento_id',
+          otherKey:'id_profile',
+          timestamps:false
+        });
+      },
+      Event.associate = models=>{
+        Event.belongsToMany(models.Comment,{
+          through:'comments_has_event',
+          as:'comentario',
+          foreignKey:'id_event',
+          otherKey:'id_comment',
+          timestamps:false
+        });
+      },
+      Event.associate = models=>{
+        Event.belongsToMany(models.Share,{
+          through:'event_has_share',
+          as:'compartilhar',
+          foreignKey:'id_event',
+          otherKey:'id_share',
+          timestamps:false
+        });
+      },
+      Event.associate = models=>{
+        Event.belongsToMany(models.Like,{
+          through:'likes_has_event',
+          as:'curtir',
+          foreignKey:'id_event',
+          otherKey:'id_like',
+          timestamps:false
+        });
       }
+
      
     return Event
 }

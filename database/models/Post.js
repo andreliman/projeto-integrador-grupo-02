@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes)=>{
         created_at:DataTypes.TIMESTAMPS,
         updated_at:DataTypes.TIMESTAMPS
     }, {
-        tableName:'post', 
+        tableName:'posts', 
         timestamps:false
     })
     Post.associate = models=>{
@@ -49,7 +49,7 @@ module.exports = (sequelize, DataTypes)=>{
         });
       },
       Post.associate = (models)=>{
-        Post.belongsTo(models.Proto_Content,{
+        Post.belongsTo(models.Photo_Content,{
             foreignKey:'id_post',
             as:'foto'
         })

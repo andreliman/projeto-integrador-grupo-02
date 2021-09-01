@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes)=>{
         Like.belongsToMany(models.Post,{
           through:'post_has_likes',
           as:'post',
-          foreignKey:'id_likes',
+          foreignKey:'id_like',
           otherKey:'id_post',
           timestamps:false
         });

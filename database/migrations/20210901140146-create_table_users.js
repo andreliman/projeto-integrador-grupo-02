@@ -9,11 +9,11 @@ module.exports = {
           primaryKey: true,
           autoIncrement: true
         },
-        nome:{
+        name:{
           type:Sequelize.STRING,
           allowNull:false
         },
-        telefone:{
+        phone:{
             type:Sequelize.STRING,
             allowNull:false
         },
@@ -21,11 +21,11 @@ module.exports = {
             type:Sequelize.STRING,
             allowNull:false
         },
-        data_criacao:{
+        creation_date:{
             type:Sequelize.DATE,
             allowNull: false
         },
-        senha:{
+        password:{
           type:Sequelize.STRING,
           allowNull:false
       },

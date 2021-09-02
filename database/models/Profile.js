@@ -1,8 +1,8 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Profile = sequelize.define('Profile',{
-        id_user:DataTypes.INTEGER,
-        id_breed:DataTypes.INTEGER,
+        user_id:DataTypes.INTEGER,
+        breed_id:DataTypes.INTEGER,
         pet_name:{
           type:DataTypes.STRING,
           allowNull:false
@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes)=>{
           type:DataTypes.DATE,
           allowNull:false
         },
-        sexo:{
-          type:DataTypes.INTEGER,
+        genre:{
+          type:DataTypes.STRING,
           alowNull:false
         },
-        localizacao:{
+        location:{
           type:DataTypes.STRING,
           allowNull:false
         },
@@ -33,34 +33,42 @@ module.exports = (sequelize, DataTypes)=>{
 
     Profile.associate = (models)=>{
         Profile.belongsTo(models.User,{
-            foreignKey:'id_user',
+            foreignKey:'user_id',
             as:'user'
         }),
+        Profile.hasMany(models.Photo,{
+          through:'profile_has_photos',
+          foreignKey:'photo_id',
+          as:'photos'
+        }),
         Profile.belongsTo(models.Breed, {
-            foreignKey:'id_breed',
+            foreignKey:'breed_id',
             as:'breed'
         }),
-        Profile.belongsTo(models.Share, {
-          foreignKey:'id_share',
+        Profile.belongsToMany(models.Share, {
+          through:'profile_has_shares',
+          foreignKey:'share_id',
           as:'share'
-      }),
-        Profile.hasMany(models.New_Event, {
-            foreignKey:'id_profile',
-            as:'profile'
-        }),
-        Profile.belongsToMany(models.Comment,{
-          through:'profile_has_comments',
-          as:'comentario',
-          foreignKey:'id_profile',
-          otherKey:'id_comment',
-          timestamps:false
         }),
         Profile.belongsToMany(models.Event,{
-          through:'profile_has_event',
-          as:'evento',
-          foreignKey:'id_profile',
-          otherKey:'event_id',
-          timestamps:false
+          through:'profile_has_events',
+          as:'events',
+          foreignKey:'profile_id',
+          otherKey:'event_id'
+        }),
+        Profile.belongsToMany(models.Post,{
+          through:'profile_has_posts',
+          as:'posts',
+          foreignKey:'profile_id',
+        }),
+        Profile.belongsToMany(models.Friend, {
+          through:'profile_has_friends',
+          foreignKey:'fiend_id',
+          as:'friends'
+        }),
+        Profile.belongsTo(models.Like, {
+          foreignKey:'like_id',
+          as:'likes'
         })
       };
      

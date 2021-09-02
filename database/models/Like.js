@@ -1,38 +1,41 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Like = sequelize.define('Like',{
-        id:{type:DataTypes.INTEGER,primaryKey:true, autoIncrement:true,},
-        id_profile:DataTypes.INTEGER,
-        created_at:DataTypes.TIMESTAMPS,
-        updated_at:DataTypes.TIMESTAMPS
+        
+        profile_id:DataTypes.INTEGER
     }, {
-        tableName:'likes', 
-        timestamps:false
-    })
+        tableName:'likes'
+    });
    
     Like.associate = (models)=>{
         Like.hasOne(models.Profile, {
-            foreignKey:'id_profile',
+            foreignKey:'profile_id',
             as:'profile'
-        })
-      },
-      Like.associate = models=>{
+        }),
         Like.belongsToMany(models.Post,{
           through:'post_has_likes',
           as:'post',
-          foreignKey:'id_like',
-          otherKey:'id_post',
-          timestamps:false
-        });
-      },
-      Like.associate = models=>{
+          foreignKey:'like_id',
+          otherKey:'post_id'
+        }),
         Like.belongsToMany(models.Event,{
-          through:'likes_has_event',
-          as:'evento',
-          foreignKey:'id_like',
-          otherKey:'id_event',
-          timestamps:false
-        });
+          through:'event_has_likes',
+          as:'event',
+          foreignKey:'like_id',
+          otherKey:'event_id'
+        }),
+        Like.belongsToMany(models.Photo,{
+          through:'photo_has_likes',
+          as:'photo',
+          foreignKey:'like_id',
+          otherKey:'photo_id'
+        }),
+        Like.belongsToMany(models.Comment,{
+          through:'comment_has_likes',
+          as:'comment',
+          foreignKey:'like_id',
+          otherKey:'comment_id'
+        })
       }
      
     return Like

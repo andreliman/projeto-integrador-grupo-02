@@ -1,11 +1,11 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const User = sequelize.define('User',{
-        nome:{
+        name:{
             type:DataTypes.STRING,
             allowNull:false
         },
-        telefone:{
+        phone:{
             type:DataTypes.STRING,
             allowNull:false
         },
@@ -13,11 +13,11 @@ module.exports = (sequelize, DataTypes)=>{
             type:DataTypes.STRING,
             allowNull:false
         },
-        data_criacao:{
+        creation_date:{
             type:DataTypes.DATE,
             allowNull:false
         },
-        senha:{
+        password:{
             type:DataTypes.STRING,
             allowNull: false
         }},
@@ -26,8 +26,8 @@ module.exports = (sequelize, DataTypes)=>{
     })
     User.associate = (models)=>{
         User.hasMany(models.Profile, {
-            foreignKey:'id_user',
-            as:'profile'
+            foreignKey:'user_id',
+            as:'users'
         })
       }
      

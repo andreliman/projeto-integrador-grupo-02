@@ -2,17 +2,17 @@
 module.exports = (sequelize, DataTypes)=>{
     const Album = sequelize.define('Album',{
         
-        id_profile:DataTypes.INTEGER,
+        profile_id:DataTypes.INTEGER,
 
-        descricao:{
+        description:{
             type:DataTypes.STRING,
             allowNull:false
         },
-        qtd_fotos:{
+        num_photos:{
             type:DataTypes.INTEGER,
             allowNull:false
         },
-        data_criacao:{
+        creation_date:{
             type:DataTypes.DATE,
             allowNull:false
         }},
@@ -22,12 +22,13 @@ module.exports = (sequelize, DataTypes)=>{
 
     Album.associate = (models)=>{
         Album.belongsTo(models.Profile,{
-            foreignKey:'id_profile',
+            foreignKey:'profile_id',
             as:'profile'
         }),
-        Album.hasMany(models.Photo_Content, {
-            foreignKey:'id_album',
-            as:'photos_content'
+        Album.belongsToMany(models.Photo, {
+            through:'album_has_photos',
+            foreignKey:'album_id',
+            as:'photos'
         })
     };
      

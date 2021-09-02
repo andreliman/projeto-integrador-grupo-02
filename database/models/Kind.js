@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Kind = sequelize.define('Kind',{
-        tipo:{
+        kind:{
             type:DataTypes.STRING,
             allowNull: false
         }},{

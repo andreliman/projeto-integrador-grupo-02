@@ -9,22 +9,22 @@ module.exports = {
             primaryKey:true, 
             autoIncrement:true
         },
-        id_profile:{
-          type:Sequelize.INTEGER,
+        profile_id:{
+          type:Sequelize.INTEGER.UNSIGNED,
           references: {
             model: 'profiles',
             key: 'id'
           }},
 
-        descricao:{
+        description:{
             type:Sequelize.STRING,
             allowNull:false
         },
-        qtd_fotos:{
+        num_photos:{
             type:Sequelize.INTEGER,
             allowNull:false
         },
-        data_criacao:{
+        creation_date:{
             type:Sequelize.DATE,
             allowNull:false
         },

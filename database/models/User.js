@@ -26,8 +26,8 @@ module.exports = (sequelize, DataTypes)=>{
     })
     User.associate = (models)=>{
         User.hasMany(models.Profile, {
-            foreignKey:'id_user',
-            as:'profile'
+            foreignKey:'user_id',
+            as:'users'
         })
       }
      

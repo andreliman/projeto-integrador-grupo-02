@@ -2,38 +2,48 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-   
-    await queryInterface.createTable('shares', { 
+    await queryInterface.createTable('comment_has_likes', { 
       id: {
         type: Sequelize.INTEGER.UNSIGNED,
         primaryKey: true,
         autoIncrement: true
       },
-      profile_id:{
-        type:Sequelize.INTEGER,
+      comment_id: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
         references: {
-          model: 'profiles',
-          key: 'id'
-        }},
+          model: "comments",
+          key: "id"
+        }
+
+      },
+      like_id: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
+        references: {
+          model: "likes",
+          key: "id"
+        }
+
+      },
+      
       created_at: {
         type: 'TIMESTAMP',
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
         allowNull: false
+
       },
       updated_at: {
         type: 'TIMESTAMP',
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
         allowNull: false
-      }
-      
 
-    });
-    
+    }});
+     
   },
 
   down: async (queryInterface, Sequelize) => {
- 
-    await queryInterface.dropTable('shares');
-    
+    await queryInterface.dropTable('comment_has_likes');
+     
   }
 };

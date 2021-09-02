@@ -9,13 +9,13 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true
       },
-      id_user: {
+      user_id: {
         type: Sequelize.INTEGER.UNSIGNED,
         references: {
           model: 'kinds',
           key: 'id'
       }},
-      id_breed: {
+      breed_id: {
         type: Sequelize.INTEGER.UNSIGNED,
         references: {
           model: 'breeds',
@@ -29,11 +29,11 @@ module.exports = {
             type:Sequelize.DATE,
             allowNull:false
         },
-        sexo:{
-          type:Sequelize.INTEGER,
+        genre:{
+          type:Sequelize.STRING,
           alowNull:false
         },
-        localizacao:{
+        location:{
             type:Sequelize.STRING,
             allowNull:false
         },
@@ -41,6 +41,12 @@ module.exports = {
             type:Sequelize.STRING,
             allowNull: false
         },
+        photo_id:{
+          type:Sequelize.STRING,
+          references: {
+            model: 'photos',
+            key: 'id'
+      }},
         bio:Sequelize.STRING,
         photo_profile:Sequelize.STRING,
         created_at: {

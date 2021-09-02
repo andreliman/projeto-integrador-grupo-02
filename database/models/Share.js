@@ -1,12 +1,8 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Share = sequelize.define('Share',{
-        id:{
-          type:DataTypes.INTEGER,
-          primaryKey:true, 
-          autoIncrement:true
-        },
-        id_profile:DataTypes.INTEGER
+        
+        profile_id:DataTypes.INTEGER
        
     }, {
         tableName:'shares'
@@ -14,23 +10,28 @@ module.exports = (sequelize, DataTypes)=>{
     });
    
     Share.associate = (models)=>{
-        Share.hasOne(models.Profile, {
-          foreignKey:'id_profile',
+        Share.belongsToMany(models.Profile, {
+          through:'profile_has_shares',
+          foreignKey:'profile_id',
           as:'profile'
         }),
         Share.belongsToMany(models.Post,{
-          through:'post_has_share',
+          through:'post_has_shares',
           as:'post',
-          foreignKey:'id_share',
-          otherKey:'id_post',
-          timestamps:false
+          foreignKey:'share_id',
+          otherKey:'post_id'
         }),
         Share.belongsToMany(models.Event,{
-          through:'event_has_share',
-          as:'evento',
-          foreignKey:'id_share',
-          otherKey:'id_event',
-          timestamps:false
+          through:'event_has_shares',
+          as:'events',
+          foreignKey:'share_id',
+          otherKey:'event_id'
+        }),
+        Share.belongsToMany(models.Photo,{
+          through:'photo_has_shares',
+          as:'photos',
+          foreignKey:'share_id',
+          otherKey:'photo_id'
         })
       };
       

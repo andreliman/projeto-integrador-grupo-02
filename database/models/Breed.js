@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Breed = sequelize.define('Breed',{
-       nome:{
+       name:{
             type:DataTypes.STRING,
             allowNull: false
         },
@@ -12,11 +12,11 @@ module.exports = (sequelize, DataTypes)=>{
     });
     Breed.associate = (models)=>{
         Breed.belongsTo(models.Kind,{
-            foreignKey:'kind_id',
+            foreignKey:'king_id',
             as:'kind'
         }),
         Breed.hasMany(models.Profile, {
-            foreignKey:'id_breed',
+            foreignKey:'breed_id',
             as:'breed'
         })
     };

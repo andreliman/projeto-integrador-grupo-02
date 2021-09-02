@@ -1,59 +1,52 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Post = sequelize.define('Post',{
-        id:{type:DataTypes.INTEGER,primaryKey:true, autoIncrement:true,},
-        id_profile:DataTypes.INTEGER,
-        post:DataTypes.STRING,
-        link:DataTypes.STRING,
+        
+        profile_id:DataTypes.INTEGER,
+        post:{
+          type:DataTypes.STRING,
+          allowNull:false
+        },
+        
         likes:DataTypes.INTEGER,
-        qtd_comentarios:DataTypes.INTEGER,
-        share:DataTypes.INTEGER,
-        photo:DataTypes.STRING,
-        created_at:DataTypes.TIMESTAMPS,
-        updated_at:DataTypes.TIMESTAMPS
+        num_comments:DataTypes.INTEGER,
+        share:DataTypes.INTEGER
+        
     }, {
-        tableName:'posts', 
-        timestamps:false
-    })
+        tableName:'posts'
+    });
     Post.associate = models=>{
-        Post.belongsTo(models.Profile,{
-            foreignKey:'id_profile',
+        Post.hasOne(models.Profile,{
+            foreignKey:'profile_id',
             as:'profile',
-        });
-      },
-      Post.associate = models=>{
+        }),
         Post.belongsToMany(models.Comment,{
           through:'post_has_comments',
           as:'comentario',
           foreignKey:'post_id',
-          otherKey:'comments_id',
-          timestamps:false
-        });
-      },
-      Post.associate = models=>{
+          otherKey:'comment_id'
+        }),
+      
         Post.belongsToMany(models.Share,{
-          through:'post_has_share',
-          as:'compartilhar',
-          foreignKey:'id_post',
-          otherKey:'id_share',
-          timestamps:false
-        });
-      },
-      Post.associate = models=>{
+          through:'post_has_shares',
+          as:'shares',
+          foreignKey:'post_id',
+          otherKey:'share_id'
+        }),
+     
         Post.belongsToMany(models.Like,{
           through:'post_has_likes',
-          as:'curtir',
-          foreignKey:'id_post',
-          otherKey:'id_likes',
-          timestamps:false
-        });
-      },
-      Post.associate = (models)=>{
-        Post.belongsTo(models.Photo_Content,{
-            foreignKey:'id_post',
-            as:'foto'
+          as:'likes',
+          foreignKey:'post_id',
+          otherKey:'like_id'
+        }),
+      
+        Post.belongsToMany(models.Photo,{
+          through:'post_has_photos',
+            foreignKey:'photo_id',
+            as:'photos'
         })
-    }
+    };
 
      
     return Post

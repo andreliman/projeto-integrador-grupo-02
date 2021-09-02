@@ -1,19 +1,20 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Friend = sequelize.define('Friend',{
-        id:{type:DataTypes.INTEGER,primaryKey:true, autoIncrement:true,},
-        id_profile:DataTypes.INTEGER,
-        status:DataTypes.STRING,
-        created_at:DataTypes.TIMESTAMPS,
-        updated_at:DataTypes.TIMESTAMPS
+        
+        profile_id:DataTypes.INTEGER,
+        status:{
+            type:DataTypes.STRING,
+            allowNull: false
+        }
     }, {
-        tableName:'friends', 
-        timestamps:false
+        tableName:'friends'
     })
    
     Friend.associate = (models)=>{
         Friend.belongsTo(models.Profile, {
-            foreignKey:'id_profile',
+            through:'profile_has_friends',
+            foreignKey:'profile_id',
             as:'profile'
         })
       }

@@ -41,12 +41,6 @@ module.exports = {
             type:Sequelize.STRING,
             allowNull: false
         },
-        photo_id:{
-          type:Sequelize.STRING,
-          references: {
-            model: 'photos',
-            key: 'id'
-      }},
         bio:Sequelize.STRING,
         photo_profile:Sequelize.STRING,
         created_at: {

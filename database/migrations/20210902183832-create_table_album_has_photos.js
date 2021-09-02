@@ -9,7 +9,7 @@ module.exports = {
         autoIncrement: true
       },
       album_id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: "albuns",

@@ -10,19 +10,19 @@ module.exports = {
         autoIncrement: true
       },
       profile_id:{
-        type:Sequelize.INTEGER,
+        type:Sequelize.INTEGER.UNSIGNED,
         references: {
           model: 'profiles',
           key: 'id'
         }},
       post:{
-        type:DataTypes.STRING,
+        type:Sequelize.STRING,
         allowNull:false
         },
         
-      likes:DataTypes.INTEGER,
-      num_comments:DataTypes.INTEGER,
-      share:DataTypes.INTEGER,
+      likes:Sequelize.INTEGER,
+      num_comments:Sequelize.INTEGER,
+      share:Sequelize.INTEGER,
       
       created_at: {
         type: 'TIMESTAMP',

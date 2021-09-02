@@ -23,10 +23,6 @@ module.exports = (sequelize, DataTypes)=>{
           type:DataTypes.STRING,
           allowNull:false
         },
-        photo_id:{
-          type:DataTypes.STRING,
-          allowNull:false
-        },
         bio:DataTypes.STRING,
         photo_profile:DataTypes.STRING,
         

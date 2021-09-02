@@ -10,7 +10,7 @@ module.exports = {
         autoIncrement: true
       },
       profile_id:{
-        type:Sequelize.INTEGER,
+        type:Sequelize.INTEGER.UNSIGNED,
         references: {
           model: 'profiles',
           key: 'id'

@@ -7,53 +7,24 @@
         <div class="forms">
           <div>
             <form action="" method="" class="form">
-                <input type="text" name="email" placeholder="Número de telefone ou e-mail">
+                <input type="text" name="email" placeholder="Insira seu email">
             </form>
           </div>
           <div>
             <form action="" method="" class="form">
-                <input type="text" name="nomeDono" placeholder="Nome do Dono">
-            </form>
-          </div>
-          <div>
-            <form action="" method="" class="form">
-                <input type="text" name="nomePet" placeholder="Nome do Pet">
-            </form>
-          </div>
-          <div>
-            <form action="" method="" class="form">
-                <select name="especie">
-                    <option value="" selected disabled hidden>Espécie</option>
-                    <option value="cao">Cão</option>
-                    <option value="gato">Gato</option>
-                    <option value="passaro">Pássaro</option>
-                    <option value="anfibio">Anfíbio</option>
-                    <option value="reptil">Réptil</option>
-                </select>
-            </form>
-          </div>
-          <div>
-            <form action="" method="" class="form">
-                <select name="racas">
-                    <option value="" selected disabled hidden>Raça</option>
-                    <option value="rnd">RND</option>
-                    <option value="labrador">Labrador</option>
-                    <option value="shihtzu">Shih-Tzu</option>
-                    <option value="bassethound">Basset Hound</option>
-                    <option value="dachshound">Dachshound</option>
-                </select>
+                <input type="text" name="name" placeholder="Insira seu nome completo">
             </form>
           </div>
           <div class="password">
             <form action="" method="" class="form">
-              <input type="password" name="senha" placeholder="Insira sua senha" encripted>
-              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <input id="password" type="password" name="password" placeholder="Insira sua senha" encripted>
+              <i class="fa fa-eye-slash" onclick="eyeClick()" aria-hidden="true"></i>
             </form>
           </div>
           <div class="password">
             <form action="" method="" class="form">
-              <input type="password" name="confirmarSenha" placeholder="Insira sua senha">
-              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <input id="password2" type="password" name="password" placeholder="Confirme sua senha">
+              <i class="fa fa-eye-slash" onclick="eyeClick2()" aria-hidden="true"></i>
             </form>
           </div>
           <div class="submit">
@@ -62,9 +33,10 @@
           </div>               
         </div>
         <div class="login">
-            <p>Já tem uma conta? <a href="/manimals">Faça login.</a></p>
+            <p>Já tem uma conta? <a href="/manimal">Faça login.</a></p>
         </div>
     </main>
+    <script src="/js/eyeClick.js"></script>
     <script src="/js/darkMode.js"></script>
 </body>
 </html>

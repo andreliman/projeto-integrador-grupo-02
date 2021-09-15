@@ -5,7 +5,7 @@
     <main class="main">
       <div class="languageForm">
         <form action="" method="" class="">
-          <select name="lingua">
+          <select name="language">
               <option value="portugues" selected >português (Brasil)</option>
               <option value="portuguesPort">português (Portugal)</option>
               <option value="ingles">inglês</option>
@@ -22,8 +22,8 @@
           </div>
           <div class="password">
             <form action="" method="" class="form">
-              <input type="password" name="senha" placeholder="Senha" encripted>
-              <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              <input id="password" type="password" name="password" placeholder="Senha" encripted>
+              <i class="fa fa-eye-slash" onclick="eyeClick()" aria-hidden="true"></i>
             </form>
           </div>
           <div class="submit">
@@ -32,12 +32,13 @@
           </div>               
         </div>
         <div class="help">
-          <p>Esqueceu seus dados de login? <a href="/manimals/ajuda">Obtenha ajuda para entrar</a></p>
+          <p>Esqueceu seus dados de login? <a href="/manimal/ajuda">Obtenha ajuda para entrar</a></p>
         </div>
         <div class="cadastro">
-            <p>Não tem uma conta? <a href="/manimals/cadastro">Cadastre-se.</a></p>
+            <p>Não tem uma conta? <a href="/manimal/cadastro">Cadastre-se.</a></p>
         </div>
     </main>
+    <script src="/js/eyeClick.js"></script>
     <script src="/js/darkMode.js"></script>
 </body>
 </html>

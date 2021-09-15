@@ -1,6 +1,4 @@
 const express = require('express');
-
-
 const router = express.Router();
 
 /** Rotas Ed* */
@@ -23,7 +21,7 @@ router.get('/eventos/criar', (req, res) => {
 });
 
 router.post('/eventos/criar', (req, res) => {
-  res.redirect('/manimals/eventos/criados');
+  res.redirect('/manimal/eventos/criados');
 });
 
 router.get('/eventos/criados', (req, res) => {
@@ -53,7 +51,7 @@ router.get('/cadastro', (req, res) => {
 });
 
 router.post('/cadastro', (req, res) => {
-  res.redirect('/manimals');
+  res.redirect('/manimal/profile/create');
 });
 
 router.get('/', (req, res) => {
@@ -61,7 +59,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  res.redirect('/manimals/inicial');
+  res.redirect('/manimal/inicial');
 });
 
 router.get('/ajuda', (req, res) => {
@@ -69,7 +67,7 @@ router.get('/ajuda', (req, res) => {
 });
 
 router.post('/ajuda', (req, res) => {
-  res.redirect('/manimals/ajuda/confirmacao');
+  res.redirect('/manimal/ajuda/confirmacao');
 });
 
 router.get('/ajuda/confirmacao', (req, res) => {

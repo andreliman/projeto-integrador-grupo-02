@@ -1,0 +1,65 @@
+<%- include('./partials/head')%>
+<link rel="stylesheet" href="/stylesheets/criarPerfil.css">
+</head>
+<body class="container">
+    <main class="main">
+        <a href=""><i class="fa fa-user-plus" onclick="" aria-hidden="true"></i></a>
+        <!-- <img src="/images/Logo1.png" alt="Logo Manimal"> -->
+        
+        <div class="forms">
+          <div>
+            <form action="" method="" class="form">
+                <input type="text" name="pet_name" placeholder="Nome do Pet">
+            </form>
+          </div>
+          <div>
+            <form action="" class="form" method="POST">
+                <select name="kind">
+                    <option value="" selected disabled hidden>Espécie</option>
+                    <option value="cao">Cão</option>
+                    <option value="gato">Gato</option>
+                    <option value="passaro">Pássaro</option>
+                    <option value="anfibio">Anfíbio</option>
+                    <option value="reptil">Réptil</option>
+                </select>
+            </form>
+          </div>
+          <div>
+            <form action="" class="form" method="POST">
+                <select name="breed">
+                    <option value="" selected disabled hidden>Raça</option>
+                    <option value="rnd">RND</option>
+                    <option value="labrador">Labrador</option>
+                    <option value="shihtzu">Shih-Tzu</option>
+                    <option value="bassethound">Basset Hound</option>
+                    <option value="dachshound">Dachshound</option>
+                </select>
+            </form>
+          </div>
+          <div>
+            <form action="" class="form" method="POST">
+                <select name="genre">
+                    <option value="" selected disabled hidden>Insira o sexo do pet</option>
+                    <option value="macho">Macho</option>
+                    <option value="femea">Fêmea</option>
+                </select>
+            </form>
+          </div>
+          <div>
+            <form action="" class="form" method="POST">
+                <input type="date" name="birthday" placeholder="Insira a data de aniversário do pet">
+            </form>
+          </div>
+          <div class="submit">
+            <form action="" class="submit" method="POST">
+              <input type="submit" name="submit" value="Prosseguir">
+          </div>               
+        </div>
+        <div class="login">
+            <p>Já tem uma conta? <a href="/manimal">Faça login.</a></p>
+        </div>
+    </main>
+    <script src="/js/eyeClick.js"></script>
+    <script src="/js/darkMode.js"></script>
+</body>
+</html>

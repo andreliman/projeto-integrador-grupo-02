@@ -67,6 +67,10 @@
     color: var(--white);
 }
 
+.main .forms .password .fa-eye-slash:active {
+    color: var(--black);
+}
+
 .main .forms .submit {
     margin: 10px 0;
 }

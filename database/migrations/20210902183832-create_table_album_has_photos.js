@@ -18,7 +18,7 @@ module.exports = {
         },
       },
       photo_id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.STRING,
         allowNull: false,
         references: {
           model: "photos",

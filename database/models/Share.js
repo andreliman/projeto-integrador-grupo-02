@@ -31,8 +31,7 @@ module.exports = (sequelize, DataTypes)=>{
         Share.belongsToMany(models.Photo,{
           through:'photo_has_shares',
           as:'photos',
-          foreignKey:'share_id',
-          otherKey:'photo_id'
+          foreignKey:'photo_id' 
         })
       };
       

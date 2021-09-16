@@ -18,11 +18,11 @@ module.exports = {
         },
       },
       event_id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.CHAR(60),
         allowNull: false,
         references: {
           model: "events",
-          key: "id",
+          key: "event_id",
         },
       },
 

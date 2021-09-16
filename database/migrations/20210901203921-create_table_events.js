@@ -3,11 +3,10 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("events", {
-      id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+      event_id: {
+        type: Sequelize.CHAR(40),
         primaryKey: true,
         allowNull: false,
-        autoIncrement: true,
       },
       profile_id: {
         type: Sequelize.INTEGER.UNSIGNED,
@@ -38,13 +37,16 @@ module.exports = {
         allowNull: false,
       },
       description: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
-      location: {
-        type: Sequelize.STRING,
+      local: {
+        type: Sequelize.TEXT,
         allowNull: false,
       },
+      photo_event_path:Sequelize.STRING,
+      photo_id:Sequelize.STRING,
+
       num_comments: {
         type: Sequelize.INTEGER,
         allowNull: false,

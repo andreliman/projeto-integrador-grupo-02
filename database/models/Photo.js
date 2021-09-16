@@ -1,6 +1,7 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Photo = sequelize.define('Photo',{
+        photo_id:DataTypes.STRING,
         profile_id:DataTypes.STRING,
         photo_path:{
             type:DataTypes.STRING,
@@ -20,11 +21,7 @@ module.exports = (sequelize, DataTypes)=>{
             foreignKey:'album_id',
             as:'album'
         }),
-        Photo.belongsToMany(models.Post,{
-            through:'post_has_photos',
-            foreignKey:'post_id',
-            as:'post'
-        }),
+        
         Photo.belongsToMany(models.Comment,{
             through:'photo_has_comments',
             foreignKey:'comment_id',

@@ -4,10 +4,9 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("photos", {
       id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.STRING,
         primaryKey: true,
-        allowNull: false,
-        autoIncrement: true,
+        allowNull: false
       },
       profile_id: {
         type: Sequelize.INTEGER.UNSIGNED,

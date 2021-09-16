@@ -5,7 +5,9 @@ module.exports = (sequelize, DataTypes)=>{
           type:DataTypes.STRING,
           allowNull:false
         },
-        profile_id:DataTypes.INTEGER
+        profile_id:DataTypes.INTEGER,
+        photo_comments_path:DataTypes.STRING,
+        photo_id:DataTypes.STRING
         },
         {
         tableName:'comments'

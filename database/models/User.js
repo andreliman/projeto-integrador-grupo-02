@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes)=>{
             allowNull:false
         },
         phone:{
-            type:DataTypes.STRING,
+            type:DataTypes.CHAR(15),
             allowNull:false
         },
         email:{
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes)=>{
     User.associate = (models)=>{
         User.hasMany(models.Profile, {
             foreignKey:'user_id',
-            as:'profiles'
+            as:'users'
         })
       }
      

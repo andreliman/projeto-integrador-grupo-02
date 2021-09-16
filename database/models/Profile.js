@@ -1,8 +1,14 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Profile = sequelize.define('Profile',{
-        user_id:DataTypes.INTEGER,
-        breed_id:DataTypes.INTEGER,
+        user_id: {
+          type: DataTypes.INTEGER,
+          allowNull: false
+        },
+        breed_id: {
+          type: DataTypes.INTEGER,
+          allowNUll: false
+        },
         pet_name:{
           type:DataTypes.STRING,
           allowNull:false
@@ -36,7 +42,7 @@ module.exports = (sequelize, DataTypes)=>{
             foreignKey:'user_id',
             as:'user'
         }),
-        Profile.hasMany(models.Photo,{
+        Profile.belongsToMany(models.Photo,{
           through:'profile_has_photos',
           foreignKey:'photo_id',
           as:'photos'
@@ -48,27 +54,27 @@ module.exports = (sequelize, DataTypes)=>{
         Profile.belongsToMany(models.Share, {
           through:'profile_has_shares',
           foreignKey:'share_id',
-          as:'share'
+          as:'shares'
         }),
         Profile.belongsToMany(models.Event,{
           through:'profile_has_events',
-          as:'events',
-          foreignKey:'profile_id',
-          otherKey:'event_id'
+          foreignKey:'event_id',
+          as:'events',          
+          otherKey:'profile_id'
         }),
         Profile.belongsToMany(models.Post,{
           through:'profile_has_posts',
           as:'posts',
-          foreignKey:'profile_id',
+          foreignKey:'posts_id',
         }),
         Profile.belongsToMany(models.Friend, {
           through:'profile_has_friends',
-          foreignKey:'fiend_id',
+          foreignKey:'friend_id',
           as:'friends'
         }),
         Profile.belongsTo(models.Like, {
           foreignKey:'like_id',
-          as:'likes'
+          as:'like'
         })
       };
      

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes)=>{
           allowNull:false
         },
         
-        likes:DataTypes.INTEGER,
+        like_id:DataTypes.INTEGER,
         num_comments:DataTypes.INTEGER,
         share:DataTypes.INTEGER
         

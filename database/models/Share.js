@@ -2,11 +2,12 @@
 module.exports = (sequelize, DataTypes)=>{
     const Share = sequelize.define('Share',{
         
-        profile_id:DataTypes.INTEGER
-       
+        profile_id:{
+          type: DataTypes.INTEGER,
+          allowNull: false
+        },       
     }, {
-        tableName:'shares'
-        
+        tableName:'shares' 
     });
    
     Share.associate = (models)=>{

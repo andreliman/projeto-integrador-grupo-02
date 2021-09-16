@@ -12,12 +12,12 @@ module.exports = (sequelize, DataTypes)=>{
     });
     Breed.associate = (models)=>{
         Breed.belongsTo(models.Kind,{
-            foreignKey:'king_id',
+            foreignKey:'kind_id',
             as:'kind'
         }),
         Breed.hasMany(models.Profile, {
             foreignKey:'breed_id',
-            as:'breed'
+            as:'profiles'
         })
     };
      

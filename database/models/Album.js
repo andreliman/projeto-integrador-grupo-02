@@ -2,8 +2,10 @@
 module.exports = (sequelize, DataTypes)=>{
     const Album = sequelize.define('Album',{
         
-        profile_id:DataTypes.INTEGER,
-
+        profile_id:{
+            type: DataTypes.INTEGER,
+            allowNull:false
+        },
         description:{
             type:DataTypes.STRING,
             allowNull:false

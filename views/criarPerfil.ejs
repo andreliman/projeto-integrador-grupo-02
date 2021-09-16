@@ -16,11 +16,11 @@
             <form action="" class="form" method="POST">
                 <select name="kind">
                     <option value="" selected disabled hidden>Espécie</option>
-                    <option value="cao">Cão</option>
-                    <option value="gato">Gato</option>
-                    <option value="passaro">Pássaro</option>
-                    <option value="anfibio">Anfíbio</option>
-                    <option value="reptil">Réptil</option>
+                    <% breeds.forEach(breed => { %>
+                      <option value="<%= breed.kind_id %>">
+                        <%= breed.kind_id %>
+                      </option>
+                    <% }) %>
                 </select>
             </form>
           </div>
@@ -28,11 +28,11 @@
             <form action="" class="form" method="POST">
                 <select name="breed">
                     <option value="" selected disabled hidden>Raça</option>
-                    <option value="rnd">RND</option>
-                    <option value="labrador">Labrador</option>
-                    <option value="shihtzu">Shih-Tzu</option>
-                    <option value="bassethound">Basset Hound</option>
-                    <option value="dachshound">Dachshound</option>
+                    <% breeds.forEach(breed => { %>
+                      <option value="<%= breed.id %>">
+                        <%= breed.name %>
+                      </option>
+                    <% }) %>
                 </select>
             </form>
           </div>

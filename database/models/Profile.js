@@ -1,6 +1,7 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Profile = sequelize.define('Profile',{
+        
         user_id: {
           type: DataTypes.INTEGER,
           allowNull: false
@@ -21,16 +22,17 @@ module.exports = (sequelize, DataTypes)=>{
           type:DataTypes.STRING,
           alowNull:false
         },
-        location:{
-          type:DataTypes.STRING,
+        locaL:{
+          type:DataTypes.TEXT,
           allowNull:false
         },
         nickname:{
           type:DataTypes.STRING,
           allowNull:false
         },
-        bio:DataTypes.STRING,
-        photo_profile:DataTypes.STRING,
+        bio:DataTypes.TEXT,
+        photo_profile_path:DataTypes.STRING,
+        photo_id:DataTypes.STRING
         
       },{
         tableName:'profiles', 
@@ -41,11 +43,6 @@ module.exports = (sequelize, DataTypes)=>{
         Profile.belongsTo(models.User,{
             foreignKey:'user_id',
             as:'user'
-        }),
-        Profile.belongsToMany(models.Photo,{
-          through:'profile_has_photos',
-          foreignKey:'photo_id',
-          as:'photos'
         }),
         Profile.belongsTo(models.Breed, {
             foreignKey:'breed_id',
@@ -58,9 +55,9 @@ module.exports = (sequelize, DataTypes)=>{
         }),
         Profile.belongsToMany(models.Event,{
           through:'profile_has_events',
-          foreignKey:'event_id',
+          foreignKey:'profile_id',
           as:'events',          
-          otherKey:'profile_id'
+          otherKey:'event_id'
         }),
         Profile.belongsToMany(models.Post,{
           through:'profile_has_posts',

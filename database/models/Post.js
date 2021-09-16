@@ -4,13 +4,15 @@ module.exports = (sequelize, DataTypes)=>{
         
         profile_id:DataTypes.INTEGER,
         post:{
-          type:DataTypes.STRING,
+          type:DataTypes.TEXT,
           allowNull:false
         },
+        photo_post_path:DataTypes.STRING,
+        photo_id:DataTypes.STRING,
         
-        like_id:DataTypes.INTEGER,
+        num_likes:DataTypes.INTEGER,
         num_comments:DataTypes.INTEGER,
-        share:DataTypes.INTEGER
+        num_share:DataTypes.INTEGER
         
     }, {
         tableName:'posts'
@@ -39,12 +41,6 @@ module.exports = (sequelize, DataTypes)=>{
           as:'likes',
           foreignKey:'post_id',
           otherKey:'like_id'
-        }),
-      
-        Post.belongsToMany(models.Photo,{
-          through:'post_has_photos',
-            foreignKey:'photo_id',
-            as:'photos'
         })
     };
 

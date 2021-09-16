@@ -10,7 +10,7 @@ module.exports = {
         autoIncrement: true,
       },
       photo_id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.STRING,
         allowNull: false,
         references: {
           model: "photos",

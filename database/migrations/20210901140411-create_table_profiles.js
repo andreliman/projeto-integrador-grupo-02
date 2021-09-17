@@ -41,7 +41,7 @@ module.exports = {
         type: Sequelize.STRING,
         alowNull: false,
       },
-      locaL: {
+      local: {
         type: Sequelize.TEXT,
         allowNull: false,
       },

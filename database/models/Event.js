@@ -39,15 +39,12 @@ module.exports = (sequelize, DataTypes)=>{
 
         num_comments:{
           type:DataTypes.INTEGER,
-          
         },
-        likes_id:{
-          type:DataTypes.INTEGER,
-          
+        num_likes:{
+          type:DataTypes.INTEGER, 
         },
-        share_id:{
+        num_share:{
           type:DataTypes.INTEGER,
-         
         }
     }, {
         tableName:'events'

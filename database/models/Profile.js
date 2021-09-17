@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes)=>{
           type:DataTypes.STRING,
           alowNull:false
         },
-        locaL:{
+        local:{
           type:DataTypes.TEXT,
           allowNull:false
         },

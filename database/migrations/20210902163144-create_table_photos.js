@@ -8,17 +8,17 @@ module.exports = {
         primaryKey: true,
         allowNull: false
       },
-      profile_id: {
-        type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false,
-        references: {
-          model: "profiles",
-          key: "id",
-        },
-      },
       photo_path: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      album_id: {
+        type: Sequelize.INTEGER.UNSIGNED,
+        allowNull: false,
+        references: {
+          model: "albuns",
+          key: "id",
+        },
       },
       created_at: {
         type: "TIMESTAMP",

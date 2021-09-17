@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const manimalRouter = require('./routes/manimal');
 const profileRouter = require('./routes/profileRouter');
+const eventRouter = require('./routes/eventRouter');
 const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -16,6 +17,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/manimal', manimalRouter);
 app.use('/manimal/profile', profileRouter);
+app.use('/manimal/event', eventRouter);
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));

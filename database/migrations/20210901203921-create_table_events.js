@@ -51,11 +51,11 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      likes: {
+      num_likes: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      share: {
+      num_share: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },

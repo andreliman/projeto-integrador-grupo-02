@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes)=>{
     const Photo = sequelize.define('Photo',{
         photo_id:DataTypes.STRING,
-        profile_id:DataTypes.STRING,
+        album_id:DataTypes.INTEGER,
         photo_path:{
             type:DataTypes.STRING,
             allowNull:false
@@ -11,17 +11,11 @@ module.exports = (sequelize, DataTypes)=>{
         tableName:'photos'
     });
 
-    Photo.associate = (models)=>{
-        Photo.belongsTo(models.Profile,{
-            foreignKey:'profile_id',
-            as:'profile'
-        }),
-        Photo.belongsToMany(models.Album,{
-            through:'album_has_photos',
+    Photo.associate = (models)=>{     
+        Profile.belongsTo(models.Album,{
             foreignKey:'album_id',
             as:'album'
         }),
-        
         Photo.belongsToMany(models.Comment,{
             through:'photo_has_comments',
             foreignKey:'comment_id',

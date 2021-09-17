@@ -20,45 +20,38 @@
     <div class="container">
         <%- include('./partials/somenteHeader')%>
         <main class="main">
+            <div class="info__foto">
+                <img src= "<%= profile.photo_profile_path %>" alt="" class="info__foto__perfil">
+            </div>
+            <div class="info__wrapper">
+                <div class="box__nome__aniversario">
+                    <span class="info"><%= profile.pet_name %></span>
+                    <span class="info"><%= profile.birthday %></span>
+                </div>  
+            </div>
             <div class="eventos">
                 <a href="" class="evento-escolhido">Eventos Criados</a>
-                <a href="aceitos" class="eventos-outros">Eventos Aceitos</a>
                 <a href="./" class="eventos-outros">Eventos Disponíveis</a>
             </div>
             <div class="mural">
                 <div class="album-evento">
-                    <img src="/images/praia.png" alt="" class="album__capa">
+                    <% eventosCriadosPorProfile.forEach(eventos => { %>
+                    <img src="<%= eventos.photo_events_path %>" alt="" class="album__capa">
                     <ul class="post__lista_icons">
                         <li><i class="fa fa-paw evento_icon" aria-hidden="true"></i></li>
                         <li><i class="fa fa-comment evento_icon" aria-hidden="true"></i></li>
                         <li><i class="fa fa-paper-plane-o evento_icon" aria-hidden="true"></i></li>
                     </ul>
-                    <span class="album__nome">Aniversário do Bono</span>
+                    <span class="album__nome"><%= eventos.name %></span>
                     <section class="descricao-eventos">
                         <div class="info_eventos">
-                            <p><span>Data:</span> 20 de julho a 30 de julho  </p>
-                            <p><span>Local:</span>Hospital Veterinário Unicamp </p>
-                            <p><span>Descrição:</span>campanha de vacinação em Campinas</p>
+                            <p><span>Data:</span> <%= eventos.beginning_date %>  </p>
+                            <p><span>Local:</span><%= eventos.local %> </p>
+                            <p><span>Descrição:</span><%= eventos.description %></p>
                         </div>
                             <button type="submit"class="principal__button">Convidar</button>
                     </section>
-                </div>
-                <div class="album-evento">
-                    <img src="/images/trilha2.png" alt="" class="album__capa">
-                    <ul class="post__lista_icons">
-                        <li><i class="fa fa-paw evento_icon" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-comment evento_icon" aria-hidden="true"></i></li>
-                        <li><i class="fa fa-paper-plane-o evento_icon" aria-hidden="true"></i></li>
-                    </ul>
-                    <span class="album__nome">Trilha na Natureza</span>
-                    <section class="descricao-eventos">
-                        <div class="info_eventos">
-                            <p><span>Data:</span> 20 de julho </p>
-                            <p><span>Local:</span> Embu das Artes, Praça Central</p>
-                            <p><span>Descrição:</span>Vamos fazer uma trilha com muita natureza</p>
-                        </div>
-                            <button type="submit" class="principal__button">Convidar</button>
-                    </section>
+                    <% }) %>
                 </div>
                 
             </div>

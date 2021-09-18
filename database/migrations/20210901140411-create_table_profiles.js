@@ -41,16 +41,17 @@ module.exports = {
         type: Sequelize.STRING,
         alowNull: false,
       },
-      location: {
-        type: Sequelize.STRING,
+      local: {
+        type: Sequelize.TEXT,
         allowNull: false,
       },
       nickname: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      bio: Sequelize.STRING,
-      photo_profile: Sequelize.STRING,
+      bio: Sequelize.TEXT,
+      photo_profile_path: Sequelize.STRING,
+      photo_id:Sequelize.STRING,
       created_at: {
         type: "TIMESTAMP",
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),

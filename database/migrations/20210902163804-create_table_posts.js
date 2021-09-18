@@ -18,13 +18,15 @@ module.exports = {
         },
       },
       post: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
+      photo_post_path:Sequelize.STRING,
+      photo_id:Sequelize.STRING,
 
-      likes: Sequelize.INTEGER,
+      num_likes: Sequelize.INTEGER,
       num_comments: Sequelize.INTEGER,
-      share: Sequelize.INTEGER,
+      num_share: Sequelize.INTEGER,
 
       created_at: {
         type: "TIMESTAMP",

@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes)=>{
             allowNull:false
         },
         description:{
-            type:DataTypes.STRING,
+            type:DataTypes.TEXT,
             allowNull:false
         },
         num_photos:{
@@ -26,12 +26,8 @@ module.exports = (sequelize, DataTypes)=>{
         Album.belongsTo(models.Profile,{
             foreignKey:'profile_id',
             as:'profile'
-        }),
-        Album.belongsToMany(models.Photo, {
-            through:'album_has_photos',
-            foreignKey:'album_id',
-            as:'photos'
         })
+        
     };
      
     return Album

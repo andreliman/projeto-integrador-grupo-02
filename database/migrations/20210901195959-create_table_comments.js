@@ -18,9 +18,12 @@ module.exports = {
         },
       },
       comment: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false,
       },
+      photo_comments_path: Sequelize.STRING,
+      photo_id:Sequelize.STRING,
+      
       created_at: {
         type: "TIMESTAMP",
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),

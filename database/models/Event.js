@@ -1,7 +1,10 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Event = sequelize.define('Event',{
-     
+        event_id:{
+          type:DataTypes.CHAR(40),
+          allowNull: false
+        },
         profile_id:DataTypes.INTEGER,
         name:{
           type:DataTypes.STRING,
@@ -24,36 +27,31 @@ module.exports = (sequelize, DataTypes)=>{
           allowNull:false
         },
         description:{
-          type:DataTypes.STRING,
+          type:DataTypes.TEXT,
           allowNull:false
         },
-        location:{
-          type:DataTypes.STRING,
+        local:{
+          type:DataTypes.TEXT,
           allowNull:false
         },
+        photo_event_path: DataTypes.STRING,
+        photo_id:DataTypes.STRING,
+
         num_comments:{
           type:DataTypes.INTEGER,
-          allowNull:false
         },
-        likes_id:{
-          type:DataTypes.INTEGER,
-          allowNull:false
+        num_likes:{
+          type:DataTypes.INTEGER, 
         },
-        share_id:{
+        num_share:{
           type:DataTypes.INTEGER,
-          allowNull:false
         }
     }, {
         tableName:'events'
     });
   
     Event.associate = (models)=>{
-        Event.belongsToMany(models.Photo,{
-          through:'event_has_photos',
-          as:'photo',
-          foreignKey:'event_id',
-          otherKey:'photo_id'
-        }),
+        
         Event.belongsToMany(models.Profile,{
           through:'profile_has_events',
           as:'profiles',

@@ -10,11 +10,11 @@ module.exports = {
         autoIncrement: true,
       },
       event_id: {
-        type: Sequelize.INTEGER.UNSIGNED,
+        type: Sequelize.CHAR(40),
         allowNull: false,
         references: {
           model: "events",
-          key: "id",
+          key: "event_id",
         },
       },
       like_id: {

@@ -8,12 +8,12 @@
     <div class="container__total">
       <section class="section__info">
         <div class="info__foto">
-            <img src="/images/1 (181).jpg" alt="" class="info__foto__perfil">
+            <img src= "<%= profile.photo_profile_path %>" alt="" class="info__foto__perfil">
         </div>
         <div class="info__wrapper">
         <div class="box__nome__aniversario">
-            <span class="info">Dollynho</span>
-            <span class="info">29/05/2019</span>
+            <span class="info"><%= profile.pet_name %></span>
+            <span class="info"><%= profile.birthday %></span>
         </div>  
         </div>
         
@@ -24,57 +24,55 @@
 
     <section class="criar-evento">
       <div class="nome-evento">
-        <form action="" class="nome-evento-form" method="">
+        <form action="/create" class="nome-evento-form" method="POST">
           <label for="eventName" class="label__form" >Nome do Evento</label>
-          <input type="text" class="form__text" name="Name" id="eventName" >
+          <input type="text" class="form__text" name="name" id="eventName" >
         </form>
       </div>
       <div class="data-e-hora">
         <div class="data-evento">
-          <form action="" class="data-evento-form">
+          <form action="/create" class="data-evento-form" method="POST">
             <label for="eventDate" class="laber_form">Data Inicial</label>
             <br>
-            <input class="campo_data_hora" type="date" name="eventDate">
+            <input class="campo_data_hora" type="date" name="beginning_date">
             <br>
             <label for="eventDate" class="laber_form">Data Final</label>
             <br>
-            <input class="campo_data_hora" type="date" name="eventDate">
+            <input class="campo_data_hora" type="date" name="ends_date">
          </form>
         </div>
         <div class="hora-evento">
-          <form action="" class="hora-evento-form">
+          <form action="/create" class="hora-evento-form" method="POST">
             <label for="eventHour" class="label_form">Hora Inicial</label>
             <br>
-            <input class="campo_data_hora" type="time" name="eventHour">
+            <input class="campo_data_hora" type="time" name="hour">
             <br>
             <label for="eventDate" class="label_form">Hora Final</label>
             <br>
-            <input class="campo_data_hora" type="time" name="eventHour">
+            <input class="campo_data_hora" type="time" name="finish_hour">
           </form>
         </div>
-        <div >
-          <button type="submit" class="botao-dia-todo">Dia Todo</button>
-        </div>
+        
       </div>
       <div class="local-evento-convite">
-        <form action="" class="local-evento-form" method="">
+        <form action="/create" class="local-evento-form" method="POST">
           <label for="eventAdress" class="label__form" >Local do Evento</label>
-          <input type="text" class="form__text" name="Name" id="eventAdress" >
+          <input type="text" class="form__text" name="local" id="eventAdress" >
         </form>
         <button type="submit" class="convidarform_btn">Convidar</button>
       </div>
       <div class="descricao-evento">
-        <form action="" class="descricao-evento-form" method="">
+        <form action="/create" class="descricao-evento-form" method="POST">
           <label for="eventDescrition" class="label__form" >Descricao do Evento</label>
-          <input type="text" class="form__text" name="Name" id="eventDescription" style="height: 200px;">
+          <input type="text" class="form__text" name="description" id="eventDescription" style="height: 200px;">
         </form>
-        <form action="" method="" enctype="multipart/form-data">
-          Adicionar Foto do Evento <input type="file" name="file">
+        <form action="/create" method="POST" enctype="multipart/form-data">
+          Adicionar Foto do Evento <input type="file" name="photo_event">
           <br>
           <button type="submit" class="form_btn" >Enviar</button>
                     
         </form>
-        <form action="" method="POST" >
+        <form action="/create" method="POST" >
           <button type="submit" class="form_btn" >Criar</button>
         </form>
         

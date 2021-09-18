@@ -10,6 +10,9 @@
 - **HTML5**
 - **CSS3**
 - **JavaScript** 
+- **Sequelize**
+- **MySQL**
+- **AWS S3**
 
 
 ---
@@ -20,4 +23,5 @@ Você pode conferir o layout do site no link abaixo:
 
 **Desenvolvido  por:**
 **[Eduardo Cruz](https://github.com/edcruz29/).**
+**[Neto Machado](https://github.com/netomachado/).**
 adicionem os gits 

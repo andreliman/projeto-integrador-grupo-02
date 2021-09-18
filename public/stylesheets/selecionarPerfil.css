@@ -1,0 +1,73 @@
+.container {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main {
+  padding: 0;
+  padding-bottom: 25px;
+  margin: 0 8px;
+}
+
+.main .profile {
+    padding-top: 15vh;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main .fa-user-plus {
+  padding-bottom: 30px;
+  font-size: 75px;
+}
+
+.main .redirect button {
+  height: 40px;
+  width: 150px;
+  background-color: var(--buttonColor);
+  box-shadow: var(--box-form);
+  border-radius: 11px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--white);
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.main .logout {
+  margin-top: 15vh;
+}
+
+.main .logout p {
+  font-size: 13px;
+}
+
+.main .logout a {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--selected);
+  text-decoration: none;
+}
+
+/*responsividade*/
+
+@media (min-width: 1080px) {
+  .main .fa-user-plus {
+    padding-bottom: 60px;
+    font-size: 150px;
+  }
+
+  .main .redirect {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .main .logout {
+    font-size: 15px;
+  }
+}

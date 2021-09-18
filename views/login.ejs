@@ -1,5 +1,6 @@
-<%- include('./partials/head')%>
-<link rel="stylesheet" href="/stylesheets/login.css">
+  <%- include('./partials/head')%>
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/stylesheets/login.css">
 </head>
 <body class="container">
     <main class="main">
@@ -16,20 +17,19 @@
         <img src="/images/Logo1.png" alt="Logo Manimal">
         <div class="forms">
           <div>
-            <form action="" method="" class="form">
-                <input type="text" name="email" placeholder="Insira seu email">
+            <form class="form" action="" method="POST">
+              <div class="email">
+                <input type="email" name="email" id="email" placeholder="Insira seu email">
+              </div>
+              <div class="password">
+                <input type="password" name="password" id="password" placeholder="Senha" encripted>
+                <i class="fa fa-eye-slash" onclick="eyeClick()" aria-hidden="true"></i>
+              </div>
+              <div class="submit">
+                <button type="submit">Entrar</button>
+              </div>
             </form>
           </div>
-          <div class="password">
-            <form action="" method="" class="form">
-              <input id="password" type="password" name="password" placeholder="Senha" encripted>
-              <i class="fa fa-eye-slash" onclick="eyeClick()" aria-hidden="true"></i>
-            </form>
-          </div>
-          <div class="submit">
-            <form action="" method="POST" class="submit">
-              <input type="submit" name="submit" value="Entrar"> 
-          </div>               
         </div>
         <div class="help">
           <p>Esqueceu seus dados de login? <a href="/manimal/ajuda">Obtenha ajuda para entrar</a></p>

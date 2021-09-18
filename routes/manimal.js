@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const LoginController = require('../controllers/LoginController');
 
 /** Rotas Ed* */
 router.get('/inicial', (req, res) => {
@@ -46,22 +47,24 @@ router.get('/perfilVisitante', (req, res) => {
 });
 
 /** Rotas André* */
-router.get('/cadastro', (req, res) => {
-  res.render('cadastro');
-});
-
-router.post('/cadastro', (req, res) => {
-  res.redirect('/manimal/profile/create');
-});
-
+// Login
 router.get('/', (req, res) => {
-  res.render('login');
+  res.render('login', { title: "Login" });
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
+  const { email, password } = req.body;
+
+  const { password: notUsedPassword, ...user } = await LoginController.logUser({
+    email,
+    password,
+  });
+
+  req.session.user = user;
+
   res.redirect('/manimal/inicial');
 });
-
+// login
 router.get('/ajuda', (req, res) => {
   res.render('ajudaLogin');
 });

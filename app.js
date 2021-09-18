@@ -2,8 +2,10 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 const logger = require('morgan');
 const manimalRouter = require('./routes/manimal');
+const registerRouter = require('./routes/registerRouter')
 const profileRouter = require('./routes/profileRouter');
 const eventRouter = require('./routes/eventRouter');
 const app = express();
@@ -14,8 +16,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({ 
+  secret: Math.random().toString(36).slice(-10),
+  resave: true,
+  saveUninitialized: true 
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/manimal', manimalRouter);
+app.use('/manimal/register', registerRouter);
 app.use('/manimal/profile', profileRouter);
 app.use('/manimal/event', eventRouter);
 // catch 404 and forward to error handler

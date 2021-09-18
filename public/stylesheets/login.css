@@ -83,10 +83,11 @@
     margin-top: 10px;
 }
 
-.main .forms .submit input{
+.main .forms .submit button{
     height: 40px;
     width: 175px;
     background-color: var(--buttonColor);
+    color: var(--white);
     box-shadow: var(--box-form);
     border-radius: 11px;
     cursor: pointer;

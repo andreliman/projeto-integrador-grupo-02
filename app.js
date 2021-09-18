@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -7,6 +8,7 @@ const manimalRouter = require('./routes/manimal');
 const profileRouter = require('./routes/profileRouter');
 const eventRouter = require('./routes/eventRouter');
 const app = express();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const multerConfig = require('../config/multer')
 
 /** Rotas Ed* */
 router.get('/inicial', (req, res) => {

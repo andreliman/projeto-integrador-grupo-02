@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const EventController = require('../controllers/eventController');
+const multer = require('multer');
+const multerConfig = require('../config/multer')
 
 router.get('/create', async (req, res) => {
     const profile = await EventController.buscarProfile(1)

@@ -2,11 +2,31 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const multerConfig = require('../config/multer')
+const postController = require('../controllers/postController')
 
 /** Rotas Ed* */
-router.get('/inicial', (req, res) => {
-  res.render('inicial');
+router.get('/inicial', async function(req, res, next) {
+  const posts = await postController.showPosts();
+  res.render('inicial',{posts})
 });
+router.get('/posts', async function(req, res, next) {
+  res.render('post')
+});
+
+router.post('/posts', multer(multerConfig).single('file'), async function(req, res, next) {
+  const{location:photo_post_path} = req.file
+  const {post} = req.body
+  
+ await postController.criarPost({post,photo_post_path});
+  
+  return res.redirect('/inicial')
+  
+  /*const{originalname:nome, size, key, location:url=''} = req.file;
+  const post = await photosController.cadastrarPhoto({nome, size, key, url})
+  
+  return res.json(post)*/
+  
+  });
 router.get('/album', (req, res) => {
   res.render('album');
 });
@@ -16,6 +36,8 @@ router.get('/album/newalbum', (req, res) => {
 router.get('/editar/perfil', (req, res) => {
   res.render('editarPerfil');
 });
+
+
 
 /** Rotas Neto* */
 router.get('/eventos/criar', (req, res) => {

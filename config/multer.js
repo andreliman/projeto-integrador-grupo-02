@@ -19,7 +19,7 @@ const storageType={
     }),
     s3:multerS3({
         s3: new aws.S3(),
-        bucket:'manimalsteste',
+        bucket:'manimals',
         contentType:multerS3.AUTO_CONTENT_TYPE,
         acl:'public-read',
         key:(req,file,cb) =>{
@@ -36,7 +36,7 @@ module.exports = {
     dest: path.resolve(__dirname,'..', 'tmp', 'uploads'),
     storage: storageType[process.env.STORAGE_TYPE],
     limits:{
-        fileSize: 2*1024 * 1024,
+        fileSize: 5*1024 * 1024,
     },
     fileFilter:(req, file,cb) => {
         const allowedMimes = [

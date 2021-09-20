@@ -8,14 +8,24 @@
     </div>
   </div>
   <section class="principal">
-    <i class="fa fa-plus-circle new" aria-hidden="true"></i>
+    <a href="/manimal/posts"><i class="fa fa-plus-circle new" aria-hidden="true"></i></a>
     <div class="post__and__sugestoes">
       <div class="postagens">
-          <%- include('./partials/post')%>
-          <%- include('./partials/post')%>
-          <%- include('./partials/post')%>
-          <%- include('./partials/post')%>
-          <%- include('./partials/post')%>
+        <div class="post__wrapper">
+          <% posts.forEach(post=>{ %>
+          <div class="post__foto">
+            <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
+          </div>
+          <ul class="post__lista_icons">
+              <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+              <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
+              <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
+          </ul>
+          <div class="post__legenda">
+              <p><%=post.post%></p>
+          </div>
+          <% }) %>
+        </div>
       </div>
       <div class="sugestoes">
         <h3 class="sugestoes__titulo">Segestão de Amigos</h3>

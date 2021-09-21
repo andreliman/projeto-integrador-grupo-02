@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes)=>{
     })
    
     Friend.associate = (models)=>{
-        Friend.belongsTo(models.Profile, {
+        Friend.belongsToMany(models.Profile, {
             through:'profile_has_friends',
-            foreignKey:'profile_id',
-            as:'profile'
+            foreignKey:'friend_id',
+            as:'profiles'
         })
       }
      

@@ -52,6 +52,7 @@ module.exports = {
       bio: Sequelize.TEXT,
       photo_profile_path: Sequelize.STRING,
       photo_id:Sequelize.STRING,
+      night_mode: Sequelize.INTEGER,
       created_at: {
         type: "TIMESTAMP",
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),

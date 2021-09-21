@@ -4,9 +4,23 @@ const multer = require('multer');
 const multerConfig = require('../config/multer')
 const postController = require('../controllers/postController')
 const LoginController = require('../controllers/LoginController');
+const verificarUserLogado = require('../middlewares/verificarUserLogado');
 
 /** Post* */
-router.get('/inicial', async function(req, res, next) {
+router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
+  const { profiles } = req.session;
+  const { id } = req.params;
+
+  let profile = [];
+
+  for (let i=0; i <= profiles.length-1; i++) {
+    if (profiles[i].id == Number(id)) {
+      profile = profiles[i];
+    };
+  };  
+
+  req.session.profile = profile;
+
   const posts = await postController.showPosts();
   res.render('inicial',{posts})
 });
@@ -82,7 +96,7 @@ router.post('/', async (req, res) => {
 
   req.session.user = user;
 
-  res.redirect('/manimal/inicial');
+  res.redirect('/manimal/profile/select');
 });
 // login
 router.get('/ajuda', (req, res) => {

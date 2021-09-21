@@ -11,7 +11,6 @@ module.exports = {
       },
       profile_id: {
         type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false,
         references: {
           model: "profiles",
           key: "id",
@@ -19,7 +18,6 @@ module.exports = {
       },
       event_id: {
         type: Sequelize.CHAR(60),
-        allowNull: false,
         references: {
           model: "events",
           key: "event_id",

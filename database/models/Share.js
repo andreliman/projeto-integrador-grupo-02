@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes)=>{
     Share.associate = (models)=>{
         Share.belongsToMany(models.Profile, {
           through:'profile_has_shares',
-          foreignKey:'profile_id',
-          as:'profile'
+          foreignKey:'share_id',
+          as:'profiles'
         }),
         Share.belongsToMany(models.Post,{
           through:'post_has_shares',

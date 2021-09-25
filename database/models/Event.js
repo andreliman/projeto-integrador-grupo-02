@@ -54,9 +54,8 @@ module.exports = (sequelize, DataTypes)=>{
         
         Event.belongsToMany(models.Profile,{
           through:'profile_has_events',
-          as:'profiles',
           foreignKey:'event_id',
-          otherKey:'profile_id'
+          as:'profiles',          
         }),
         Event.belongsToMany(models.Comment,{
           through:'event_has_comments',

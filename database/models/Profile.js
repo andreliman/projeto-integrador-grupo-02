@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes)=>{
         },
         breed_id: {
           type: DataTypes.INTEGER,
-          allowNUll: false
+          allowNull: false
         },
         pet_name:{
           type:DataTypes.STRING,
@@ -32,7 +32,8 @@ module.exports = (sequelize, DataTypes)=>{
         },
         bio:DataTypes.TEXT,
         photo_profile_path:DataTypes.STRING,
-        photo_id:DataTypes.STRING
+        photo_id:DataTypes.STRING,
+        night_mode: DataTypes.INTEGER
         
       },{
         tableName:'profiles', 
@@ -43,34 +44,33 @@ module.exports = (sequelize, DataTypes)=>{
         Profile.belongsTo(models.User,{
             foreignKey:'user_id',
             as:'user'
-        }),
+        });
         Profile.belongsTo(models.Breed, {
             foreignKey:'breed_id',
             as:'breed'
-        }),
+        });
         Profile.belongsToMany(models.Share, {
           through:'profile_has_shares',
-          foreignKey:'share_id',
+          foreignKey:'profile_id',
           as:'shares'
-        }),
+        });
         Profile.belongsToMany(models.Event,{
           through:'profile_has_events',
           foreignKey:'profile_id',
           as:'events',          
-          otherKey:'event_id'
-        }),
+        });
         Profile.belongsToMany(models.Post,{
           through:'profile_has_posts',
           as:'posts',
-          foreignKey:'posts_id',
-        }),
+          foreignKey:'profile_id',
+        });
         Profile.belongsToMany(models.Friend, {
           through:'profile_has_friends',
-          foreignKey:'friend_id',
+          foreignKey:'profile_id',
           as:'friends'
-        }),
-        Profile.belongsTo(models.Like, {
-          foreignKey:'like_id',
+        });
+        Profile.hasOne(models.Like, {
+          foreignKey:'profile_id',
           as:'like'
         })
       };

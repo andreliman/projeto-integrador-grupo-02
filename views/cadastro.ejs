@@ -1,35 +1,34 @@
 <%- include('./partials/head')%>
 <link rel="stylesheet" href="/stylesheets/cadastro.css">
+<title><%= title %></title>
 </head>
 <body class="container">
     <main class="main">
         <img src="/images/Logo1.png" alt="Logo Manimal">
         <div class="forms">
           <div>
-            <form action="" method="" class="form">
-                <input type="text" name="email" placeholder="Insira seu email">
-            </form>
-          </div>
-          <div>
-            <form action="" method="" class="form">
+            <form class="form" action="" method="POST">
+              <div>
                 <input type="text" name="name" placeholder="Insira seu nome completo">
+              </div>
+              <div>
+                <input type="text" name="phone" placeholder="Tel. Ex: (11)9 9999-9999">
+              </div>
+              <div>
+                <input type="text" name="email" placeholder="Insira seu email">
+              </div>              
+              <div class="password">
+                <input id="password" type="password" name="password" placeholder="Insira sua senha" encripted>
+                <i class="fa fa-eye-slash" onclick="eyeClick()" aria-hidden="true"></i>
+              </div>
+              <div class="password">
+                <input id="password2" type="password" name="passwordConfirm" placeholder="Confirme sua senha">
+                <i class="fa fa-eye-slash" onclick="eyeClick2()" aria-hidden="true"></i>
+              </div>
+              <div class="submit">
+                <input class="submit" type="submit" name="submit" value="Registrar!">
+              </div>
             </form>
-          </div>
-          <div class="password">
-            <form action="" method="" class="form">
-              <input id="password" type="password" name="password" placeholder="Insira sua senha" encripted>
-              <i class="fa fa-eye-slash" onclick="eyeClick()" aria-hidden="true"></i>
-            </form>
-          </div>
-          <div class="password">
-            <form action="" method="" class="form">
-              <input id="password2" type="password" name="password" placeholder="Confirme sua senha">
-              <i class="fa fa-eye-slash" onclick="eyeClick2()" aria-hidden="true"></i>
-            </form>
-          </div>
-          <div class="submit">
-            <form action="" method="POST" class="submit">
-              <input type="submit" name="submit" value="Registrar!">
           </div>               
         </div>
         <div class="login">

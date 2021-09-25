@@ -18,9 +18,10 @@ module.exports = (sequelize, DataTypes)=>{
         tableName:'posts'
     });
     Post.associate = models=>{
-        Post.hasOne(models.Profile,{
-            foreignKey:'profile_id',
-            as:'profile',
+        Post.belongsToMany(models.Profile,{
+          through: 'profile_has_posts',  
+          foreignKey:'post_id',
+          as:'profiles',
         }),
         Post.belongsToMany(models.Comment,{
           through:'post_has_comments',

@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes)=>{
     });
    
     Like.associate = (models)=>{
-        Like.hasOne(models.Profile, {
+        Like.belongsTo(models.Profile, {
             foreignKey:'profile_id',
             as:'profile'
         }),

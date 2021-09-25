@@ -11,7 +11,6 @@ module.exports = {
       },
       profile_id: {
         type: Sequelize.INTEGER.UNSIGNED,
-        allowNull: false,
         references: {
           model: "profiles",
           key: "id",

@@ -3,27 +3,8 @@ const router = express.Router();
 const multer = require('multer');
 const multerConfig = require('../config/multer')
 const postController = require('../controllers/postController')
+const profileController = require('../controllers/profileController');
 
-
-/** Post* */
-router.get('/inicial', async function(req, res, next) {
-  const posts = await postController.showPosts();
-  res.render('inicial',{posts})
-});
-router.get('/posts', async function(req, res, next) {
-  res.render('post')
-});
-
-router.post('/posts', multer(multerConfig).single('file'), async function(req, res, next) {
-  const user = req.session;
-  const{location:photo_post_path, key:photo_id} = req.file
-  const {post} = req.body
-  
- await postController.criarPost({user,post,photo_post_path,photo_id});
-  
-  return res.redirect('/inicial')
-});
-=======
 const LoginController = require('../controllers/LoginController');
 const verificarUserLogado = require('../middlewares/verificarUserLogado');
 
@@ -41,24 +22,26 @@ router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
   };  
 
   req.session.profile = profile;
-
-  const posts = await postController.showPosts();
+  const profile_id = profile.id;
+  const posts = await postController.showPosts(profile_id);
   res.render('inicial',{posts})
 });
-router.get('/posts', async function(req, res, next) {
-  res.render('post')
+
+
+router.post('/posts', multer(multerConfig).single('photo'), async function(req, res, next) {
+  const {profile} = req.session
+  const{location:photo_post_path = '', key:photo_id = ''} = req.file
+  const {post} = req.body
+  const profile_id = profile.id;
+  await postController.criarPost({profile_id,post,photo_post_path,photo_id});
+  return res.redirect('/manimal/inicial/:id')
 });
 
-router.post('/posts', multer(multerConfig).single('file'), async function(req, res, next) {
-  const user = req.session;
-  const{location:photo_post_path, key:photo_id} = req.file
-  const {post} = req.body
-  
- await postController.criarPost({user,post,photo_post_path,photo_id});
-  
-  return res.redirect('/inicial')
-});
->>>>>>> 5570057e651eb298b675a3db7ff2ac79704d8480
+router.get('/search', async(req,res,next)=>{
+  const {key} = req.query;
+  const buscar = await profileController.findAnimalByName({key});
+  return res.render('pesquisar', {buscar});
+})
 
 /**Album*/
 router.get('/album', (req, res) => {

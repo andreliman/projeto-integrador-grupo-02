@@ -133,6 +133,31 @@
   border-radius: 20px;
   margin-bottom: 10px;
 }
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  width: 100%;
+}
+input[type=file]{
+  display:none;
+}
+button{
+  background-color: var(--bgSite);
+}
+.textarea{
+  width: 100%;
+  resize: none;
+ 
+}
+.fa-camera,.fa-paper-plane{
+  margin-left: 10px;
+  font-size: 35px;
+  color:var(--buttonColor);
+
+}
+
 
 /*Tratamento Responsivo*/
 
@@ -225,6 +250,7 @@ width: 100%;
     flex-wrap: nowrap;
     width: 100%;
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 .menu__icon--sugestoes{
   color: var(--selected) ;

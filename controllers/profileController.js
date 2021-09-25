@@ -7,3 +7,8 @@ exports.findProfile = async (id) => {
 
     return profile;    
 }
+exports.findAnimalByName = async ({key}) => {
+    const profile = await ProfileModel.findAnimalByName({key});
+
+    return profile;    
+}

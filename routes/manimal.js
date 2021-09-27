@@ -28,13 +28,13 @@ router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
 });
 
 
-router.post('/posts', multer(multerConfig).single('photo'), async function(req, res, next) {
+router.post('/posts/', multer(multerConfig).single('photo'), async function(req, res, next) {
   const {profile} = req.session
   const{location:photo_post_path = '', key:photo_id = ''} = req.file
   const {post} = req.body
   const profile_id = profile.id;
   await postController.criarPost({profile_id,post,photo_post_path,photo_id});
-  return res.redirect('/manimal/inicial/:id')
+  return res.redirect(`/manimal/inicial/${profile_id}`)
 });
 
 router.get('/search', async(req,res,next)=>{
@@ -79,11 +79,11 @@ router.get('/eventos', (req, res) => {
 });
 
 /** Rotas Alan* */
-router.get('/perfilUser', (req, res) => {
+router.get('/perfilUser/:id', (req, res) => {
   res.render('perfilUser');
 });
 
-router.get('/perfilVisitante', (req, res) => {
+router.get('/perfilVisitante/:id', (req, res) => {
   res.render('perfilVisitante');
 });
 

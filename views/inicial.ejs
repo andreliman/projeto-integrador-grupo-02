@@ -7,8 +7,20 @@
       <span class="perfil__localizacao">São Paulo</span>
     </div>
   </div>
+
   <section class="principal">
-    <a href="/manimal/posts"><i class="fa fa-plus-circle new" aria-hidden="true"></i></a>
+    <div class ='novo__post'> 
+      <form class="form" action="/manimal/posts/" method="POST"  enctype="multipart/form-data">
+        <div>
+            <textarea class="textarea" placeholder="Como está o seu dia?" name="post" id="post" cols="180" rows="2"></textarea>
+        </div>
+        <div>
+          <label for="photo"><i class="fa fa-camera img_fotografia" aria-hidden="true"></i></label>
+          <input class="form-control btn btn-success" id="photo" type="file" name="photo" >
+        </div>
+       <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+    </form>
+    </div>
     <div class="post__and__sugestoes">
       <div class="postagens">
         <div class="post__wrapper">

@@ -21,8 +21,11 @@
         <nav class="nav">
           <div class="nav__logo"></div>
           <div class="menu__desktop">
+            <form action="/manimal/search" method="GET" >
+              <input type="search" name="key" id="key">
+              <input type="submit" value="pesquisar">
+            </form>
             <ul class="menu__desktop__lista">
-              <li><i class="fa fa-search menu__icon" aria-hidden="true"></i></li>
               <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
               <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
               <li><a href="/manimal/event/criar"><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></a></li>

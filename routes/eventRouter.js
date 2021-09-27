@@ -3,14 +3,14 @@ const router = express.Router();
 const EventController = require('../controllers/eventController');
 const multer = require('multer');
 const multerConfig = require('../config/multer')
+const verificarProfileLogado = require("../middlewares/verificarProfileLogado")
 
-router.get('/create', async (req, res) => {
-    const profile = await EventController.buscarProfile(1)
-    //trazer o profile pela session lá do login
+router.get('/criar', verificarProfileLogado, async (req, res) => {
+    const { profile } = req.session;
     res.render('criarEventos', { profile });
 });
 
-router.post('/create',  async (req, res) => {
+router.post('/criar',  multer(multerConfig).single('photo'), async(req, res) => {
     const { name,
             beginning_date,
             ends_date,
@@ -20,13 +20,12 @@ router.post('/create',  async (req, res) => {
             local
           } = req.body;
     
-    let profile_id = 1;
- //trazer o profile pela session lá do login
-  
-    const { photo_event_path, photo_id } = await EventController.importarPhoto("photo_event");
-  //implementar a importação da photo pelo multer
+    const { profile } = req.session;
+    const profile_id = profile.id;
+    
+    const{location:photo_event_path = '', key:photo_id = ''} = req.file;
 
-    await EventController.criarUmEvento(
+    await EventController.criarUmEvento({
             profile_id,
             name,
             beginning_date,
@@ -37,27 +36,30 @@ router.post('/create',  async (req, res) => {
             local,
             photo_event_path,
             photo_id
-            );
+    });
   
-    res.status(201).redirect(`/list/:${profile.id}`);
+
+  res.redirect(`/manimal/event/list/${profile_id}`);
   });
   
-  router.get('/list/:profile_id',  async(req, res) => {
-    
-    const { profile_id } = req.params;
+  router.get('/list/:id', verificarProfileLogado, async(req, res) => {
+    const { profile } = req.session;
+    const { id } = req.params;
+    const profile_id = profile.id;
     const eventosCriadosPorProfile = await EventController.listarEventosPorId(profile_id);
     
     
-    res.render('eventosCriados', {title: 'Eventos Criados', profile, eventosCriadosPorProfile });
+  res.render('eventosCriados', {title: 'Eventos Criados', profile, eventosCriadosPorProfile });
   });
 
-  router.get('/list',  async (req, res) => {
-  
+  router.get('/list', verificarProfileLogado, async (req, res) => {
+    const { profile } = req.session;
     const todosEventos = await EventController.buscarTodosEventos();
-  //trazer o profile da session la do login
+    
     res.render('eventosDisponiveis', {title: 'Eventos Disponiveis', profile, todosEventos});
   
   
   });
+  
 
 module.exports = router;

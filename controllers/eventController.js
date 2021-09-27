@@ -1,7 +1,7 @@
 const { v4 }= require('uuid');
 const eventModels = require("../models/eventModels");
 
-exports.criarUmEvento = ( 
+exports.criarUmEvento = ({ 
     profile_id,
     name,
     beginning_date,
@@ -10,10 +10,11 @@ exports.criarUmEvento = (
     finish_hour,
     description,
     local,
-    photo_id,
-    photo_event_path) => { 
+    photo_event_path,
+    photo_id
+}) => { 
         const event_id = v4();
-        eventModels.criarUmEvento(
+        eventModels.criarUmEvento({
                 event_id,
                 profile_id,
                 name,
@@ -23,8 +24,9 @@ exports.criarUmEvento = (
                 finish_hour,
                 description,
                 local,
-                photo_id,
-                photo_event_path)};
+                photo_event_path,
+                photo_id
+        })};
 
 
 exports.listarEventosPorId = (profile_id) => {
@@ -36,6 +38,5 @@ exports.listarEventosPorId = (profile_id) => {
     }
 };
 
-exports.buscarProfile = (id) => eventModels.buscarProfile(id);
 
 exports.buscarTodosEventos = () => eventModels.buscarTodosEventos();

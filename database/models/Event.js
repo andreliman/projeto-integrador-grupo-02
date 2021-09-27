@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes)=>{
     const Event = sequelize.define('Event',{
         event_id:{
           type:DataTypes.CHAR(40),
-          allowNull: false
+          allowNull: false,
+          primaryKey: true
         },
         profile_id:DataTypes.INTEGER,
         name:{

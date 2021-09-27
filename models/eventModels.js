@@ -1,6 +1,6 @@
-const { Event, Profile, event_has_photos }= require("../database/models");
+const { Event }= require("../database/models");
 
-exports.criarUmEvento= (
+exports.criarUmEvento= ({
     event_id,
     profile_id,
     name,
@@ -10,8 +10,9 @@ exports.criarUmEvento= (
     finish_hour,
     description,
     local,
-    photo_id,
-    photo_event_path) =>  Event.create(
+    photo_event_path,
+    photo_id
+}) =>  Event.create({
                         event_id,
                         profile_id,
                         name,
@@ -21,12 +22,12 @@ exports.criarUmEvento= (
                         finish_hour,
                         description,
                         local,
-                        photo_id,
-                        photo_event_path);
+                        photo_event_path,
+                        photo_id
+});
                 
 
-exports.listarEventos= (profile_id) => Event.findAll(profile_id);
-        
-exports.buscarProfile = (id) => Profile.findByPk(id);
+exports.listarEventos= async(profile_id) => await Event.findAll({
+    where:{profile_id}});
 
 exports.buscarTodosEventos = () => Event.findAll();

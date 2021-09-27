@@ -5,16 +5,16 @@
     <div class="container_eventos">
         <%- include('./partials/somenteHeader')%>
     </div>
-    <div class="container__total">
+  <div class="container__total">
       <section class="section__info">
         <div class="info__foto">
             <img src= "<%= profile.photo_profile_path %>" alt="" class="info__foto__perfil">
         </div>
         <div class="info__wrapper">
-        <div class="box__nome__aniversario">
+          <div class="box__nome__aniversario">
             <span class="info"><%= profile.pet_name %></span>
             <span class="info"><%= profile.birthday %></span>
-        </div>  
+          </div>  
         </div>
         
       </section>
@@ -23,26 +23,22 @@
     </div>
 
     <section class="criar-evento">
-      <div class="nome-evento">
-        <form action="/create" class="nome-evento-form" method="POST">
+      <form action="/manimal/event/criar" class="evento-form" enctype="multipart/form-data" method="POST">
+        <div class="nome-evento">
           <label for="eventName" class="label__form" >Nome do Evento</label>
           <input type="text" class="form__text" name="name" id="eventName" >
-        </form>
-      </div>
-      <div class="data-e-hora">
-        <div class="data-evento">
-          <form action="/create" class="data-evento-form" method="POST">
-            <label for="eventDate" class="laber_form">Data Inicial</label>
+        </div>
+        <div class="data-e-hora">
+          <div class="data-evento">
+            <label for="eventDate" class="label_form">Data Inicial</label>
             <br>
             <input class="campo_data_hora" type="date" name="beginning_date">
             <br>
-            <label for="eventDate" class="laber_form">Data Final</label>
+            <label for="eventDate" class="label_form">Data Final</label>
             <br>
             <input class="campo_data_hora" type="date" name="ends_date">
-         </form>
-        </div>
-        <div class="hora-evento">
-          <form action="/create" class="hora-evento-form" method="POST">
+          </div>
+          <div class="hora-evento">
             <label for="eventHour" class="label_form">Hora Inicial</label>
             <br>
             <input class="campo_data_hora" type="time" name="hour">
@@ -50,36 +46,23 @@
             <label for="eventDate" class="label_form">Hora Final</label>
             <br>
             <input class="campo_data_hora" type="time" name="finish_hour">
-          </form>
+          </div>
         </div>
-        
-      </div>
-      <div class="local-evento-convite">
-        <form action="/create" class="local-evento-form" method="POST">
+        <div class="local-evento-convite">
           <label for="eventAdress" class="label__form" >Local do Evento</label>
           <input type="text" class="form__text" name="local" id="eventAdress" >
-        </form>
-        <button type="submit" class="convidarform_btn">Convidar</button>
-      </div>
-      <div class="descricao-evento">
-        <form action="/create" class="descricao-evento-form" method="POST">
+        </div>
+        <div class="descricao-evento">
           <label for="eventDescrition" class="label__form" >Descricao do Evento</label>
-          <input type="text" class="form__text" name="description" id="eventDescription" style="height: 200px;">
-        </form>
-        <form action="/create" method="POST" enctype="multipart/form-data">
-          Adicionar Foto do Evento <input type="file" name="photo_event">
-          <br>
-          <button type="submit" class="form_btn" >Enviar</button>
-                    
-        </form>
-        <form action="/create" method="POST" >
-          <button type="submit" class="form_btn" >Criar</button>
-        </form>
-        
+          <textarea type="text" class="form__text" name="description" id="eventDescription" style="height: 200px;"></textarea>
+        </div>
 
+        <label for="eventPhoto" class="label_form">Adicionar Foto do Evento</label>
+        <input type="file" name="photo">
         
-      </div>
+        <button type="submit" class="form_btn" >Criar</button>
+      </form> 
     </section>
     <script src="/js/darkMode.js"></script>
-</div>
+  </div>
 </body>

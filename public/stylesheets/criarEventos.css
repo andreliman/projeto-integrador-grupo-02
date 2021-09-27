@@ -94,9 +94,9 @@ padding: 0 2px;
 }
 
 .local-evento-convite {
-    display: flex;
+    display: block;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:space-evenly;
 }
 
 .descricao-evento-form {
@@ -128,8 +128,14 @@ padding: 0 2px;
     border-radius: 10px;
     border: var(--borda);
     outline: none;
-   
+
 }
+
+textarea{
+    vertical-align: top;
+    height: 5em;
+}
+
 .form__textarea{
     resize: none;
     

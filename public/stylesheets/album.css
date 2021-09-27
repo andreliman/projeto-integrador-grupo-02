@@ -140,13 +140,7 @@ body{
   display: inline-block;
   margin-top: 5px;
   justify-content: right;
-}
-.mural {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
+
 }
 .album {
   display: flex;

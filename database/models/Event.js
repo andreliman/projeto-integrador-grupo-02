@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes)=>{
     const Event = sequelize.define('Event',{
         event_id:{
           type:DataTypes.CHAR(40),
-          allowNull: false
+          allowNull: false,
+          primaryKey: true
         },
         profile_id:DataTypes.INTEGER,
         name:{
@@ -54,9 +55,8 @@ module.exports = (sequelize, DataTypes)=>{
         
         Event.belongsToMany(models.Profile,{
           through:'profile_has_events',
-          as:'profiles',
           foreignKey:'event_id',
-          otherKey:'profile_id'
+          as:'profiles',          
         }),
         Event.belongsToMany(models.Comment,{
           through:'event_has_comments',

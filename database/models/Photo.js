@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes)=>{
     });
 
     Photo.associate = (models)=>{     
-        Profile.belongsTo(models.Album,{
+        Photo.belongsTo(models.Album,{
             foreignKey:'album_id',
             as:'album'
         }),

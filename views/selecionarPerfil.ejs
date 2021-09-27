@@ -1,0 +1,25 @@
+<%- include('./partials/head')%>
+<title><%= title %></title>
+<link rel="stylesheet" href="/stylesheets/selecionarPerfil.css">
+</head>
+<body class="container">
+    <main class="main">
+        <div class="profile">
+            <% profiles.forEach(profile => { %>
+                <div class="profilePicture">
+                    <a href="/manimal/inicial/<%=profile.id%>"><img src="<%=profile.photo_profile_path%>" alt="Foto perfil" srcset=""></a>
+                    <h2><%=profile.pet_name%></h2>
+                </div>
+            <% }) %>
+
+        </div>
+        <div class="redirect">
+            <a href="/manimal/profile/create"><button type="button">Criar novo</button></a>
+        </div>               
+        <div class="logout">
+            <a href="/manimal/profile/logout">Fazer logout</a>
+        </div>
+    </main>
+    <script src="/js/darkMode.js"></script>
+</body>
+</html>

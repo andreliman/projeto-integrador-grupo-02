@@ -57,27 +57,6 @@ router.get('/editar/perfil', (req, res) => {
 
 
 
-/** Rotas Neto* */
-router.get('/eventos/criar', (req, res) => {
-  res.render('criarEventos');
-});
-
-router.post('/eventos/criar', (req, res) => {
-  res.redirect('/manimal/eventos/criados');
-});
-
-router.get('/eventos/criados', (req, res) => {
-  res.render('eventosCriados');
-});
-
-router.get('/eventos/aceitos', (req, res) => {
-  res.render('eventosAceitos');
-});
-
-router.get('/eventos', (req, res) => {
-  res.render('eventosDisponiveis');
-});
-
 /** Rotas Alan* */
 router.get('/perfilUser/:id', (req, res) => {
   res.render('perfilUser');

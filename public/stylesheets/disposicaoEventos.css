@@ -13,24 +13,23 @@ body{
     background-color: var(--bgSite)
 
 }
-
+.foto__perfil {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-size: cover;
+  
+}
 .eventos {
     display: flex;
     text-align: left;
     padding: 10px;
     color:var(--destaque);
     border:var(--borda);
+    margin: 10px 15px 0 15px;
 }
-    
-.eventos {
-  display: flex;
-  text-align: left;
-  padding: 10px;
-  color: var(--white);
-  margin: 10px 15px 0 15px;
-
   
-}
+
 .eventos-outros {
   padding-right: 10px;
   margin-left: 10px;
@@ -83,11 +82,6 @@ body{
     margin-bottom: 10px;
 }
 
-.button_disponiveis {
-    display: flex;
-    justify-content: space-around;
-}
-
 .post__lista_icons li{
     display: inline-block;
     margin-top: 5px;
@@ -104,52 +98,18 @@ body{
     gap: 20px 20px;
     padding: 10px;
 }
-.album{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
-    border:var(--borda);
-    border-radius: 5px;
-    
-}
+
 
 .descricao-eventos {
   max-width: 320px;
 }
-.principal__button {
-  margin-top: 20px;
-  color:var(--white);
-  width: 120px;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: var(--buttonColor);
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-.convidar__button {
-  margin-top: 20px;
-  color:var(--white);
-  width: 120px;
-  font-size: 18px;
-  font-weight: bold;
-  background-color: var(--buttonColor);
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
+
+
 .post__lista_icons li {
   display: inline-block;
   margin-top: 5px;
   justify-content: right;
 
-}
-.album {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 15px;
-  border: var(--borda);
-  border-radius: 5px;
 }
 
 .album-evento {
@@ -179,20 +139,15 @@ body{
   cursor: pointer;
 }
 
-@media (min-width: 1080px) {
-  .header {
-    position: relative;
-  }
-}
+
 @media(min-width:1800px){
     .mural {
         justify-content: flex-start;
         padding: 30px;
         margin: auto;
       }
-      .album {
-        margin-bottom: 20px;
-        margin-right: 40px;
-     
-      }
+      
+      .header {
+    position: relative;
+  }
 }

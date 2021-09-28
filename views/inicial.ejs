@@ -1,13 +1,12 @@
 <%- include('./partials/header')%>
 <main class="main">
   <div class="perfil__wrapper">
-    <div class="foto__perfil"></div>
+    <a href="/manimal/perfilUser/<%=searchProfile.id%>"><div class="foto__perfil"><img class="foto__perfil" src="<%=searchProfile.photo_profile_path%>" alt=""></div></a>
     <div class="descricao__wrapper">
-      <h4 class="perfi__nome">Polenta</h4>
-      <span class="perfil__localizacao">São Paulo</span>
+      <h4 class="perfi__nome"><%=searchProfile.pet_name%></h4>
+      <span class="perfil__localizacao"><%=searchProfile.local%></span>
     </div>
   </div>
-
   <section class="principal">
     <div class ='novo__post'> 
       <form class="form" action="/manimal/posts/" method="POST"  enctype="multipart/form-data">
@@ -48,12 +47,9 @@
         <%- include('./partials/sugestoes')%>
       </div>
     </div>
- 
-   
-  
-
     
   </section>
+  
 </main>
 </div>
 <script src="/js/darkMode.js"></script>

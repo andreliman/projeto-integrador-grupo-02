@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/stylesheets/reset.css" />
     <link rel="stylesheet" href="/stylesheets/header.css" />
     <link rel="stylesheet" href="/stylesheets/perfilVisitante.css" />
+    <link rel="stylesheet" href="/stylesheets/padrao.css" />
     <title>Perfil visitante</title>
   </head>
   <body>
@@ -22,8 +23,8 @@
       <main>
       <div class="cabecalho">
           <div class="menu_cabecalho_02">
-                <img src="/images/perfi 1.jpg" alt="" class="img_cabecalho">
-                <h1>Doguinho</h1>  
+                <img src="<%=searchProfileVisitante.photo_profile_path%>" alt="" class="img_cabecalho">
+                <h1><%=searchProfileVisitante.pet_name%></h1>  
                 <button class="btn"> Seguindo </button>
          </div>
           <div class="cabecalho_1">
@@ -33,9 +34,9 @@
               <h2> 120  Seguindo</h2>
             </div>
             <div class="menu_cabecalho_03">
-                <h2><i class="fa fa-home inco_casa" aria-hidden="true"></i> Mora em Salvador, Brazil</h2>
-                <h2><i class="fa fa-map-marker inco_localizacao" aria-hidden="true"></i> Salvador</h2>
-                <h2><i class="fa fa-commenting inco_dial" aria-hidden="true"></i>Mais Informações Pet</h2>
+                <h2><i class="fa fa-home inco_casa" aria-hidden="true"></i> Mora <%=searchProfileVisitante.local%>, Brasil</h2>
+                <h2><i class="fa fa-map-marker inco_localizacao" aria-hidden="true"></i> <%=searchProfileVisitante.local%></h2>
+                <h2><i class="fa fa-commenting inco_dial" aria-hidden="true"></i><%=searchProfileVisitante.nickname%></h2>
             </div>
          </div>  
         </div>
@@ -78,76 +79,27 @@
                 
                 <li>
                     <i class="fas fa-plus-circle img_mais"></i>
-                </li>
-                
+                </li> 
             </ul>
-
         </section>
-    
-        <section class="text_publicacao">
-            <h5 class="texto_publicacao">Publicação</h5>
-            <ul class="add_publicacao">
-                    <img src="/images/perfi 1.jpg" alt="" class="img_amigo">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="No que você está pensando?"></textarea>
-                    <ul class="icons_wrapper">
-                        <li>
-                            <i class="fa fa-camera img_fotografia" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-map-marker img_localizacao" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                            <i class="fas fa-location-arrow img_enviar"></i>
-                        </li>
-                    </ul>
-            </ul>
-
-        </section>
+            <h5 class="texto_publicacao">Publicações</h5>
         <section class="timeline">
-            <ul class="ver_timeline">
-                <li>
-                    <img src="/images/perfil6.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <h4 class="perfil_nome">Lulu</h4>
-                    <span class="perfil_localizacao">São Paulo</span>
-
-                </li>
-            </ul>
-
-            <div class="timeline_publicacao">
-                <img src="/images/perfil.jpg">
-                <ul class="post__lista_icons">
-                    <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <div class="post__wrapper">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit quia vitae. Repellendus eligendi rem natus consequatur, dolorum corporis quidem exercitationem culpa. Autem, eveniet dolore error nisi dolorem molestiae enim?</p>
-            </div>
-            <ul class="ver_timeline">
-                <li>
-                    <img src="/images/perfil6.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <h4 class="perfil_nome">Lulu</h4>
-                    <span class="perfil_localizacao">São Paulo</span>
-
-                </li>
-            </ul>
-
-            <div class="timeline_publicacao">
-                <img src="/images/perfil.jpg">
-                <ul class="post__lista_icons">
-                    <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <div class="post__wrapper">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit quia vitae. Repellendus eligendi rem natus consequatur, dolorum corporis quidem exercitationem culpa. Autem, eveniet dolore error nisi dolorem molestiae enim?</p>
-            </div>
+            <div class="postagens">
+                <div class="post__wrapper">
+                  <% posts.forEach(post=>{ %>
+                  <div class="post__foto">
+                    <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
+                  </div>
+                  <ul class="post__lista_icons">
+                      <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
+                      <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
+                  </ul>
+                  <div class="post__legenda">
+                      <p><%=post.post%></p>
+                  </div>
+                  <% }) %>
+                </div>
         </section>  
       </main>
     </div>

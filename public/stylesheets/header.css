@@ -5,6 +5,17 @@
     padding: 15px 2%;
     box-shadow: var(--box-header);
   }
+  .pesquisar{
+    display: flex;
+    align-items: center;
+    background-color: var(--bgSite);
+  }
+  nav .fa-search{
+    font-size: 30px;
+  }
+  input[type=search]{
+    border-radius: 5px;
+  }
   .container {
     background-color:var(--bgSite);
     height: 100%;

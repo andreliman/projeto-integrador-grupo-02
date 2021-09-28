@@ -9,6 +9,13 @@ exports.showPost = (profile_id) =>{
   });
   return show
  }
+ exports.showPostsVisitante = (id) =>{
+  const show = db.Post.findAll({
+      where:{profile_id:id},
+      order:[['id','DESC']]
+  });
+  return show
+ }
 
 exports.createNewPost = (profile_id,post,photo_post_path,photo_id) =>{
   

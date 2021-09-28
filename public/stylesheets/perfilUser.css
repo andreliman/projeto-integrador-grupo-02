@@ -215,6 +215,7 @@ ul.ver_timeline li .img_amigo{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 30px;
     margin-bottom: 70px;
 }

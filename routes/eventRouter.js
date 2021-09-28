@@ -56,7 +56,7 @@ router.post('/criar',  multer(multerConfig).single('photo'), async(req, res) => 
     const { profile } = req.session;
     const todosEventos = await EventController.buscarTodosEventos();
     
-    res.render('eventosDisponiveis', {title: 'Eventos Disponiveis', profile, todosEventos});
+  res.render('eventosDisponiveis', {title: 'Eventos Disponiveis', profile, todosEventos});
   
   
   });

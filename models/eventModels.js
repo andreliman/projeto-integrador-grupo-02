@@ -30,4 +30,4 @@ exports.criarUmEvento= ({
 exports.listarEventos= async(profile_id) => await Event.findAll({
     where:{profile_id}});
 
-exports.buscarTodosEventos = () => Event.findAll();
+exports.buscarTodosEventos = async() => await Event.findAll();

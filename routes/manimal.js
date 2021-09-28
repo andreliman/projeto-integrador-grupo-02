@@ -24,7 +24,8 @@ router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
   req.session.profile = profile;
   const profile_id = profile.id;
   const posts = await postController.showPosts(profile_id);
-  res.render('inicial',{posts})
+  const searchProfile = await profileController.findUserProfile(profile_id);
+  res.render('inicial',{posts, searchProfile})
 });
 
 
@@ -38,9 +39,12 @@ router.post('/posts/', multer(multerConfig).single('photo'), async function(req,
 });
 
 router.get('/search', async(req,res,next)=>{
+  const {profile} = req.session
   const {key} = req.query;
+  const profile_id = profile.id;
   const buscar = await profileController.findAnimalByName({key});
-  return res.render('pesquisar', {buscar});
+  const searchProfile = await profileController.findUserProfile(profile_id);
+  return res.render('pesquisar', {buscar, searchProfile});
 })
 
 /**Album*/
@@ -51,19 +55,33 @@ router.get('/album/newalbum', (req, res) => {
   res.render('newAlbum');
 });
 /**Perfil */
-router.get('/editar/perfil', (req, res) => {
-  res.render('editarPerfil');
+router.get('/editar/perfil/:id', async (req, res) => {
+  const {profile} = req.session
+  const profile_id = profile.id;
+  const searchProfile = await profileController.findUserProfile(profile_id);
+  res.render('editarPerfil', {searchProfile});
 });
 
 
 
 /** Rotas Alan* */
-router.get('/perfilUser/:id', (req, res) => {
-  res.render('perfilUser');
+router.get('/perfilUser/:id', async (req, res) => {
+  const {profile} = req.session
+  const profile_id = profile.id;
+  const searchProfile = await profileController.findUserProfile(profile_id);
+  const posts = await postController.showPosts(profile_id);
+  res.render('perfilUser', {searchProfile, posts});
 });
 
-router.get('/perfilVisitante/:id', (req, res) => {
-  res.render('perfilVisitante');
+router.get('/perfilVisitante/:id',async (req, res) => {
+  const { id } = req.params;
+  const {profile} = req.session
+  const profile_id = profile.id;
+  const searchProfile = await profileController.findUserProfile(profile_id);
+  const searchProfileVisitante = await profileController.findVisitante(id);
+  const posts = await postController.showPostsVisitante(id);
+
+  res.render('perfilVisitante', {searchProfile, searchProfileVisitante, posts});
 });
 
 /** Rotas André* */

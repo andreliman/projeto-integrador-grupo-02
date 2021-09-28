@@ -22,9 +22,9 @@
       <main>
       <div class="cabecalho">
           <div class="menu_cabecalho_02">
-                <img src="/images/perfi 1.jpg" alt="" class="img_cabecalho">
-                <h1>Doguinho</h1>  
-                <button class="btn"> Editar Perfil </button>
+                <img src=<%=searchProfile.photo_profile_path%> alt="" class="img_cabecalho">
+                <h1><%=searchProfile.pet_name%></h1>  
+                <a href="/manimal/editar/perfil/<%=searchProfile.id%>"><button class="btn"> Editar Perfil </button></a>
          </div>
           <div class="cabecalho_1">
             <div class="menu_cabecalho_01">
@@ -33,9 +33,9 @@
               <h2> 120  Seguindo</h2>
             </div>
             <div class="menu_cabecalho_03">
-                <h2><i class="fa fa-home inco_casa" aria-hidden="true"></i> Mora em Salvador, Brazil</h2>
-                <h2><i class="fa fa-map-marker inco_localizacao" aria-hidden="true"></i> Salvador</h2>
-                <h2><i class="fa fa-commenting inco_dial" aria-hidden="true"></i>Mais Informações Pet</h2>
+                <h2><i class="fa fa-home inco_casa" aria-hidden="true"></i> Mora em<%=searchProfile.local%>, Brazil</h2>
+                <h2><i class="fa fa-map-marker inco_localizacao" aria-hidden="true"></i> <%=searchProfile.local%></h2>
+                <h2><i class="fa fa-commenting inco_dial" aria-hidden="true"></i><%=searchProfile.nickname%></h2>
             </div>
          </div>  
         </div>
@@ -87,7 +87,7 @@
         <section class="text_publicacao">
             <h5 class="texto_publicacao">Publicação</h5>
             <ul class="add_publicacao">
-                    <img src="/images/perfi 1.jpg" alt="" class="img_amigo">
+                    <img src=<%=searchProfile.photo_profile_path%> alt="" class="img_amigo">
                     <textarea name="" id="" cols="30" rows="10" placeholder="No que você está pensando?"></textarea>
                     <ul class="icons_wrapper">
                         <li>
@@ -104,50 +104,24 @@
 
         </section>
         <section class="timeline">
-            <ul class="ver_timeline">
-                <li>
-                    <img src="/images/perfil6.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <h4 class="perfil_nome">Lulu</h4>
-                    <span class="perfil_localizacao">São Paulo</span>
-
-                </li>
-            </ul>
-
-            <div class="timeline_publicacao">
-                <img src="/images/perfil.jpg">
-                <ul class="post__lista_icons">
-                    <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <div class="post__wrapper">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit quia vitae. Repellendus eligendi rem natus consequatur, dolorum corporis quidem exercitationem culpa. Autem, eveniet dolore error nisi dolorem molestiae enim?</p>
-            </div>
-            <ul class="ver_timeline">
-                <li>
-                    <img src="/images/perfil6.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <h4 class="perfil_nome">Lulu</h4>
-                    <span class="perfil_localizacao">São Paulo</span>
-
-                </li>
-            </ul>
-
-            <div class="timeline_publicacao">
-                <img src="/images/perfil.jpg">
-                <ul class="post__lista_icons">
-                    <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
-              </ul>
-            </div>
-            <div class="post__wrapper">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod impedit quia vitae. Repellendus eligendi rem natus consequatur, dolorum corporis quidem exercitationem culpa. Autem, eveniet dolore error nisi dolorem molestiae enim?</p>
-            </div>
+            <% posts.forEach(post=>{ %>
+                <div class="postagens">
+                    <div class="post__wrapper">
+                      
+                      <div class="post__foto">
+                        <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
+                      </div>
+                      <ul class="post__lista_icons">
+                          <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+                          <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
+                          <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
+                      </ul>
+                      <div class="post__legenda">
+                          <p><%=post.post%></p>
+                      </div>
+                      <% }) %>
+                    </div>
+            
         </section>  
       </main>
     </div>

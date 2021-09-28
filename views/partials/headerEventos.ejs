@@ -1,0 +1,35 @@
+<header class="header">
+    <nav class="nav">
+      
+      <form  class='pesquisar' action="/manimal/search" method="GET" >
+        <input type="search" name="key" id="key">
+        <button class="pesquisar" type="submit"><i class="fa fa-search menu__icon" aria-hidden="true"></i></button>
+      </form>
+      <div class="menu__desktop">
+        <ul class="menu__desktop__lista">
+          <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
+          <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
+          <li><a href="/manimal/event/criar"></a><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></li>
+          <li><i class="fa fa-sun-o menu__icon" aria-hidden="true" id="theme"></i></li>
+        </ul>
+        <a href="<%= profile.photo_profile_path %>"><div class="foto__perfil"><img class="foto__perfil" src="<%=profile.photo_profile_path%>" alt=""></div></a>
+      </div>
+      <div class="nav_icons">
+        <a href=""
+          ><i class="fa fa-paw nav__icons__notify" aria-hidden="true"></i
+        ></a>
+        <i class="fa fa-bars nav__icons__menu" aria-hidden="true"></i>
+      </div>
+    </nav>
+    <div class="menu__mobile">
+      <ul class="menu__mobile__lista">
+        <li><i class="fa fa-plus menu__icon" aria-hidden="true"></i></li>
+        <li><i class="fa fa-search menu__icon" aria-hidden="true"></i></li>
+        <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
+        <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
+        <li><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></li>
+        <li><i class="fa fa-cogs menu__icon" aria-hidden="true"></i></li>
+      </ul>
+      <a href="<%= profile.photo_profile_path %>"><div class="foto__perfil"></div></a>
+    </div>
+  </header>

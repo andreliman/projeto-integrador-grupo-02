@@ -1,0 +1,12 @@
+<%- include('./partials/header')%>
+<div class="sugestoes__wrapper">
+    <% buscar.forEach(busca=>{ %>
+        <div class="sugestoes__foto">
+            <img class= sugestoes__foto src="<%=busca.photo_profile_path%>" alt="">
+        </div>
+    <span class="sugestoes__nome"><%=busca.pet_name%></span>
+    <a href="/manimal/perfilVisitante/<%=busca.id%>"><i class="fa fa-heart menu__icon--sugestoes" aria-hidden="true"></i></a>
+    <% }) %>
+  </div>
+
+  

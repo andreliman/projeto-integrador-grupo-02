@@ -7,35 +7,33 @@
     <div class="container__total">
     <section class="section__info">
         <div class="info__foto">
-            <img src="/images/1 (181).jpg" alt="" class="info__foto__perfil">
+            <img src=<%=searchProfile.photo_profile_path%> alt="" class="info__foto__perfil">
         </div>
         <div class="info__wrapper">
         <div class="box__nome__aniversario">
-            <span class="info">Dollynho</span>
-            <span class="info">29/05/2019</span>
+            <span class="info"><%=searchProfile.pet_name%></span>
+            <span class="info"><%=searchProfile.birthday%></span>
         </div>
         <div class="box__especie__raca">
-            <span class="info">Cachorro</span>
-            <span class="info">Shih Tzu</span>
+            <span class="info"><%=searchProfile.breed_id%></span>
+            <span class="info"><%=searchProfile.breed_id%></span>
         </div>
      
         </div>
         
     </section>
     <div class="info__loc">
-        <i class="fa fa-map-marker info__localizacao" aria-hidden="true"><span class="info__localizacao__span">São Paulo - SP</span></i>
+        <i class="fa fa-map-marker info__localizacao" aria-hidden="true"><span class="info__localizacao__span"><%=searchProfile.local%></span></i>
     </div>
     <form action="" class="formulario" method="POST">
         <label for="petName" class="label__form" >Nome do pet</label>
-        <input type="text" class="form__text" name="Name" id="petName" >
+        <input type="text" class="form__text" name="Name" id="petName" value='<%=searchProfile.pet_name%>' >
         <label for="subtitulo" class="label__form">Subtítulo</label>
-        <input type="text" class="form__text" name="subtitulo" id="subtitulo">
-        <label for="email" class="label__form">E-mail</label>
-        <input type="email" class="form__email" name="email" id="email">
-        <label for="tel" class="label__form" >Telefone</label>
-        <input type="tel" class="form__tel"name="tel" id="tel">
+        <input type="text" class="form__text" name="subtitulo" id="subtitulo" value='<%=searchProfile.nickname%>'>
+        <label for="genero" class="label__form">Gênero</label>
+        <input type="text" class="form__text" name="genero" id="genero" value='<%=searchProfile.genre%>'>
         <label for="bio" class="label__form" >Biografia</label>
-        <textarea name="" id="" cols="30" rows="10 " class="form__textarea" nome="bio" id="bio"></textarea>
+        <textarea name="" id="" cols="30" rows="10 " class="form__textarea" nome="bio" id="bio" ><%=searchProfile.bio%></textarea>
         <button type="submit" class="form__btn">Enviar</button>
     </form>
     </div>

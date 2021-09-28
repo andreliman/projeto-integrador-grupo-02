@@ -77,7 +77,6 @@
   height: 65px;
   border-radius: 50%;
   background-size: cover;
-  background-image: url(../images/fotos-de-cachorro-filhote-1\ 4.svg);
 }
 
 .postagens{
@@ -86,7 +85,7 @@
   flex-wrap: wrap;
 }
 .post__foto{
-    background-image: url(../images/Passeio\ Polenta\ 1.svg);
+    
     background-size: cover;
     background-position:top;
     height: 400px;
@@ -133,6 +132,31 @@
   border-radius: 20px;
   margin-bottom: 10px;
 }
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  width: 100%;
+}
+input[type=file]{
+  display:none;
+}
+button{
+  background-color: var(--bgSite);
+}
+.textarea{
+  width: 100%;
+  resize: none;
+ 
+}
+.fa-camera,.fa-paper-plane{
+  margin-left: 10px;
+  font-size: 35px;
+  color:var(--buttonColor);
+
+}
+
 
 /*Tratamento Responsivo*/
 
@@ -164,6 +188,16 @@
   .nav {
 width: 100%;
   }
+nav .fa-search{
+  font-size: 30px;
+}
+input[type=search]{
+  border-radius: 5px;
+}
+.pesquisar{
+  display: flex;
+  align-items: center;
+}
 .nav_icons{
     display: none;
   }
@@ -225,6 +259,7 @@ width: 100%;
     flex-wrap: nowrap;
     width: 100%;
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 .menu__icon--sugestoes{
   color: var(--selected) ;

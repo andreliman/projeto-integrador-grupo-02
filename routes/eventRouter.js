@@ -38,7 +38,6 @@ router.post('/criar',  multer(multerConfig).single('photo'), async(req, res) => 
             photo_id
     });
   
-
   res.redirect(`/manimal/event/list/${profile_id}`);
   });
   

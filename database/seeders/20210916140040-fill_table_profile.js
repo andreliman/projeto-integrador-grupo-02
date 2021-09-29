@@ -8,7 +8,6 @@ module.exports = {
         {
           user_id: 1,
           breed_id: 1,
-          style: "travesso",
           pet_name: "Bono",
           birthday: "",
           genre: "macho",
@@ -22,7 +21,6 @@ module.exports = {
         {
           user_id: 2,
           breed_id: 1,
-          style: "Sussinha",
           pet_name: "Sabrino",
           birthday: "",
           genre: "macho",
@@ -36,7 +34,6 @@ module.exports = {
         {
           user_id: 2,
           breed_id: 2,
-          style: "Nervouser",
           pet_name: "Polenta",
           birthday: "",
           genre: "fêmea",

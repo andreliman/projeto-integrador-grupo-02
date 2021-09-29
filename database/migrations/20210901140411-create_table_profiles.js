@@ -25,10 +25,6 @@ module.exports = {
           key: "id",
         },
       },
-      style: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       pet_name: {
         type: Sequelize.STRING,
         allowNull: false,

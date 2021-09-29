@@ -9,15 +9,39 @@
   padding: 0;
   padding-bottom: 25px;
   margin: 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items:stretch;
 }
 
 .main .profile {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main .profile .profilePicture .btn{
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.main .profile .profilePicture .btn button{
+  height: 20px;
+  width: 60px;
+  background-color: var(--buttonColor);
+  box-shadow: var(--box-form);
+  border-radius: 11px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--white);
 }
 
 .main .profile .profilePicture img {
@@ -44,32 +68,54 @@
   font-size: 15px;
   font-weight: bold;
   color: var(--white);
-  margin-top: 40px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.main .header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.main .header p {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.main .header span {
+  color: var(--buttonColor);
+  font-weight: bold;
 }
 
 .main .logout {
-  margin-top: 15vh;
+  height: 50px;
+  margin-top: 5px;
 }
 
 .main .logout a {
-  font-size: 13px;
+  margin-top: 5px;
+  height: 50px;
   font-style: italic;
   font-weight: bold;
-  color: var(--selected);
   text-decoration: none;
+  color: var(--buttonColor);
+}
+
+.main .logout .fa-sign-out {
+  font-size: 35px;
 }
 
 /*responsividade*/
 
 @media (min-width: 1080px) {
   .main .profile .profilePicture img {
-    height: 200px;
-    width: 200px; 
+    height: 150px;
+    width: 150px; 
   }
 
   .main .profile .profilePicture h2 {
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 20px;
   }
 
@@ -79,6 +125,20 @@
   }
 
   .main .logout {
-    font-size: 15px;
+    font-size: 14px;
+  }
+
+  .main .header p {
+    font-size: 14px;
+  }
+
+  .main .logout .fa-sign-out {
+    font-size: 50px;
+  }
+
+  .main .profile .profilePicture .btn button{
+    height: 25px;
+    width: 65px;
+    font-size: 12px;
   }
 }

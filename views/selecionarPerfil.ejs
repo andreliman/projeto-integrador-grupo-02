@@ -4,11 +4,23 @@
 </head>
 <body class="container">
     <main class="main">
+        <div class="header">
+            <p>Bem vindo <span><%=name%></span>! Selecione um perfil:</p>
+            <div class="logout">
+                <a href="/manimal/profile/logout" title="logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+            </div>
+        </div>
         <div class="profile">
             <% profiles.forEach(profile => { %>
                 <div class="profilePicture">
-                    <a href="/manimal/inicial/<%=profile.id%>"><img src="<%=profile.photo_profile_path%>" alt="Foto perfil" srcset=""></a>
+                    <a href="/manimal/inicial/<%=profile.id%>" title="<%=profile.pet_name%>"><img src="<%=profile.photo_profile_path%>" alt="Foto perfil"></a>
                     <h2><%=profile.pet_name%></h2>
+                    <div class="btn">
+                        <a href="/manimal/profile/update/:<%=profile.id%>"><button type="button">Atualizar</button></a>
+                        <form action="/manimal/profile/select/<%= profile.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Deletar</button>
+                        </form>
+                    </div>
                 </div>
             <% }) %>
 
@@ -16,9 +28,6 @@
         <div class="redirect">
             <a href="/manimal/profile/create"><button type="button">Criar novo</button></a>
         </div>               
-        <div class="logout">
-            <a href="/manimal/profile/logout">Fazer logout</a>
-        </div>
     </main>
     <script src="/js/darkMode.js"></script>
 </body>

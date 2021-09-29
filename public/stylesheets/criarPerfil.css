@@ -7,31 +7,95 @@
 
 .main {
     padding: 0;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
     margin: 0 8px;
 }
+.main .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+}
+  
+.main .header p {
+    font-size: 12px;
+    font-style: italic;
+}
+  
+.main .header span {
+    color: var(--buttonColor);
+    font-weight: bold;
+}
 
-.main .fa-user-plus {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    font-size: 100px;
 
+.main .logout {
+    height: 50px;
+    margin-top: 5px;
+}
+  
+.main .logout a {
+    margin-top: 5px;
+    height: 50px;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--buttonColor);
+}
+  
+.main .logout .fa-sign-out {
+    font-size: 35px;
 }
 
 .main .forms {
-    margin: 20px 0;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
+}
+
+.main .forms form{
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.main .forms .form-control{
+    display: none;
+}
+
+.main .forms .textarea{
+    max-width: 300px;
     width: 100%;
 }
 
-.main .forms div {
+.main .forms .textarea textarea{
     margin: 10px 0;
+    max-width: 300px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--input-forms);
+    border: var(--borda-forms);
+    border-radius: 5.5px;
+    color: var(--white);
+}
+
+.main .forms .fields {
+    margin-bottom: 10px;
+    margin-left: 8px;
     max-width: 250px;
     width: 100%;
+}
+
+.main .forms .fa-user-plus {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 80px;
+    color: var(--destaque);
+    cursor: pointer;
 }
 
 .main .forms input, select {
@@ -57,24 +121,8 @@
     cursor:pointer;
 }
 
-.main .forms .password{
-    position: relative;
-}
-
-.main .forms .password .fa-eye-slash {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    cursor: pointer;
-    color: var(--white);
-}
-
-.main .forms .password .fa-eye-slash:active {
-    color: var(--black);
-}
-
 .main .forms .submit {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .main .forms .submit input{
@@ -88,15 +136,15 @@
     font-weight: bold;
 }
 
-.main .login {
-    margin-bottom: 10px;
+.main .profile {
+    margin-top: 15px;
 }
 
-.main .login p {
+.main .profile p {
     font-size: 13px;
 }
 
-.main .login a {
+.main .profile a {
     font-style: italic;
     color: var(--link);
     text-decoration: none;
@@ -105,10 +153,11 @@
 /*responsividade*/
 
 @media(min-width:1080px) {
-    
-    .main .forms div {
+    .main .forms form{
+        max-width: 500px;    
+    }
+    .main .forms .fields {
         max-width: 300px;
-        width: 100%;
     }
 
     .main .forms input, select {
@@ -120,17 +169,37 @@
         width: 100%;
     }
 
-    .main .forms .password .fa-eye-slash {
-        top: 12px;
-        right: 15px;
+    .main .forms .fa-user-plus {
+        padding-top: 30px;
+        padding-bottom: 50px;
+        font-size: 100px;
     }
 
     .main .forms .submit {
         margin-top: 20px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
     }
 
-    .main .login {
+    .main .profile {
         font-size: 15px;
+    }
+
+    .main .forms .textarea{
+        max-width: 500px;
+    }
+
+    .main .forms .textarea textarea{
+        max-width: 400px;
+    }
+    .main .logout {
+        font-size: 14px;
+    }
+    
+    .main .header p {
+        font-size: 14px;
+    }
+    
+    .main .logout .fa-sign-out {
+        font-size: 50px;
     }
 }

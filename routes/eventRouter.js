@@ -10,7 +10,7 @@ router.get('/criar', verificarProfileLogado, async (req, res) => {
     res.render('criarEventos', { profile });
 });
 
-router.post('/criar',  multer(multerConfig).single('photo'), async(req, res) => {
+router.post('/criar', multer(multerConfig).single('photo'), async(req, res) => {
     const { name,
             beginning_date,
             ends_date,
@@ -23,7 +23,8 @@ router.post('/criar',  multer(multerConfig).single('photo'), async(req, res) => 
     const { profile } = req.session;
     const profile_id = profile.id;
     
-    const{path:photo_event_path = '', key:photo_id = ''} = req.file;
+    // const{location:photo_event_path = '', key:photo_id = ''} = req.file;
+    const { key:photo_event_path = '' } = req.file;
 
     await EventController.criarUmEvento({
             profile_id,
@@ -34,8 +35,7 @@ router.post('/criar',  multer(multerConfig).single('photo'), async(req, res) => 
             finish_hour,
             description,
             local,
-            photo_event_path,
-            photo_id
+            photo_event_path
     });
   
   res.redirect(`/manimal/event/list/${profile_id}`);

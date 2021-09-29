@@ -59,7 +59,7 @@
     position: relative;
 }
 
-.main .forms .password .fa-eye-slash {
+.main .forms .password .fa-eye {
     position: absolute;
     top: 8px;
     right: 12px;
@@ -67,7 +67,7 @@
     color: var(--white);
 }
 
-.main .forms .password .fa-eye-slash:active {
+.main .forms .password .fa-eye:active {
     color: var(--black);
 }
 
@@ -118,7 +118,7 @@
         width: 100%;
     }
 
-    .main .forms .password .fa-eye-slash {
+    .main .forms .password .fa-eye {
         top: 12px;
         right: 15px;
     }

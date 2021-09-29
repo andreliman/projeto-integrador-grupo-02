@@ -214,12 +214,15 @@ h5{
   text-align: center;
 }
 .timeline{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 70px;
+  max-width: 1000px;
+  margin: auto;
+ 
 }
 
 ul.ver_timeline{
@@ -266,15 +269,38 @@ ul.post__lista_icons li{
   
 }
 .post__wrapper{
-  background-color: var(--white);
+  background-color: var(--bgSite);
   border-radius: 5px;
  
 }
+.post__foto{
+  
+  object-fit:cover;
+  border-radius: 5px;
+}
+
 .post__wrapper p{
   font-size: 20px;
   padding: 10px;
 }
 
+.post__legenda{
+  margin-top: 5px;
+  background-color: var(--white);
+
+  height: 30px;
+  border-radius: 5px;
+  
+}
+.post__legenda p {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  text-align: justify;
+  
+
+}
 @media(max-width: 500px){
   ul.ver_amigos{
     justify-content: center;

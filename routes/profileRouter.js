@@ -30,15 +30,37 @@ router.post('/create', multer(multerConfig).single('photo'), async(req, res) => 
 router.get('/select', verificarUserLogado, async (req, res) => {
     const { id, name } = req.session.user;
 
-    const profiles = await ProfileController.findProfile(id);
+    const profiles = await ProfileController.findProfiles(id);
 
     req.session.profiles = profiles;
    
     res.render('selecionarPerfil', { title: "Seleção de perfil", profiles, name });
 });
 
-// Deletar
+//Editar
 
+router.get('/edit/:id', verificarUserLogado, async (req, res) => {
+    const { name } = req.session.user;
+    const { id } = req.params;
+
+    const breeds = await ProfileController.listAllBreeds();
+    const kinds = await ProfileController.listAllKinds();
+
+    const profile = await ProfileController.findProfile(id);
+    
+    res.render('editarPerfil', {profile, name, breeds, kinds});
+});
+
+router.put("/edit/:id", multer(multerConfig).single('photo'), async function (req, res) {
+    const { id } = req.params;
+    const { key:photo_profile_path = '' } = req.file;
+    const { breed_id, pet_name, birthday, genre, local, nickname, bio } = req.body;
+  
+    await ProfileController.editProfile( id, { breed_id, pet_name, birthday, genre, local, nickname, bio, photo_profile_path });
+    res.redirect('/manimal/profile/select');
+});
+
+// Deletar
 router.delete('/select/:id', verificarUserLogado, async (req, res) => {
     const { id } = req.params;
 

@@ -4,7 +4,6 @@ const multer = require('multer');
 const multerConfig = require('../config/multer')
 const postController = require('../controllers/postController')
 const profileController = require('../controllers/profileController');
-
 const LoginController = require('../controllers/LoginController');
 const verificarUserLogado = require('../middlewares/verificarUserLogado');
 
@@ -31,10 +30,11 @@ router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
 
 router.post('/posts/', multer(multerConfig).single('photo'), async function(req, res, next) {
   const {profile} = req.session
-  const{location:photo_post_path = '', key:photo_id = ''} = req.file
+  // const{location:photo_post_path = '', key:photo_id = ''} = req.file
+  const { key:photo_post_path = '' } = req.file;
   const {post} = req.body
   const profile_id = profile.id;
-  await postController.criarPost({profile_id,post,photo_post_path,photo_id});
+  await postController.criarPost({profile_id,post,photo_post_path});
   return res.redirect(`/manimal/inicial/${profile_id}`)
 });
 
@@ -54,15 +54,6 @@ router.get('/album', (req, res) => {
 router.get('/album/newalbum', (req, res) => {
   res.render('newAlbum');
 });
-/**Perfil */
-router.get('/editar/perfil/:id', async (req, res) => {
-  const {profile} = req.session
-  const profile_id = profile.id;
-  const searchProfile = await profileController.findUserProfile(profile_id);
-  res.render('editarPerfil', {searchProfile});
-});
-
-
 
 /** Rotas Alan* */
 router.get('/perfilUser/:id', async (req, res) => {
@@ -85,6 +76,7 @@ router.get('/perfilVisitante/:id',async (req, res) => {
 });
 
 /** Rotas André* */
+
 // Login
 router.get('/', (req, res) => {
   res.render('login', { title: "Login" });

@@ -1,6 +1,7 @@
 <%- include('./partials/head')%>
 <title><%= title %></title>
 <link rel="stylesheet" href="/stylesheets/selecionarPerfil.css">
+<script src="/js/darkMode.js"></script>
 </head>
 <body class="container">
     <main class="main">
@@ -16,7 +17,7 @@
                     <a href="/manimal/inicial/<%=profile.id%>" title="<%=profile.pet_name%>"><img src="<%=profile.photo_profile_path%>" alt="Foto perfil"></a>
                     <h2><%=profile.pet_name%></h2>
                     <div class="btn">
-                        <a href="/manimal/profile/update/:<%=profile.id%>"><button type="button">Atualizar</button></a>
+                        <a href="/manimal/profile/edit/<%=profile.id%>"><button type="button">Editar</button></a>
                         <form action="/manimal/profile/select/<%= profile.id %>?_method=DELETE" method="POST">
                             <button type="submit">Deletar</button>
                         </form>
@@ -29,6 +30,5 @@
             <a href="/manimal/profile/create"><button type="button">Criar novo</button></a>
         </div>               
     </main>
-    <script src="/js/darkMode.js"></script>
 </body>
 </html>

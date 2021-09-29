@@ -10,9 +10,10 @@ exports.criarUmEvento = ({
     finish_hour,
     description,
     local,
-    photo_event_path,
-    photo_id
-}) => { 
+    photo_event_path
+}) => {
+        const photo_id = Math.floor(Math.random()*10000);
+         
         const event_id = v4();
         eventModels.criarUmEvento({
                 event_id,

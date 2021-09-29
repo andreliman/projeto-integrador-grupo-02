@@ -23,7 +23,7 @@ router.post('/criar',  multer(multerConfig).single('photo'), async(req, res) => 
     const { profile } = req.session;
     const profile_id = profile.id;
     
-    const{location:photo_event_path = '', key:photo_id = ''} = req.file;
+    const{path:photo_event_path = '', key:photo_id = ''} = req.file;
 
     await EventController.criarUmEvento({
             profile_id,

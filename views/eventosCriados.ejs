@@ -34,8 +34,9 @@
                 <a href="/manimal/event/list" class="eventos-outros">Eventos Disponíveis</a>
             </div>
             <div class="mural">
+                <% eventosCriadosPorProfile.forEach(eventos=>{ %>
                 <div class="album-evento">
-                    <% eventosCriadosPorProfile.forEach(eventos=>{ %>
+                    
                     <img src="<%= eventos.photo_event_path %>" alt="" class="album__capa">
                     <ul class="post__lista_icons">
                         <li><i class="fa fa-paw evento_icon" aria-hidden="true"></i></li>
@@ -51,9 +52,9 @@
                         </div>
                             <button type="submit"class="principal__button">Convidar</button>
                     </section>
-                    <% }) %>
+                    
                 </div>
-                
+                <% }) %>
             </div>
 
         </main>

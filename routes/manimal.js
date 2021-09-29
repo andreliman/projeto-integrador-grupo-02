@@ -60,8 +60,9 @@ router.get('/perfilUser/:id', async (req, res) => {
   const {profile} = req.session
   const profile_id = profile.id;
   const searchProfile = await profileController.findUserProfile(profile_id);
+  console.log(searchProfile)
   const posts = await postController.showPosts(profile_id);
-  res.render('perfilUser', {searchProfile, posts});
+  res.render('perfilUser', {searchProfile, posts,});
 });
 
 router.get('/perfilVisitante/:id',async (req, res) => {

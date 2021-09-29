@@ -63,9 +63,9 @@
 
 }
 
-/* .main .forms .form-control{
+.main .forms .form-control{
     display: none;
-} */
+}
 
 .main .forms .textarea{
     max-width: 300px;

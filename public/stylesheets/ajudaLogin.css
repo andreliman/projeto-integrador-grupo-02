@@ -10,6 +10,8 @@
 
 .main {
     padding: 0;
+    max-width: 350px;
+    width: 100%;
     margin: 0 15px;
 }
 
@@ -46,13 +48,13 @@
 
 .main .forms div {
     margin-top: 10px;
-    max-width: 300px;
+    max-width: 600px;
     width: 100%;
 }
 
 .main .forms input {
     height: 40px;
-    width: 96%;
+    width: 100%;
     padding: 0;
     padding-left: 8px;
     background-color: var(--input-forms);
@@ -74,7 +76,7 @@
 
 .main .forms .submit input{
     height: 40px;
-    max-width: 300px;
+    max-width: 150px;
     width: 100%;
     background-color: var(--buttonColor);
     box-shadow: var(--box-form);
@@ -110,12 +112,11 @@
     }
 
     .main .forms input {
-        height: 50px;
+        height: 45px;
     }
 
     .main .forms .submit input {
-        height: 50px;
-        max-width: 500px;
-        width: 100%;
+        height: 40px;
+        max-width: 200px;
     }
 }

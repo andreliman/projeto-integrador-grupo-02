@@ -30,11 +30,11 @@ router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
 
 router.post('/posts/', multer(multerConfig).single('photo'), async function(req, res, next) {
   const {profile} = req.session
-  // const{location:photo_post_path = '', key:photo_id = ''} = req.file
-  const { key:photo_post_path = '' } = req.file;
+  const{location:photo_post_path = '', key:photo_id = ''} = req.file
+  //const { key:photo_post_path = '' } = req.file;
   const {post} = req.body
   const profile_id = profile.id;
-  await postController.criarPost({profile_id,post,photo_post_path});
+  await postController.criarPost({profile_id,post,photo_post_path, photo_id});
   return res.redirect(`/manimal/inicial/${profile_id}`)
 });
 

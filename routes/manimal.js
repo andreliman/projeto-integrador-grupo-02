@@ -7,6 +7,7 @@ const profileController = require('../controllers/profileController');
 const LoginController = require('../controllers/LoginController');
 const verificarUserLogado = require('../middlewares/verificarUserLogado');
 const friendsController = require('../controllers/friendsController');
+const albumsController = require('../controllers/albumsController')
 /** Post* */
 router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
   const { profiles } = req.session;
@@ -48,12 +49,22 @@ router.get('/search', async(req,res,next)=>{
 })
 
 /**Album*/
-router.get('/album', (req, res) => {
-  res.render('album');
+router.get('/album/:id', async(req, res) => {
+  const {profile} = req.session
+  const profile_id = profile.id;
+  const showAlbums = await albumsController.showAlbums(profile_id);
+  const searchProfile = await profileController.findUserProfile(profile_id);
+  res.render('album',{searchProfile, showAlbums});
 });
-router.get('/album/newalbum', (req, res) => {
-  res.render('newAlbum');
+router.get('/album/detalhe/:id', async(req, res) => {
+  const {profile} = req.session
+  const profile_id = profile.id;
+  const {id} = req.params
+  const detalheAlbum = await albumsController.detalheAlbum(id);
+  const searchProfile = await profileController.findUserProfile(profile_id);
+  res.render('detalheAlbum',{searchProfile, detalheAlbum});
 });
+
 
 /** Rotas Alan* */
 router.get('/perfilUser/:id', async (req, res) => {
@@ -77,11 +88,11 @@ router.get('/perfilVisitante/:id',async (req, res) => {
 });
 router.post('/perfilVisitante/:id/add/', async (req,res)=>{
   const { id } = req.params;
+  const friend_id = id;
   const {profile} = req.session
-  const owner_id = id
   const profile_id = profile.id;
-  const status = "seguindo"
-  await friendsController.addFriend(owner_id,profile_id,status);
+  const seguindo = "seguindo"
+  await friendsController.addFriend(friend_id,profile_id,seguindo);
   return res.redirect(`/manimal/inicial/${profile_id}`)
 })
 

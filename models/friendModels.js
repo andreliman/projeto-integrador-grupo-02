@@ -6,7 +6,14 @@ exports.showFriends = (profile_id) =>{
     });
     return show
 }
-exports.addFriends = (owner_id,profile_id,status) =>{
-    const criar = db.Friend.create(owner_id,profile_id,status)
-    return criar
+exports.addFriends = (friend_id,profile_id,seguindo) =>{
+   
+    const criar = 
+    db.Friend.create({
+        friend_id:friend_id,
+        profile_id: profile_id,
+        status:seguindo
+      })
+    
+      return criar
    }

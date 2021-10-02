@@ -6,7 +6,7 @@ const postController = require('../controllers/postController')
 const profileController = require('../controllers/profileController');
 const LoginController = require('../controllers/LoginController');
 const verificarUserLogado = require('../middlewares/verificarUserLogado');
-
+const friendsController = require('../controllers/friendsController');
 /** Post* */
 router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
   const { profiles } = req.session;
@@ -75,6 +75,15 @@ router.get('/perfilVisitante/:id',async (req, res) => {
 
   res.render('perfilVisitante', {searchProfile, searchProfileVisitante, posts});
 });
+router.post('/perfilVisitante/:id/add/', async (req,res)=>{
+  const { id } = req.params;
+  const {profile} = req.session
+  const owner_id = id
+  const profile_id = profile.id;
+  const status = "seguindo"
+  await friendsController.addFriend(owner_id,profile_id,status);
+  return res.redirect(`/manimal/inicial/${profile_id}`)
+})
 
 /** Rotas André* */
 

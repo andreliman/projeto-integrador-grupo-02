@@ -1,7 +1,6 @@
 
 module.exports = (sequelize, DataTypes)=>{
     const Photo = sequelize.define('Photo',{
-        photo_id:DataTypes.STRING,
         album_id:DataTypes.INTEGER,
         photo_path:{
             type:DataTypes.STRING,

@@ -25,7 +25,10 @@
           <div class="menu_cabecalho_02">
                 <img src="<%=searchProfileVisitante.photo_profile_path%>" alt="" class="img_cabecalho">
                 <h1><%=searchProfileVisitante.pet_name%></h1>  
-                <button class="btn"> Seguindo </button>
+                <form action="/manimal/perfilVisitante/<%=searchProfileVisitante.id%>/add/" method="POST">
+                    <button type="submit">Seguir</button>
+                </form>
+                
          </div>
           <div class="cabecalho_1">
             <div class="menu_cabecalho_01">

@@ -23,12 +23,9 @@
         <main class="main">
             <div class="mural">
                 <div class="album">
-                    <% showAlbums.forEach(album=>{ %>
-                    <a href="/album/detalhe/<%=album.id%>">
+                    <% detalheAlbum.forEach(album=>{ %>
                     <img src="<%=album.album.photo_path%>" alt="" class="album__capa">
-                    <span class="album__nome"><%=album.description%></span>
                     <% }) %>
-                    </a>
                 </div>
             </div>
         </main>

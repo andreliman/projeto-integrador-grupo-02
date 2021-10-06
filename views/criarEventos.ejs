@@ -1,5 +1,6 @@
 <%- include('./partials/head')%>
 <link rel="stylesheet" href="/stylesheets/criarEventos.css">
+<script defer src="./js/eventvalidations.js"></script>
 </head>
 <body class="body">
     <div class="container_eventos">
@@ -27,34 +28,41 @@
         <div class="nome-evento">
           <label for="eventName" class="label__form" >Nome do Evento</label>
           <input type="text" class="form__text" name="name" id="eventName" >
+          <span class="error-message"></span>
         </div>
         <div class="data-e-hora">
           <div class="data-evento">
             <label for="eventDate" class="label_form">Data Inicial</label>
             <br>
             <input class="campo_data_hora" type="date" name="beginning_date">
+            <span class="error-message"></span>
             <br>
             <label for="eventDate" class="label_form">Data Final</label>
             <br>
             <input class="campo_data_hora" type="date" name="ends_date">
+            <span class="error-message"></span>
           </div>
           <div class="hora-evento">
             <label for="eventHour" class="label_form">Hora Inicial</label>
             <br>
             <input class="campo_data_hora" type="time" name="hour">
+            <span class="error-message"></span>
             <br>
             <label for="eventDate" class="label_form">Hora Final</label>
             <br>
             <input class="campo_data_hora" type="time" name="finish_hour">
+            <span class="error-message"></span>
           </div>
         </div>
         <div class="local-evento-convite">
           <label for="eventAdress" class="label__form" >Local do Evento</label>
           <input type="text" class="form__text" name="local" id="eventAdress" >
+          <span class="error-message"></span>
         </div>
         <div class="descricao-evento">
           <label for="eventDescrition" class="label__form" >Descricao do Evento</label>
           <textarea type="text" class="form__text" name="description" id="eventDescription" style="height: 200px;"></textarea>
+          <span class="error-message"></span>
         </div>
 
         <label for="eventPhoto" class="label_form">Adicionar Foto do Evento</label>

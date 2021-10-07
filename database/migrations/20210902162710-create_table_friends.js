@@ -16,9 +16,11 @@ module.exports = {
           key: "id",
         },
       },
+      friend_id: {
+        type: Sequelize.INTEGER.UNSIGNED,
+      },    
       status: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       created_at: {
         type: "TIMESTAMP",

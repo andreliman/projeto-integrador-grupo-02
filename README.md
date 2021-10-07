@@ -24,4 +24,5 @@ Você pode conferir o layout do site no link abaixo:
 **Desenvolvido  por:**
 **[Eduardo Cruz](https://github.com/edcruz29/).**
 **[Neto Machado](https://github.com/netomachado/).**
-adicionem os gits 
+**[André Nunes](https://github.com/andreliman/).**
+**[Alan Rabelo](https://github.com/arjesus1987).**

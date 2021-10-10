@@ -64,8 +64,7 @@ module.exports = (sequelize, DataTypes)=>{
           as:'posts',
           foreignKey:'profile_id',
         });
-        Profile.belongsToMany(models.Friend, {
-          through:'profile_has_friends',
+        Profile.hasMany(models.Friend, {
           foreignKey:'profile_id',
           as:'friends'
         });

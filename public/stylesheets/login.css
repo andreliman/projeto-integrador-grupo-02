@@ -17,18 +17,6 @@
     margin-top: 30px;
 }
 
-.main .languageForm select {
-    height: 15px;
-    width: 150px;
-    font-size: 11px;
-    font-family: 'Roboto';
-    color: var(--text);
-    background-color:var(--bgSite);
-    border: none;
-    padding: 0;
-    text-align-last: center;
-}
-
 .main .forms {
     margin: 20px 0;
     display: flex;

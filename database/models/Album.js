@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes)=>{
         Album.belongsTo(models.Profile,{
             foreignKey:'profile_id',
             as:'profile'
+        }),
+        Album.hasMany(models.Photo,{
+            foreignKey:'album_id',
+            as:'photo'
         })
         
     };

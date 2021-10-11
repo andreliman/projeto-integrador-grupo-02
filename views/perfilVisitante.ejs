@@ -26,15 +26,15 @@
                 <img src="<%=searchProfileVisitante.photo_profile_path%>" alt="" class="img_cabecalho">
                 <h1><%=searchProfileVisitante.pet_name%></h1>  
                 <form action="/manimal/perfilVisitante/<%=searchProfileVisitante.id%>/add/" method="POST">
-                    <button type="submit">Seguir</button>
+                    <button class="btn" type="submit">Seguir</button>
                 </form>
                 
          </div>
           <div class="cabecalho_1">
             <div class="menu_cabecalho_01">
               <h2> 2 Publicações</h2>
-              <h2> 120  Seguidores</h2>
-              <h2> 120  Seguindo</h2>
+              <h2><%=seguidores.count%> Seguidores</h2>
+              <h2><%=seguindo.count%> Seguindo</h2>
             </div>
             <div class="menu_cabecalho_03">
                 <h2><i class="fa fa-home inco_casa" aria-hidden="true"></i> Mora <%=searchProfileVisitante.local%>, Brasil</h2>
@@ -46,43 +46,11 @@
        <section class="text_amigo">
             <h5 class="texto_amigos">Amigos</h5>
             <ul class="ver_amigos">
+                <% amigos.forEach(amigo=>{ %>
                 <li>
-                    <img src="/images/perfi 1.jpg" alt="" class="img_amigo">
+                    <img src="<%=amigo.photo_profile_path%>" alt="" class="img_amigo">
                 </li>
-                <li>
-                    <img src="/images/gato1.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/praia.png" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil3.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil4.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil5.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil6.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil7.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil8.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil9.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil10.jpg" alt="" class="img_amigo">
-                </li>
-                
-                <li>
-                    <i class="fas fa-plus-circle img_mais"></i>
-                </li> 
+                <% }) %>
             </ul>
         </section>
             <h5 class="texto_publicacao">Publicações</h5>

@@ -157,7 +157,34 @@ button{
   color:var(--buttonColor);
 
 }
+.search{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.search__wrapper{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+.search__nome{
+  font-size: 40px;
+  color:var(--text);
+  margin-right: 20px;
+}
 
+.search__foto{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: var(--selected);
+  margin-right: 20px;
+}
 
 /*Tratamento Responsivo*/
 

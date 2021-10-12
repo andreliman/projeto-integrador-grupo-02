@@ -3,25 +3,26 @@ const errorContainer = document.querySelector('.errors-container');
 
 const { name:eventName, beginning_date, ends_date, hour, finish_hour, local, description } = form.elements;
 
+
 const formElements = [eventName, beginning_date, ends_date, hour, finish_hour, local, description];
 
 function checkIfEmpty() {
-    const isValidEventName = eventName.value.trim().length > 0;
-    const span = eventName.nextElementSibling;
+    const isValidLocal = local.value.trim().length > 0;
+    const span = local.nextElementSibling;
     span.innerText= "";
 
-    if (!isValidEventName){
+    if (!isValidLocal){
         span.innerText= "o campo não pode estar vazio";
-        eventName.insertAdjacentElement("afterend", span);
-        eventName.style.borderColor = "red";
+        local.insertAdjacentElement("afterend", span);
+        local.style.borderColor = "red";
         return false;
     };
-    eventName.style.borderColor = "green";
+    local.style.borderColor = "green";
     return true;
 
   };
 
-  eventName.onblur = checkIfEmpty;
+  local.onblur = checkIfEmpty;
 
 //   function checkIfEmpty(input, errors) {
 //     if (!input.value.trim().length) {

@@ -1,7 +1,9 @@
 const db = require('../database/models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
+
 exports.showFriends = async (profile_id) =>{
+
     const data = await db.Friend.findAll({
         where:{profile_id:profile_id},
     }).then((rows) => rows.map((row) => row.dataValues));

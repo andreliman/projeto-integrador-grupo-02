@@ -1,3 +1,6 @@
+body{
+  background-color: var(--bgSite) !important;
+}
 .nav {
   display: flex;
   justify-content: space-between;
@@ -7,8 +10,8 @@
   box-shadow: var(--box-header);
   position: relative;
 }
-.container {
-  background-color: var(--bgSite);
+.container-lg {
+  background-color: var(--bgSite) !important;
 }
 .nav__logo {
   width: 200px;
@@ -71,19 +74,35 @@
   font-weight: lighter;
   color: var(--localizacao);
 }
-
-.foto__perfil {
+.foto__perfil__post__wrapper{
+  display: flex;
+  align-items: center;
+}
+.petname{
+  font-size: 20px;
+  color:var(--destaque);
+  margin-left: 10px;
+  font-weight: bold;
+}
+.foto__perfil, .foto__perfil__post {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
   object-position:top;
+  margin-bottom: 10px;
 }
-
+.post__and__sugestoes{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 .postagens{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
 }
 .post__foto{
     
@@ -96,7 +115,7 @@
 .post__lista_icons li{
     display: inline-block;
     margin-top: 5px;
-    justify-content: right;
+  
     
 }
 .post__legenda{
@@ -309,9 +328,11 @@ input[type=search]{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
 }
 .post__and__sugestoes{
   display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 .postagens{

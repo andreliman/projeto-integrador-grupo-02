@@ -1,5 +1,5 @@
 .body{
-    background-color: var(--bgSite)
+    background-color: var(--bgSite) !important
 }
 .principal{
     display: flex;

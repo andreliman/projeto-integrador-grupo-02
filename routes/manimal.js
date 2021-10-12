@@ -74,8 +74,9 @@ router.get('/perfilUser/:id', async (req, res) => {
   const seguidores = await friendsController.countSeguidores(profile_id);
   const seguindo = await friendsController.countSeguindo(profile_id);
   const amigos = await friendsController.showFriends(profile_id);
-  const posts = await postController.showPosts(profile_id);
-  res.render('perfilUser', {searchProfile, posts,seguidores,seguindo, amigos});
+  const posts = await postController.showPostsUser(profile_id);
+  const countPosts = await postController.countPosts(profile_id)
+  res.render('perfilUser', {searchProfile,posts,countPosts,seguidores,seguindo, amigos});
 });
 
 router.get('/perfilVisitante/:id',async (req, res) => {
@@ -88,8 +89,9 @@ router.get('/perfilVisitante/:id',async (req, res) => {
   const seguidores = await friendsController.countSeguidoresVisitante(id);
   const seguindo = await friendsController.countSeguindoVisitante(id);
   const posts = await postController.showPostsVisitante(id);
+  const countPosts = await postController.countPosts(id)
 
-  res.render('perfilVisitante', {searchProfile, searchProfileVisitante, posts, seguidores, seguindo, amigos});
+  res.render('perfilVisitante', {searchProfile, searchProfileVisitante, posts,countPosts, seguidores, seguindo, amigos});
 });
 router.post('/perfilVisitante/:id/add/', async (req,res)=>{
   const { id } = req.params;

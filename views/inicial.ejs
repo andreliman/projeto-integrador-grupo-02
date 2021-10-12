@@ -1,4 +1,5 @@
 <%- include('./partials/header')%>
+<div class="container-lg">
 <main class="main">
   <div class="perfil__wrapper">
     <a href="/manimal/perfilUser/<%=searchProfile.id%>"><div class="foto__perfil"><img class="foto__perfil" src="<%=searchProfile.photo_profile_path%>" alt=""></div></a>
@@ -24,13 +25,15 @@
       <div class="postagens">
         <div class="post__wrapper">
           <% posts.forEach(post=>{ %>
+            <div class="foto__perfil__post__wrapper">
+              <img class="foto__perfil__post" src="<%=post.profiles.photo_profile_path%>" alt="">
+              <span class="petname"><%=post.profiles.pet_name%></span>
+            </div>
           <div class="post__foto">
             <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
           </div>
           <ul class="post__lista_icons">
               <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
-              <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
-              <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
           </ul>
           <div class="post__legenda">
               <p><%=post.post%></p>
@@ -43,6 +46,7 @@
   </section>
   
 </main>
+</div>
 </div>
 <script src="/js/darkMode.js"></script>
 </body>

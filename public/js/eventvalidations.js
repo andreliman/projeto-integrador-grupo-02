@@ -1,12 +1,30 @@
 const form = document.querySelector('.evento-form');
-const errorContainer = document.querySelector('.errors-container');
+
 
 const { name:eventName, beginning_date, ends_date, hour, finish_hour, local, description } = form.elements;
 
+function checkNameIfEmpty() {
+    const isValidName = eventName.value.trim().length > 0;
+    const span = eventName.nextElementSibling;
+    span.innerText= "";
 
-const formElements = [eventName, beginning_date, ends_date, hour, finish_hour, local, description];
+    if (!isValidName){
+        span.innerText= "o campo não pode estar vazio";
+        eventName.insertAdjacentElement("afterend", span);
+        eventName.style.borderColor = "red";
+        return false;
+    };
+    eventName.style.borderColor = "green";
+    return true;
 
-function checkIfEmpty() {
+  };
+
+  eventName.onblur = checkNameIfEmpty;
+
+
+
+
+function checkLocalIfEmpty() {
     const isValidLocal = local.value.trim().length > 0;
     const span = local.nextElementSibling;
     span.innerText= "";
@@ -22,17 +40,40 @@ function checkIfEmpty() {
 
   };
 
-  local.onblur = checkIfEmpty;
+  local.onblur = checkLocalIfEmpty;
 
-//   function checkIfEmpty(input, errors) {
-//     if (!input.value.trim().length) {
-//       errors.push(`Preenha o campo ${input.name}, noob`);
-//     }
-//   };
+  function checkDescriptionIfEmpty() {
+    const isValidDescription = description.value.trim().length > 0;
+    const span = description.nextElementSibling;
+    span.innerText= "";
 
+    if (!isValidDescription){
+        span.innerText= "o campo não pode estar vazio";
+        description.insertAdjacentElement("afterend", span);
+        description.style.borderColor = "red";
+        return false;
+    };
+    description.style.borderColor = "green";
+    return true;
 
-form.addEventListener("submit", function(event){
-    if(!checkIfEmpty()){
-        return event.preventDefault();
+  };
+
+  description.onblur = checkDescriptionIfEmpty;
+
+window.addEventListener("load", function(){
+    form.addEventListener("submit", function(event){
+    if(!checkNameIfEmpty()){
+        event.preventDefault();
+        alert(`O nome do evento precisa estar definido`);
+    };
+    if(!checkLocalIfEmpty()){
+        event.preventDefault();
+        alert(`O local precisa estar definido`);
+    };
+    if(!checkDescriptionIfEmpty()){
+        event.preventDefault();
+        alert(`É necessário descrever o evento`);
     }
 })
+})
+

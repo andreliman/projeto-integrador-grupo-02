@@ -120,7 +120,7 @@ router.post('/', async (req, res) => {
 
   req.session.user = user;
 
-  res.redirect('/manimal/profile/select');
+  res.status(201).redirect('/manimal/profile/select');
 });
 // login
 router.get('/ajuda', (req, res) => {

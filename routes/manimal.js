@@ -71,20 +71,27 @@ router.get('/perfilUser/:id', async (req, res) => {
   const {profile} = req.session
   const profile_id = profile.id;
   const searchProfile = await profileController.findUserProfile(profile_id);
-  console.log(searchProfile)
-  const posts = await postController.showPosts(profile_id);
-  res.render('perfilUser', {searchProfile, posts,});
+  const seguidores = await friendsController.countSeguidores(profile_id);
+  const seguindo = await friendsController.countSeguindo(profile_id);
+  const amigos = await friendsController.showFriends(profile_id);
+  const posts = await postController.showPostsUser(profile_id);
+  const countPosts = await postController.countPosts(profile_id)
+  res.render('perfilUser', {searchProfile,posts,countPosts,seguidores,seguindo, amigos});
 });
 
 router.get('/perfilVisitante/:id',async (req, res) => {
-  const { id } = req.params;
+  const {id} = req.params;
   const {profile} = req.session
   const profile_id = profile.id;
   const searchProfile = await profileController.findUserProfile(profile_id);
   const searchProfileVisitante = await profileController.findVisitante(id);
+  const amigos = await friendsController.showFriendsVisitante(id);
+  const seguidores = await friendsController.countSeguidoresVisitante(id);
+  const seguindo = await friendsController.countSeguindoVisitante(id);
   const posts = await postController.showPostsVisitante(id);
+  const countPosts = await postController.countPosts(id)
 
-  res.render('perfilVisitante', {searchProfile, searchProfileVisitante, posts});
+  res.render('perfilVisitante', {searchProfile, searchProfileVisitante, posts,countPosts, seguidores, seguindo, amigos});
 });
 router.post('/perfilVisitante/:id/add/', async (req,res)=>{
   const { id } = req.params;

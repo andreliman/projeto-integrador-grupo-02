@@ -1,9 +1,9 @@
 .body {
     height: 100%;
-    background-color:var(--bgSite);
+    background-color:var(--bgSite) !important;
 }
 .container_eventos{
-    background-color:var(--bgSite);
+    background-color:var(--bgSite) !important;
 }
 
 .container__total{

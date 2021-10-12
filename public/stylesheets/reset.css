@@ -1,6 +1,6 @@
 
 :root {
-	--bgSite: #e5e5e5;
+	--bgSite: #e5e5e5 !important;
 	--buttonColor: #663ab7;
 	--cards: #f5f5f5;
 	--white: #ffffff;
@@ -26,7 +26,7 @@
 
   }
   [data-theme="dark"] {
-	--bgSite: #0a0808;
+	--bgSite: #0a0808 !important;
 	--buttonColor: #663ab7;
 	--cards: #0a0808;
 	--white: #ffffff;

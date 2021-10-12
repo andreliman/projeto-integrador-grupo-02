@@ -1,6 +1,6 @@
-.container{
+.container-lg{
   height: auto;
-  background-color:var(--bgSite);
+  background-color:var(--bgSite) !important;
 }
 /* Cabeçalho */
 
@@ -128,9 +128,9 @@
   ul.ver_amigos{
     list-style: none;
     display: flex;
-    margin: 10px 5px;
+    margin: 10px 10px;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content:flex-start;
     align-items: center;
   }
   .texto_amigos{

@@ -1,4 +1,4 @@
-.container {
+.container-lg {
     max-width: 1080px;
     width: 100%;
     margin: 0 auto;
@@ -59,6 +59,10 @@
     position: relative;
 }
 
+.main .forms .passwordConfirm{
+    position: relative;
+}
+
 .main .forms .password .fa-eye {
     position: absolute;
     top: 8px;
@@ -67,7 +71,19 @@
     color: var(--white);
 }
 
+.main .forms .passwordConfirm .fa-eye {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    color: var(--white);
+}
+
 .main .forms .password .fa-eye:active {
+    color: var(--black);
+}
+
+.main .forms .passwordConfirm .fa-eye:active {
     color: var(--black);
 }
 
@@ -119,6 +135,11 @@
     }
 
     .main .forms .password .fa-eye {
+        top: 12px;
+        right: 15px;
+    }
+
+    .main .forms .passwordConfirm .fa-eye {
         top: 12px;
         right: 15px;
     }

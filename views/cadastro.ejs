@@ -1,30 +1,38 @@
 <%- include('./partials/head')%>
 <link rel="stylesheet" href="/stylesheets/cadastro.css">
 <title><%= title %></title>
+<script defer src="/js/eyeClick.js"></script>
+<script defer src="/js/darkMode.js"></script>
+<script defer src="/js/cadastro.js"></script>
 </head>
-<body class="container">
+<body class="container-lg">
     <main class="main">
         <img src="/images/Logo1.png" alt="Logo Manimal">
         <div class="forms">
           <div>
             <form class="form" action="" method="POST">
               <div>
-                <input type="text" name="name" placeholder="Insira seu nome completo">
+                <input type="text" name="name" placeholder="Insira seu nome e sobrenome">
+                <span class="error-message"></span>
               </div>
               <div>
-                <input type="text" name="phone" placeholder="Tel. Ex: (11)9 9999-9999">
+                <input type="text" name="phone" placeholder="Tel. Ex: (11) 99999-9999" maxlength="15">
+                <span class="error-message"></span>
               </div>
               <div>
                 <input type="text" name="email" placeholder="Insira seu email">
+                <span class="error-message"></span>
               </div>              
               <div class="password">
                 <input id="password" type="password" name="password" placeholder="Insira sua senha" encripted>
                 <i class="fa fa-eye" onclick="eyeClick()" aria-hidden="true"></i>
               </div>
-              <div class="password">
+              <span class="error-message-password"></span>
+              <div class="passwordConfirm">
                 <input id="password2" type="password" name="passwordConfirm" placeholder="Confirme sua senha">
                 <i class="fa fa-eye 2" onclick="eyeClick2()" aria-hidden="true"></i>
               </div>
+              <span class="error-message-passwordConfirm"></span>
               <div class="submit">
                 <input class="submit" type="submit" name="submit" value="Registrar!">
               </div>
@@ -35,7 +43,5 @@
             <p>Já tem uma conta? <a href="/manimal">Faça login.</a></p>
         </div>
     </main>
-    <script src="/js/eyeClick.js"></script>
-    <script src="/js/darkMode.js"></script>
 </body>
 </html>

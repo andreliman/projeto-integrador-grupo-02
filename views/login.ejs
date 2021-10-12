@@ -1,34 +1,37 @@
-  <%- include('./partials/head')%>
-  <title><%= title %></title>
-  <link rel="stylesheet" href="/stylesheets/login.css">
+<%- include('./partials/head')%>
+<title><%= title %></title>
+<link rel="stylesheet" href="/stylesheets/login.css">
+<script defer src="/js/eyeClick.js"></script>
+<script defer src="/js/darkMode.js"></script>
+<script defer src="/js/login.js"></script>
 </head>
-<body class="container">
-    <main class="main">
-        <img src="/images/Logo1.png" alt="Logo Manimal">
-        <div class="forms">
-          <div>
-            <form class="form" action="" method="POST">
-              <div class="email">
-                <input type="email" name="email" id="email" placeholder="Insira seu email">
-              </div>
-              <div class="password">
-                <input type="password" name="password" id="password" placeholder="Senha" encripted>
-                <i class="fa fa-eye" onclick="eyeClick()" aria-hidden="true"></i>
-              </div>
-              <div class="submit">
-                <button type="submit">Entrar</button>
-              </div>
-            </form>
-          </div>
+<body class="container-lg">
+  <main class="main">
+      <img src="/images/Logo1.png" alt="Logo Manimal">
+      <div class="forms">
+        <div>
+          <form class="form" action="" method="POST">
+            <div class="email">
+              <input type="email" name="email" id="email" placeholder="Insira seu email">
+              <span class="error-message"></span>
+            </div>
+            <div class="password">
+              <input type="password" name="password" id="password" placeholder="Senha" encripted>
+              <i class="fa fa-eye" onclick="eyeClick()" aria-hidden="true"></i>
+            </div>
+            <span class="error-message-password"></span>
+            <div class="submit">
+              <button type="submit">Entrar</button>
+            </div>
+          </form>
         </div>
-        <div class="help">
-          <p>Esqueceu seus dados de login? <a href="/manimal/ajuda">Obtenha ajuda para entrar</a></p>
-        </div>
-        <div class="cadastro">
-            <p>Não tem uma conta? <a href="/manimal/register">Cadastre-se.</a></p>
-        </div>
-    </main>
-    <script src="/js/eyeClick.js"></script>
-    <script src="/js/darkMode.js"></script>
+      </div>
+      <div class="help">
+        <p>Esqueceu seus dados de login? <a href="/manimal/ajuda">Obtenha ajuda para entrar</a></p>
+      </div>
+      <div class="cadastro">
+          <p>Não tem uma conta? <a href="/manimal/register">Cadastre-se.</a></p>
+      </div>
+  </main>
 </body>
 </html>

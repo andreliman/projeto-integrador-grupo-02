@@ -112,12 +112,25 @@ body{
     padding: 0;
     border-radius: 5px;
 }
+
+.post__lista_icons {
+  margin: 10px 0 0 0;
+  padding: 0;
+}
 .post__lista_icons li{
     display: inline-block;
     margin-top: 5px;
-  
-    
+    justify-content: right;
+    padding-top: 0px;  
 }
+
+.post__lista_icons p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 0 5px 0;
+}
+
 .post__legenda{
     margin-top: 5px;
     background-color: var(--white);

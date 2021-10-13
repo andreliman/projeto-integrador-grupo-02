@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>
+    <script defer src="/js/darkMode.js"></script>
+    <script defer src="/js/like.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -64,7 +67,8 @@
                     <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
                   </div>
                   <ul class="post__lista_icons">
-                      <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+                      <li><i onclick=likePost(this) class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+                      <li><p>1 Like</p></li>
                   </ul>
                   <div class="post__legenda">
                       <p><%=post.post%></p>
@@ -74,7 +78,5 @@
         </section>  
       </main>
     </div>
-    <script src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>
-    <script src="/js/darkMode.js"></script>
   </body>
 </html>

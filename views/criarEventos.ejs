@@ -1,5 +1,21 @@
-<%- include('./partials/head')%>
-<link rel="stylesheet" href="/stylesheets/criarEventos.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <script defer src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/criarEventos.css">
+    <script defer src="/js/eventvalidations.js"></script>
 </head>
 <body class="body">
     <div class="container_eventos">
@@ -12,14 +28,14 @@
         </div>
         <div class="info__wrapper">
           <div class="box__nome__aniversario">
-            <span class="info"><%= profile.pet_name %></span>
-            <span class="info"><%= profile.birthday %></span>
+            <span class="info"><%=profile.pet_name%></span>
+            
           </div>  
         </div>
         
       </section>
     <div class="info__loc">
-        <i class="fa fa-map-marker info__localizacao" aria-hidden="true"><span class="info__localizacao__span">São Paulo - SP</span></i>
+        <i class="fa fa-map-marker info__localizacao" aria-hidden="true"><span class="info__localizacao__span"><%=profile.local%></span></i>
     </div>
 
     <section class="criar-evento">
@@ -27,34 +43,41 @@
         <div class="nome-evento">
           <label for="eventName" class="label__form" >Nome do Evento</label>
           <input type="text" class="form__text" name="name" id="eventName" >
+          <span class="error-message"></span>
         </div>
         <div class="data-e-hora">
           <div class="data-evento">
             <label for="eventDate" class="label_form">Data Inicial</label>
             <br>
             <input class="campo_data_hora" type="date" name="beginning_date">
+            <span class="error-message"></span>
             <br>
             <label for="eventDate" class="label_form">Data Final</label>
             <br>
             <input class="campo_data_hora" type="date" name="ends_date">
+            <span class="error-message"></span>
           </div>
           <div class="hora-evento">
             <label for="eventHour" class="label_form">Hora Inicial</label>
             <br>
             <input class="campo_data_hora" type="time" name="hour">
+            <span class="error-message"></span>
             <br>
             <label for="eventDate" class="label_form">Hora Final</label>
             <br>
             <input class="campo_data_hora" type="time" name="finish_hour">
+            <span class="error-message"></span>
           </div>
         </div>
         <div class="local-evento-convite">
           <label for="eventAdress" class="label__form" >Local do Evento</label>
           <input type="text" class="form__text" name="local" id="eventAdress" >
+          <span class="error-message"></span>
         </div>
         <div class="descricao-evento">
           <label for="eventDescrition" class="label__form" >Descricao do Evento</label>
           <textarea type="text" class="form__text" name="description" id="eventDescription" style="height: 200px;"></textarea>
+          <span class="error-message"></span>
         </div>
 
         <label for="eventPhoto" class="label_form">Adicionar Foto do Evento</label>

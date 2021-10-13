@@ -1,13 +1,42 @@
 const db = require('../database/models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-exports.listAll = () => db.Breed.findAll({ include: "kind" }).then((rows) => rows.map((row) => row.dataValues));
 
-exports.findProfile = (id) => {
+exports.listAllKinds = () => db.Kind.findAll().then((rows) => rows.map((row) => row.dataValues));
+exports.listAllBreeds = () => db.Breed.findAll().then((rows) => rows.map((row) => row.dataValues));
 
+exports.findProfiles = (id) => {
     const profile = db.Profile.findAll({ where: { user_id: id } }).then((rows) => rows.map((row) => row.dataValues));
     return profile;
 }
+
+exports.findProfile = (id) => {
+    const profile = db.Profile.findByPk(id);
+    return profile;
+}
+
+exports.createProfile = ({ user_id, breed_id, pet_name, birthday, genre, local, nickname, bio, photo_profile_path, photo_id, night_mode }) => {
+    const newProfile = db.Profile.create({ user_id, breed_id, pet_name, birthday, genre, local, nickname, bio, photo_profile_path, photo_id, night_mode });
+    return newProfile;
+};
+
+exports.editProfile = (id, { user_id, breed_id, pet_name, birthday, genre, local, nickname, bio, photo_profile_path, photo_id, night_mode }) => {
+    return db.Profile.update({
+        user_id,
+        breed_id,
+        pet_name,
+        birthday,
+        genre,
+        local,
+        nickname,
+        bio,
+        photo_profile_path,
+        photo_id,
+        night_mode
+    }, { where: { id } });
+}
+exports.deleteProfile = (id) => db.Profile.destroy({ where: { id } });
+
 exports.findUserProfile = (profile_id) => {
 
     const profile = db.Profile.findOne({ where: { 
@@ -27,7 +56,3 @@ exports.findAnimalByName = ({key}) => {
             {[Op.like]:`%${key}%`}}}).then((rows) => rows.map((row) => row.dataValues));
     return petName;
 }
-       
-            
-
-        

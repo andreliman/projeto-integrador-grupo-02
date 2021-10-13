@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/stylesheets/reset.css">
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/album.css">
+    <script defer src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>
     <title>Meu Album</title>
 </head>
 <body>
@@ -22,52 +23,12 @@
         <main class="main">
             <div class="mural">
                 <div class="album">
-                    <img src="/images/1 (93).jpg" alt="" class="album__capa">
-                    <span class="album__nome">Pego fazendo arte!</span>
-                </div>
-                <div class="album">
-                    <img src="/images/1 (181).jpg" alt="" class="album__capa">
-                    <span class="album__nome">Dia da Preguiça</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (3).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Os do Rock eu sei quem são!</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (4).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Deu ruim, família</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (5).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Quero Biscoito</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (6).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Stalone</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (7).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Colo da Dinda</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (8).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Biscoitando outra vez</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (9).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Acabei de Chegar do Pet</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (10).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Biscoitando Pela Terceira Vez!</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (11).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Dollynho Bebê</span>
-                </div>
-                <div class="album">
-                    <img src="/images/teste (12).jpeg" alt="" class="album__capa">
-                    <span class="album__nome">Saudades mamaco!</span>
+                    <% showAlbums.forEach(album=>{ %>
+                    <a href="/album/detalhe/<%=album.id%>">
+                    <img src="<%=album.album.photo_path%>" alt="" class="album__capa">
+                    <span class="album__nome"><%=album.description%></span>
+                    <% }) %>
+                    </a>
                 </div>
             </div>
         </main>

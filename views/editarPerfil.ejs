@@ -1,42 +1,73 @@
 <%- include('./partials/head')%>
 <link rel="stylesheet" href="/stylesheets/editarPerfil.css">
+<script src="/js/darkMode.js"></script>
 </head>
-<body class=".body">
-    <div class="container">
-        <%- include('./partials/somenteHeader')%>
-    <div class="container__total">
-    <section class="section__info">
-        <div class="info__foto">
-            <img src=<%=searchProfile.photo_profile_path%> alt="" class="info__foto__perfil">
+<body class="container-lg">
+    <main class="main">
+        <div class="header">
+          <p>Bem vindo <span><%=name%></span>! Edite o perfil:</p>
+          <div class="logout">
+              <a href="/manimal/profile/logout" title="logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+          </div>
         </div>
-        <div class="info__wrapper">
-        <div class="box__nome__aniversario">
-            <span class="info"><%=searchProfile.pet_name%></span>
-            <span class="info"><%=searchProfile.birthday%></span>
+        <div class="forms">
+          <div>
+            <form class="form" action="/manimal/profile/edit/<%= profile.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div class="fields">
+              <label for="photo" title="Alterar foto"><img src="<%=profile.photo_profile_path%>" alt="Foto perfil"></label>
+              <input class="form-control" id="photo" type="file" name="photo" >
+            </div>
+            <div class="fields">
+              <input type="text" name="pet_name" placeholder="<%=profile.pet_name%>">
+            </div>
+            <div class="fields">
+              <input type="text" name="nickname" placeholder="<%=profile.nickname%>">
+            </div>
+            <div class="fields">
+              <select name="kind_id">
+                <option value="" selected disabled hidden>Espécie</option>
+                <% kinds.forEach(kind => { %>
+                  <option id="kind" value="<%= kind.id %>">
+                  <%= kind.kind %>
+                  </option>
+                <% }) %>
+              </select>
+            </div>
+            <div class="fields">
+              <select name="breed_id">
+                <option value="" selected disabled hidden>Raça</option>
+                <% breeds.forEach(breed => { %>
+                  <option id="breed" value="<%= breed.id %>">
+                    <%= breed.name %>
+                  </option>
+                <% }) %>
+            </select>
+            </div>
+            <div class="fields">
+              <select name="genre">
+                <option value="" selected disabled hidden><%=profile.genre%></option>
+                <option value="Macho">Macho</option>
+                <option value="Fêmea">Fêmea</option>
+              </select>
+            </div>
+            <div class="fields">
+              <input type="date" name="birthday" placeholder="<%=profile.bithday%>">
+            </div>
+            <div class="fields">
+              <input type="text" name="local" placeholder="<%=profile.local%>">
+            </div>
+            <div class="textarea">
+              <textarea placeholder="<%=profile.bio%>" name="bio" cols="50" rows="6"></textarea>
+            </div>
+            <div class="submit">
+              <input type="submit" name="submit" value="Prosseguir">
+            </div>
+            </form>
+          </div>
         </div>
-        <div class="box__especie__raca">
-            <span class="info"><%=searchProfile.breed_id%></span>
-            <span class="info"><%=searchProfile.breed_id%></span>
+        <div class="profile">
+            <p>Voltar a tela de <a href="/manimal/profile/select">Seleção de perfil.</a></p>
         </div>
-     
-        </div>
-        
-    </section>
-    <div class="info__loc">
-        <i class="fa fa-map-marker info__localizacao" aria-hidden="true"><span class="info__localizacao__span"><%=searchProfile.local%></span></i>
-    </div>
-    <form action="" class="formulario" method="POST">
-        <label for="petName" class="label__form" >Nome do pet</label>
-        <input type="text" class="form__text" name="Name" id="petName" value='<%=searchProfile.pet_name%>' >
-        <label for="subtitulo" class="label__form">Subtítulo</label>
-        <input type="text" class="form__text" name="subtitulo" id="subtitulo" value='<%=searchProfile.nickname%>'>
-        <label for="genero" class="label__form">Gênero</label>
-        <input type="text" class="form__text" name="genero" id="genero" value='<%=searchProfile.genre%>'>
-        <label for="bio" class="label__form" >Biografia</label>
-        <textarea name="" id="" cols="30" rows="10 " class="form__textarea" nome="bio" id="bio" ><%=searchProfile.bio%></textarea>
-        <button type="submit" class="form__btn">Enviar</button>
-    </form>
-    </div>
-    <script src="/js/darkMode.js"></script>
-</div>
+    </main>
 </body>
+</html>

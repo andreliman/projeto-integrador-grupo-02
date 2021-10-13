@@ -59,13 +59,11 @@ module.exports = (sequelize, DataTypes)=>{
           foreignKey:'profile_id',
           as:'events',          
         });
-        Profile.belongsToMany(models.Post,{
-          through:'profile_has_posts',
+        Profile.hasMany(models.Post,{
           as:'posts',
           foreignKey:'profile_id',
         });
-        Profile.belongsToMany(models.Friend, {
-          through:'profile_has_friends',
+        Profile.hasMany(models.Friend, {
           foreignKey:'profile_id',
           as:'friends'
         });

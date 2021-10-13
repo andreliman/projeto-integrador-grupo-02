@@ -14,11 +14,13 @@
     <link rel="stylesheet" href="/stylesheets/reset.css">
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/disposicaoEventos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Eventos Criados</title>
 </head>
 <body>
-    <div class="container">
-        <%- include('./partials/headerEventos')%>
+    <%- include('./partials/headerEventos')%>
+    <div class="container-lg">
+        
         <main class="main">
             <div class="info__foto">
                 <img src= "<%= profile.photo_profile_path %>" alt="" class="foto__perfil">
@@ -26,7 +28,7 @@
             <div class="info__wrapper">
                 <div class="box__nome__aniversario">
                     <span class="info"><%= profile.pet_name %></span>
-                    <span class="info"><%= profile.birthday %></span>
+                    
                 </div>  
             </div>
             <div class="eventos">
@@ -34,8 +36,9 @@
                 <a href="/manimal/event/list" class="eventos-outros">Eventos Disponíveis</a>
             </div>
             <div class="mural">
+                <% eventosCriadosPorProfile.forEach(eventos=>{ %>
                 <div class="album-evento">
-                    <% eventosCriadosPorProfile.forEach(eventos=>{ %>
+                    
                     <img src="<%= eventos.photo_event_path %>" alt="" class="album__capa">
                     <ul class="post__lista_icons">
                         <li><i class="fa fa-paw evento_icon" aria-hidden="true"></i></li>
@@ -51,9 +54,9 @@
                         </div>
                             <button type="submit"class="principal__button">Convidar</button>
                     </section>
-                    <% }) %>
+                    
                 </div>
-                
+                <% }) %>
             </div>
 
         </main>

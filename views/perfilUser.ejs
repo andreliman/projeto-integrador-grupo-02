@@ -14,23 +14,26 @@
     <link rel="stylesheet" href="/stylesheets/reset.css" />
     <link rel="stylesheet" href="/stylesheets/header.css" />
     <link rel="stylesheet" href="/stylesheets/perfilUser.css" />
+    <link rel="stylesheet" href="/stylesheets/padrao.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <title>Perfil User</title>
   </head>
   <body>
-    <div class="container">
-      <%- include('./partials/somenteHeader')%>
+    <%- include('./partials/somenteHeader')%>
+    <div class="container-lg">
       <main>
       <div class="cabecalho">
           <div class="menu_cabecalho_02">
-                <img src=<%=searchProfile.photo_profile_path%> alt="" class="img_cabecalho">
+                <img src="<%=searchProfile.photo_profile_path%>" alt="" class="img_cabecalho">
                 <h1><%=searchProfile.pet_name%></h1>  
-                <a href="/manimal/editar/perfil/<%=searchProfile.id%>"><button class="btn"> Editar Perfil </button></a>
+                <a href="/manimal/profile/edit/<%=searchProfile.id%>"><button class="btn"> Editar Perfil </button></a>
          </div>
           <div class="cabecalho_1">
             <div class="menu_cabecalho_01">
-              <h2> 2 Publicações</h2>
-              <h2> 120  Seguidores</h2>
-              <h2> 120  Seguindo</h2>
+              <h2><%=countPosts.count%> Publicações</h2>
+              <h2><%=seguidores.count%> Seguidores</h2>
+              <h2><%=seguindo.count%> Seguindo</h2>
             </div>
             <div class="menu_cabecalho_03">
                 <h2><i class="fa fa-home inco_casa" aria-hidden="true"></i> Mora em<%=searchProfile.local%>, Brazil</h2>
@@ -42,87 +45,46 @@
        <section class="text_amigo">
             <h5 class="texto_amigos">Amigos</h5>
             <ul class="ver_amigos">
+                <% amigos.forEach(amigo=>{ %>
                 <li>
-                    <img src="/images/perfi 1.jpg" alt="" class="img_amigo">
+                    <img src="<%=amigo.photo_profile_path%>" alt="" class="img_amigo">
                 </li>
-                <li>
-                    <img src="/images/gato1.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/praia.png" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil3.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil4.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil5.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil6.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil7.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil8.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil9.jpg" alt="" class="img_amigo">
-                </li>
-                <li>
-                    <img src="/images/perfil10.jpg" alt="" class="img_amigo">
-                </li>
-                
-                <li>
-                    <i class="fas fa-plus-circle img_mais"></i>
-                </li>
-                
+                <% }) %>
             </ul>
-
         </section>
     
         <section class="text_publicacao">
             <h5 class="texto_publicacao">Publicação</h5>
             <ul class="add_publicacao">
-                    <img src=<%=searchProfile.photo_profile_path%> alt="" class="img_amigo">
+                    <img src="<%=searchProfile.photo_profile_path%>" alt="" class="img_amigo">
                     <textarea name="" id="" cols="30" rows="10" placeholder="No que você está pensando?"></textarea>
                     <ul class="icons_wrapper">
                         <li>
                             <i class="fa fa-camera img_fotografia" aria-hidden="true"></i>
                         </li>
                         <li>
-                            <i class="fa fa-map-marker img_localizacao" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                            <i class="fas fa-location-arrow img_enviar"></i>
+                            <i class="fa fa-paper-plane img_enviar"></i>
                         </li>
                     </ul>
             </ul>
-
         </section>
+        
         <section class="timeline">
-            <% posts.forEach(post=>{ %>
-                <div class="postagens">
-                    <div class="post__wrapper">
-                      
-                      <div class="post__foto">
-                        <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
-                      </div>
-                      <ul class="post__lista_icons">
-                          <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
-                          <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
-                      </ul>
-                      <div class="post__legenda">
-                          <p><%=post.post%></p>
-                      </div>
-                      <% }) %>
-                    </div>
-            
-        </section>  
+            <div class="postagens">
+                <div class="post__wrapper">
+                  <% posts.forEach(post=>{ %>
+                  <div class="post__foto">
+                    <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
+                  </div>
+                  <ul class="post__lista_icons">
+                      <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+                  </ul>
+                  <div class="post__legenda">
+                      <p><%=post.post%></p>
+                  </div>
+                  <% }) %>
+                </div>
+        </section>   
       </main>
     </div>
     <script src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>

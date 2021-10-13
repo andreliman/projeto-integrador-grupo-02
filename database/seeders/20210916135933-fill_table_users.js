@@ -11,7 +11,7 @@ module.exports = {
           email: "neto@email.com",
           creation_date: "",
           password:
-            "$2a$10$kUNtnqT9ZaLt7r9WrvQO5ueU2pa/wJ5tOL7ccPijbY0ZHpIoQFdkS",
+            "$2a$10$g0CwvLg.6VOCz24UX8GSdOJe66bBAWUdyi9phUBT/wmRbe3XoPORG",
         },
         {
           name: "André Nunes",
@@ -19,7 +19,7 @@ module.exports = {
           email: "andre@email.com",
           creation_date: "",
           password:
-            "$2a$10$FK88sOq7B3VJReTJnls6/.4hxnxPrN4X2SSGJuCsxHemR8O92yvhS",
+            "$2a$10$Dj2HshlXp59X5Us9IHRdxeYoYFRaduVVIFPnsxzZIHywtdpA/Trtq",
         }
       ],
       {}

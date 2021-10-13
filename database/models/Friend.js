@@ -3,21 +3,18 @@ module.exports = (sequelize, DataTypes)=>{
     const Friend = sequelize.define('Friend',{
         
         profile_id:DataTypes.INTEGER,
-        status:{
-            type:DataTypes.STRING,
-            allowNull: false
-        }
+        friend_id: DataTypes.INTEGER,
+        status: DataTypes.STRING,
     }, {
         tableName:'friends'
     })
    
     Friend.associate = (models)=>{
-        Friend.belongsToMany(models.Profile, {
-            through:'profile_has_friends',
-            foreignKey:'friend_id',
+        Friend.belongsTo(models.Profile, {
+            foreignKey:'profile_id',
             as:'profiles'
         })
-      }
+      };
      
     return Friend
 }

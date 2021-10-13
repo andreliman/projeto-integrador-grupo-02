@@ -5,6 +5,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const logger = require('morgan');
+const methodOverride = require("method-override");
 const manimalRouter = require('./routes/manimal');
 const registerRouter = require('./routes/registerRouter')
 const profileRouter = require('./routes/profileRouter');
@@ -24,6 +25,7 @@ app.use(session({
   saveUninitialized: true 
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride("_method"));
 app.use('/manimal', manimalRouter);
 app.use('/manimal/register', registerRouter);
 app.use('/manimal/profile', profileRouter);

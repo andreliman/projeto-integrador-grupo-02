@@ -1,122 +1,204 @@
-
-.container{
-    height: 100%;
-    background-color:var(--bgSite);
+.container-lg {
+    max-width: 1080px;
     width: 100%;
-}
-.container__total{
-    background-color:var(--bgSite);
-    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.section__info{
-    margin-top: 20px;
+.main {
+    padding: 0;
+    padding-bottom: 15px;
+    margin: 0 8px;
+}
+.main .header {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px 20px;
-    justify-content: flex-start;
+    justify-content:space-between;
     align-items: center;
 }
-
-.info__foto__perfil{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+  
+.main .header p {
+    font-size: 12px;
+    font-style: italic;
 }
-.info__wrapper{
-    display: flex;
-    flex-grow: 2;
-    justify-content: space-between;
-}
-.box__nome__aniversario, .box__especie__raca{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.info{
-    font-size: 20px;
+  
+.main .header span {
+    color: var(--buttonColor);
     font-weight: bold;
-    padding: 0 5px;
 }
-.info__loc{
 
-    margin-bottom: 20px;
+
+.main .logout {
+    height: 50px;
+    margin-top: 5px;
 }
-.info__localizacao{
-    position: relative;
-    left: 50px;
-    font-size: 20px;
-    color: var(--localizacao);
+  
+.main .logout a {
+    margin-top: 5px;
+    height: 50px;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--buttonColor);
 }
-.info__localizacao__span{
-color: var(--text);
-padding: 0 2px;
+  
+.main .logout .fa-sign-out {
+    font-size: 35px;
 }
-.formulario{
+
+.main .forms {
     display: flex;
-    flex-direction: column;
-    padding: 5px 10px;
-    border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+}
+
+.main .forms form{
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.main .forms .form-control{
+    display: none;
+}
+
+.main .forms .textarea{
+    max-width: 300px;
     width: 100%;
 }
-.label__form{
-    margin-bottom: 5px;
-    color:var(--text);
-    font-size: 18px;
-    font-weight: bold;
-}
-.form__text, .form__email, .form__tel, .form__textarea{
-    margin-bottom: 10px;
+
+.main .forms .textarea textarea{
+    margin: 10px 0;
+    max-width: 300px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--input-forms);
-    color:var(--text);
-    font-size: 16px;
-    border-radius: 10px;
-    border: var(--borda);
-    outline: none; 
-}
-.form__textarea{
-    resize: none;
-    
-}
-.form__btn{
-    margin: auto;
-    width: 100px;
-    border-radius: 20px;
-    background-color: var(--buttonColor);
-    border: var(--borda);
+    border: var(--borda-forms);
+    border-radius: 5.5px;
     color: var(--white);
-    font-weight: bold;
-    font-size: 18px;
 }
-@media(min-width:1080px){
-    .container__total{
-        padding: 0 20px;
-        max-width: 800px;
-        margin: auto;
-       
+
+.main .forms .fields {
+    margin-bottom: 10px;
+    margin-left: 8px;
+    max-width: 250px;
+    width: 100%;
+}
+
+.main .forms img {
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    cursor: pointer;  
+}
+
+.main .forms input, select {
+    height: 30px;
+    width: 96%;
+    padding: 0;
+    padding-left: 8px;
+    background-color: var(--input-forms);
+    border: var(--borda-forms);
+    border-radius: 5.5px;
+    color: var(--white);
+    font-size: 14px;
+}
+
+.main .forms input::-webkit-input-placeholder {
+    color:var(--white);
+    font: 400 14px 'Roboto';
+}
+
+.main .forms select{
+    max-width: 250px;
+    width: 100%;
+    cursor:pointer;
+}
+
+.main .forms .submit {
+    margin: 15px 0;
+}
+
+.main .forms .submit input{
+    height: 40px;
+    width: 150px;
+    background-color: var(--buttonColor);
+    box-shadow: var(--box-form);
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.main .profile {
+    margin-top: 15px;
+}
+
+.main .profile p {
+    font-size: 13px;
+}
+
+.main .profile a {
+    font-style: italic;
+    color: var(--link);
+    text-decoration: none;
+}
+
+/*responsividade*/
+
+@media(min-width:1080px) {
+    .main .forms form{
+        max-width: 500px;    
     }
-    .form__text, .form__email, .form__tel, .form__textarea{
-       
-        font-size: 25px;
-      
+    .main .forms .fields {
+        max-width: 300px;
     }
-    .form__btn{
-        width: 200px;
-        font-size: 25px;
+
+    .main .forms input, select {
+        height: 40px;
+    }
+
+    .main .forms select {
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .main .forms img {
+        height: 180px;
+        width: 180px;
+    }
+
+    .main .forms .submit {
+        margin-top: 20px;
         margin-bottom: 25px;
     }
 
-}
-@media(min-width:1500px){
-    .container__total{
-        padding: 0 20px;
-        max-width: 1200px;
-        margin: auto;
-       
+    .main .profile {
+        font-size: 15px;
     }
-    .form__btn{
-        width: 200px;
-        font-size: 40px;
-        margin-bottom: 25px;
+
+    .main .forms .textarea{
+        max-width: 500px;
+    }
+
+    .main .forms .textarea textarea{
+        max-width: 400px;
+    }
+    .main .logout {
+        font-size: 14px;
+    }
+    
+    .main .header p {
+        font-size: 14px;
+    }
+    
+    .main .logout .fa-sign-out {
+        font-size: 50px;
     }
 }

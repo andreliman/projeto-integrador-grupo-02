@@ -1,4 +1,4 @@
-.container {
+.container-lg {
     max-width: 1080px;
     width: 100%;
     margin: 0 auto;
@@ -15,18 +15,6 @@
     max-width: 700px;
     width: 100%;
     margin-top: 30px;
-}
-
-.main .languageForm select {
-    height: 15px;
-    width: 150px;
-    font-size: 11px;
-    font-family: 'Roboto';
-    color: var(--text);
-    background-color:var(--bgSite);
-    border: none;
-    padding: 0;
-    text-align-last: center;
 }
 
 .main .forms {
@@ -66,7 +54,7 @@
     position: relative;
 }
 
-.main .forms .password .fa-eye-slash {
+.main .forms .password .fa-eye {
     position: absolute;
     top: 12px;
     right: 15px;
@@ -74,7 +62,7 @@
     color: var(--white);
 }
 
-.main .forms .password .fa-eye-slash:active {
+.main .forms .password .fa-eye:active {
     color: var(--black);
 }
 
@@ -139,7 +127,7 @@
         font-size: 14px;
     }
 
-    .main .forms .password .fa-eye-slash {
+    .main .forms .password .fa-eye {
         top: 17px;
         right: 15px;
     }

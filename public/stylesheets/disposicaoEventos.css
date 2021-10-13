@@ -1,5 +1,6 @@
 body{
     position: relative;
+    background-color: var(--bgSite) !important;
 }
 .header{
     position: sticky;

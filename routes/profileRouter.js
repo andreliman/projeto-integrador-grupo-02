@@ -51,7 +51,7 @@ router.get('/edit/:id', verificarUserLogado, async (req, res) => {
     res.render('editarPerfil', {profile, name, breeds, kinds});
 });
 
-router.put("/edit/:id", multer(multerConfig).single('photo'), async function (req, res) {
+router.put("/edit/:id", verificarUserLogado, multer(multerConfig).single('photo'), async function (req, res) {
     const { id } = req.params;
     const { key:photo_profile_path = '' } = req.file;
     const { breed_id, pet_name, birthday, genre, local, nickname, bio } = req.body;

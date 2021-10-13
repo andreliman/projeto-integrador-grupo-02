@@ -33,7 +33,8 @@
             <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
           </div>
           <ul class="post__lista_icons">
-              <li><i class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+              <li><i onclick=likePost(this) class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
+              <p>1 Like</p>
           </ul>
           <div class="post__legenda">
               <p><%=post.post%></p>
@@ -48,6 +49,6 @@
 </main>
 </div>
 </div>
-<script src="/js/darkMode.js"></script>
+<script defer src="/js/darkMode.js"></script>
 </body>
 </html>

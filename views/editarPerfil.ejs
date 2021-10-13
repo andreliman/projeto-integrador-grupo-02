@@ -1,6 +1,8 @@
 <%- include('./partials/head')%>
 <link rel="stylesheet" href="/stylesheets/editarPerfil.css">
-<script src="/js/darkMode.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script defer src="/js/darkMode.js"></script>
+<script defer src="/js/perfil.js"></script>
 </head>
 <body class="container-lg">
     <main class="main">
@@ -15,16 +17,19 @@
             <form class="form" action="/manimal/profile/edit/<%= profile.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="fields">
               <label for="photo" title="Alterar foto"><img src="<%=profile.photo_profile_path%>" alt="Foto perfil"></label>
+              <span class="error-message"></span>
               <input class="form-control" id="photo" type="file" name="photo" >
             </div>
             <div class="fields">
-              <input type="text" name="pet_name" placeholder="<%=profile.pet_name%>">
+              <input type="text" name="pet_name" value="<%=profile.pet_name%>">
+              <span class="error-message"></span>
             </div>
             <div class="fields">
-              <input type="text" name="nickname" placeholder="<%=profile.nickname%>">
+              <input type="text" name="nickname" value="<%=profile.nickname%>">
+              <span class="error-message"></span>
             </div>
             <div class="fields">
-              <select name="kind_id">
+              <select class="kind" name="kind_id">
                 <option value="" selected disabled hidden>Espécie</option>
                 <% kinds.forEach(kind => { %>
                   <option id="kind" value="<%= kind.id %>">
@@ -32,32 +37,40 @@
                   </option>
                 <% }) %>
               </select>
+              <span class="error-message"></span>
             </div>
             <div class="fields">
-              <select name="breed_id">
+              <select class="breed" name="breed_id">
                 <option value="" selected disabled hidden>Raça</option>
                 <% breeds.forEach(breed => { %>
                   <option id="breed" value="<%= breed.id %>">
                     <%= breed.name %>
                   </option>
                 <% }) %>
-            </select>
+              </select>
+              <span class="error-message"></span>
             </div>
             <div class="fields">
-              <select name="genre">
-                <option value="" selected disabled hidden><%=profile.genre%></option>
+              <select class="genre" name="genre">
+                <option value="<%=profile.genre%>" selected disabled><%=profile.genre%></option>
                 <option value="Macho">Macho</option>
                 <option value="Fêmea">Fêmea</option>
               </select>
+              <span class="error-message"></span>
             </div>
             <div class="fields">
-              <input type="date" name="birthday" placeholder="<%=profile.bithday%>">
+              <label class="birthday" for="birthday">Data de nascimento:</label>
+              <input type="date" name="birthday" value="<%=profile.bithday%>">
+              <span class="error-message"></span>
             </div>
             <div class="fields">
-              <input type="text" name="local" placeholder="<%=profile.local%>">
+              <input type="text" name="local" value="<%=profile.local%>">
+              <span class="error-message"></span>
             </div>
             <div class="textarea">
-              <textarea placeholder="<%=profile.bio%>" name="bio" cols="50" rows="6"></textarea>
+              <textarea name="bio" cols="50" rows="6" maxlength="255"><%=profile.bio%></textarea>
+              <span class="char-count">Restam <%=255 - profile.bio.length%> caracteres</span>
+              <span class="error-message"></span>
             </div>
             <div class="submit">
               <input type="submit" name="submit" value="Prosseguir">

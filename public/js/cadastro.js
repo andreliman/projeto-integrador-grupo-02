@@ -29,17 +29,13 @@ function validateUserName() {
   }
 
   nameInput.style.borderColor = "green";
-  span.innerText = "O nome é válido!";
-  span.style.cssText =
-    "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:green";
-  nameInput.insertAdjacentElement("afterend", span);
   return true;
 }
 
 nameInput.onblur = validateUserName;
 
 //Validação Phone
-function validadetePhoneNumber() {
+function validatePhoneNumber() {
   const isPhoneNumberWithinLimit = phone.value.length >= 14;
 
   const span = phone.nextElementSibling;
@@ -56,10 +52,6 @@ function validadetePhoneNumber() {
   }
 
   phone.style.borderColor = "green";
-  span.innerText = "Telefone válido!";
-  span.style.cssText =
-    "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:green";
-  phone.insertAdjacentElement("afterend", span);
   return true;
 }
 
@@ -87,10 +79,10 @@ window.onload = function () {
   };
 };
 
-phone.onblur = validadetePhoneNumber;
+phone.onblur = validatePhoneNumber;
 
 //Validação email
-async function validateEmail() {
+function validateEmail() {
   const user = email.value.substring(0, email.value.indexOf("@"));
   const domain = email.value.substring(
     email.value.indexOf("@") + 1,
@@ -113,10 +105,6 @@ async function validateEmail() {
     domain.lastIndexOf(".") < domain.length - 1
   ) {
     email.style.borderColor = "green";
-    span.innerText = "O email é válido!";
-    span.style.cssText =
-      "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:green";
-    email.insertAdjacentElement("afterend", span);
     return true;
   } else {
     email.style.borderColor = "red";
@@ -148,10 +136,6 @@ function validatePassword() {
     return false;
   } else {
     password.style.borderColor = "green";
-    span.innerText = "A senha é válida!";
-    span.style.cssText =
-      "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:green";
-    divPassword.insertAdjacentElement("afterend", span);
     return true;
   }
 }
@@ -174,10 +158,6 @@ function validatePasswordConfirm() {
     return false;
   } else {
     passwordConfirm.style.borderColor = "green";
-    span.innerText = "As senhas conferem!";
-    span.style.cssText =
-      "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:green";
-    divPasswordConfirm.insertAdjacentElement("afterend", span);
     return true;
   }
 }

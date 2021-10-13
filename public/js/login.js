@@ -20,9 +20,6 @@ function validateEmail() {
     (domain.indexOf(".") >=1)&&
     (domain.lastIndexOf(".") < domain.length - 1)) {
     email.style.borderColor = "green";
-    span.innerText = 'O email é válido!';
-    span.style.cssText = "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:green"
-    email.insertAdjacentElement('afterend', span);
     return true;
 } else {
     email.style.borderColor = "red";
@@ -52,10 +49,6 @@ function validatePassword() {
     return false;
   } else {
     password.style.borderColor = "green";
-    span.innerText = "A senha é válida!";
-    span.style.cssText =
-      "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:green";
-    divPassword.insertAdjacentElement("afterend", span);
     return true;
   }
 }

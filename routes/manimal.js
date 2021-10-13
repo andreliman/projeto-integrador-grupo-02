@@ -29,7 +29,7 @@ router.get('/inicial/:id', verificarUserLogado, async function(req, res, next) {
 });
 
 
-router.post('/posts/', multer(multerConfig).single('photo'), async function(req, res, next) {
+router.post('/posts/', verificarUserLogado, multer(multerConfig).single('photo'), async function(req, res, next) {
   const {profile} = req.session
   // const{location:photo_post_path = '', key:photo_id = ''} = req.file
   const { key:photo_post_path = '' } = req.file;

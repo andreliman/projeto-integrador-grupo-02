@@ -90,6 +90,26 @@
     width: 100%;
 }
 
+.main .forms .char-count {
+    display: block;
+    text-align: left;
+    color: var(--balck);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    margin: 0 0 9px 50px;
+}
+
+
+.main .forms .birthday {
+    display: block;
+    text-align: left;
+    color: var(--destaque);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 9px 4px;
+}
+
 .main .forms img {
     border-radius: 100%;
     height: 100px;

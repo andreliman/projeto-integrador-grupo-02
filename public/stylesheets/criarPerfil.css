@@ -73,7 +73,7 @@
 }
 
 .main .forms .textarea textarea{
-    margin: 10px 0;
+    margin: 10px 0 5px 0;
     max-width: 300px;
     width: 100%;
     font-family: 'Roboto', sans-serif;
@@ -88,6 +88,25 @@
     margin-left: 8px;
     max-width: 250px;
     width: 100%;
+}
+
+.main .forms .char-count {
+    display: block;
+    text-align: left;
+    color: var(--balck);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    margin: 0 0 9px 50px;
+}
+
+.main .forms .birthday {
+    display: block;
+    text-align: left;
+    color: var(--destaque);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 9px 4px;
 }
 
 .main .forms .fa-user-plus {

@@ -67,8 +67,10 @@
                     <img class="post__foto" src="<%=post.photo_post_path%>" alt="">
                   </div>
                   <ul class="post__lista_icons">
-                      <li><i onclick=likePost(this) class="fa fa-paw menu__icon" aria-hidden="true"></i></li>
-                      <li><p>1 Like</p></li>
+                      <li>
+                        <i onclick=likePost(this) class="fa fa-paw menu__icon" aria-hidden="true"></i>
+                        <p>0 Likes</p>
+                      </li>
                   </ul>
                   <div class="post__legenda">
                       <p><%=post.post%></p>

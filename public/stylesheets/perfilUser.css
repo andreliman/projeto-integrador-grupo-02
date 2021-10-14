@@ -261,12 +261,19 @@ ul.ver_timeline li{
 }
 
 ul.post__lista_icons li{
-  display: inline-block;
-  margin-top: 10px;
+  display:inline-flex;
+  margin-top: 5px;
   justify-content: right;
   padding-top: 0px;
-  
 }
+
+.post__lista_icons li p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 20px 0 0 0;
+}
+
 .post__wrapper{
   background-color: var(--bgSite);
   border-radius: 5px;

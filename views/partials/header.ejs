@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/stylesheets/padrao.css">
     <script defer src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>
     <script defer src="/js/like.js"></script>
+    <script defer src="/js/weather.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Página Padrão</title>
   </head>
@@ -23,6 +24,13 @@
       <header class="header">
         <nav class="nav">
           <a href="/manimal/inicial/<%=searchProfile.id%>"><div class="nav__logo"></div></a>
+          <div class="nav__city__temp">
+            <span class="nav__city"><%=searchProfile.local%></span>
+            <div class="nav__temp">
+              <span class="nav__temp_max">máx: 35°C </span>
+              <span class="nav__temp_min">min: 17°C</span>
+            </div>
+          </div>
           <form  class='pesquisar' action="/manimal/search" method="GET" >
             <input type="search" name="key" id="key">
             <button type="submit"><i class="fa fa-search menu__icon" aria-hidden="true"></i></button>

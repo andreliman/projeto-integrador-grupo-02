@@ -195,17 +195,17 @@ window.addEventListener("load", function () {
       alert(`Preencha corretamente o campo APELIDO`);
     }  
 
-    if (kind.option.value == "") {
+    if (kind.options[kind.selectedIndex].value == "") {
       event.preventDefault();
       alert(`O campo ESPÉCIE deve ser preenchido!`);
     }
 
-    if (breed.option.value == "") {
+    if (breed.options[breed.selectedIndex].value == "") {
         event.preventDefault();
         alert(`O campo RAÇA deve ser preenchido!`);
     }
 
-    if (genre.option.value == "") {
+    if (genre.options[genre.selectedIndex].value == "") {
         event.preventDefault();
         alert(`O campo GÊNERO deve ser preenchido!`);
     }

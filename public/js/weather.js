@@ -1,11 +1,26 @@
-async function getContent() {
-    try {
-        const response = await fetch('https://apiprevmet3.inmet.gov.br/previsao/5300108');
-        const data = await response.json();
-        console.log(data);
-    } catch (error){
-        console.log("ERRROOUUU!");
-    }
-}
+const city = document.querySelector(".nav__city");
+const max = document.querySelector(".nav__temp_max");
+const min = document.querySelector(".nav__temp_min");
 
-getContent();
+
+max.addEventListener("load", (error) => {
+    const options = {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'default'
+    }
+
+    fetch(`https://api.hgbrasil.com/weather?key=a649fad7&city_name=${city.value},SP`, options)
+    .then(response => { response.json()
+        .then(data => {
+            console.log(data);
+            const tempMax = data.forecast.max
+            max.inneText = `máx: ${tempMax}°C`
+            return max;
+        })
+    .catch(error => {
+        max.innerText = "ERRROOOUUU";
+        return max;
+    })
+    })
+});

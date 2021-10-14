@@ -1,5 +1,6 @@
 const likePost = (likeIcon) => {
-    const likeText = document.querySelector(".post__lista_icons p");
+    const likeText = likeIcon.nextElementSibling;
+    // const likeText = document.querySelector(".post__lista_icons p");
 
     const textValues = likeText.innerText.split(" ");
     const textNumber = Number(textValues[0]);

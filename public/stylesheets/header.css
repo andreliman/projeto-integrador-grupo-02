@@ -26,6 +26,15 @@
     background-size: cover;
     background-image: url(../images/Nome\ 2.png);
   }
+
+  .nav__city {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--destaque);
+  }
+
+
+  
   .nav_icons {
     font-size: 25px;
     color: var(--icons);

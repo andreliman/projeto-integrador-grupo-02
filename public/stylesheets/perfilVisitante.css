@@ -182,7 +182,7 @@ ul.add_publicacao .img_amigo {
 ul.add_publicacao textarea,
 select {
   height: 50px;
-  width: 100%;
+  width: 75%;
   background-color: var(--input-forms);
   border: var(--borda);
   border-radius: 5.5px;

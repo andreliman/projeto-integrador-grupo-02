@@ -19,6 +19,7 @@
     <script src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>
     <script defer src="/js/darkMode.js"></script>
     <script defer src="/js/like.js"></script>
+    <script defer src="/js/preview.js"></script>
 
     <title>Perfil User</title>
   </head>
@@ -58,18 +59,29 @@
     
         <section class="text_publicacao">
             <h5 class="texto_publicacao">Publicação</h5>
-            <ul class="add_publicacao">
-                    <img src="<%=searchProfile.photo_profile_path%>" alt="" class="img_amigo">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="No que você está pensando?"></textarea>
-                    <ul class="icons_wrapper">
-                        <li>
-                            <i class="fa fa-camera img_fotografia" aria-hidden="true"></i>
-                        </li>
-                        <li>
-                            <i class="fa fa-paper-plane img_enviar"></i>
-                        </li>
-                    </ul>
-            </ul>
+            <div class ='novo__post'> 
+              <div class="perfil__wrapper">
+                <a href="/manimal/perfilUser/<%=searchProfile.id%>"><div class="foto__perfil"><img class="foto__perfil" src="<%=searchProfile.photo_profile_path%>" alt=""></div></a>
+                <div class="descricao__wrapper">
+                  <h4 class="perfi__nome"><%=searchProfile.pet_name%></h4>
+                  <span class="perfil__localizacao"><%=searchProfile.local%></span>
+                </div>
+              </div>
+              
+              <form class="form" action="/manimal/posts/" method="POST"  enctype="multipart/form-data">
+                
+                <div>
+                  
+                    <textarea class="textarea" placeholder="Como está o seu dia?" name="post" id="post" cols="180" rows="2"></textarea>
+                </div>
+                <div>
+                  <label for="photo"><i class="fa fa-camera img_fotografia" aria-hidden="true"></i></label>
+                  <input class="form-control btn btn-success" id="photo" type="file" name="photo" >
+                </div>
+               <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+            </form>
+            <img class="preview" src="" alt="" id="preview">
+            </div>     
         </section>
         
         <section class="timeline">

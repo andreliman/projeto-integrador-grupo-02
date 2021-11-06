@@ -233,13 +233,28 @@ button {
   background-color: var(--selected);
   margin-right: 20px;
 }
+.preview {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  object-position: top;
+  margin: auto;
+}
 
 /*Tratamento Responsivo*/
 
-@media (min-width: 321px) {
+@media (min-width: 375px) {
   .body {
     width: 100%;
     margin: auto;
+  }
+
+  .post__foto {
+    width: 100%;
+  }
+
+  .pesquisar {
+    padding: 10px;
   }
 }
 

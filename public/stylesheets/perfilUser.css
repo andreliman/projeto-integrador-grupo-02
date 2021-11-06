@@ -181,7 +181,7 @@ ul.add_publicacao .img_amigo {
 ul.add_publicacao textarea,
 select {
   height: 50px;
-  width: 100%;
+  width: 30%;
   background-color: var(--input-forms);
   border: var(--borda);
   border-radius: 5.5px;
@@ -190,18 +190,13 @@ select {
   resize: none;
 }
 
-ul.add_publicacao li {
-  display: inline-block;
-  margin: 20px 10px;
-}
-
 /*Visualizar Timeline */
 
 ul.ver_timeline li .img_amigo {
   border-radius: 50%;
-  height: 100px;
+  height: 80px;
   object-fit: cover;
-  width: 100px;
+  width: 80px;
 }
 h5 {
   text-align: center;
@@ -293,13 +288,17 @@ ul.post__lista_icons li {
   text-align: justify;
 }
 @media (max-width: 500px) {
-  ul.ver_amigos {
-    justify-content: center;
+  ul.add_publicacao .img_amigo {
+    height: 50px;
+    width: 50px;
   }
+
   ul.add_publicacao {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0 !important;
   }
 }

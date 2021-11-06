@@ -50,16 +50,20 @@ router.post('/criar', multer(multerConfig).single('photo'), async(req, res) => {
     const { id } = req.params;
     const profile_id = profile.id;
     const eventosCriadosPorProfile = await EventController.listarEventosPorId(profile_id);
+    req.session.profile = profile;
+    const searchProfile = await profileController.findUserProfile(profile_id);
     
     
-  res.render('eventosCriados', {title: 'Eventos Criados', profile, eventosCriadosPorProfile });
+  res.render('eventosCriados', {title: 'Eventos Criados', profile, eventosCriadosPorProfile,searchProfile });
   });
 
   router.get('/list', verificarProfileLogado, async (req, res) => {
     const { profile } = req.session;
     const todosEventos = await EventController.buscarTodosEventos();
-    
-  res.render('eventosDisponiveis', {title: 'Eventos Disponiveis', profile, todosEventos});
+    req.session.profile = profile;
+    const profile_id = profile.id;
+    const searchProfile = await profileController.findUserProfile(profile_id);
+  res.render('eventosDisponiveis', {title: 'Eventos Disponiveis', profile, todosEventos, searchProfile});
   
   
   });

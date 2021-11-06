@@ -51,7 +51,7 @@
             <ul class="ver_amigos">
                 <% amigos.forEach(amigo=>{ %>
                 <li>
-                    <img src="<%=amigo.photo_profile_path%>" alt="" class="img_amigo">
+                  <a href="/manimal/perfilVisitante/<%=amigo.id%>"><div class="foto__perfil"><img class="foto__perfil" src="<%=amigo.photo_profile_path%>" alt=""></div></a>
                 </li>
                 <% }) %>
             </ul>

@@ -3,6 +3,7 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script defer src="/js/darkMode.js"></script>
 <script defer src="/js/perfil.js"></script>
+<script defer src="/js/preview.js"></script>
 </head>
 <body class="container-lg">
     <main class="main">
@@ -16,7 +17,10 @@
           <div>
             <form action="" class="form" method="POST" enctype="multipart/form-data">
             <div class="fields">
-              <label for="photo" title="Inserir foto"><i class="fa fa-user-plus" aria-hidden="true"></i></label>
+              <div class="preview__wrapper">
+                <label for="photo" title="Inserir foto"><i class="fa fa-user-plus" aria-hidden="true"></i></label>
+                <img class="preview" id="preview" src="" alt="">
+              </div>
               <span class="error-message"></span>
               <input class="form-control" id="photo" type="file" name="photo" >
             </div>

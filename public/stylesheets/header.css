@@ -60,6 +60,16 @@ input[type="search"] {
 .menu__desktop {
   display: none;
 }
+.preview__wrapper{
+  display: flex;
+}
+.preview{
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  object-position: top;
+  margin: auto;
+}
 
 /*Responsivo*/
 @media (min-width: 321px) {

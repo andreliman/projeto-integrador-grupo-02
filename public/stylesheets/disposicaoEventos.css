@@ -1,51 +1,48 @@
-body{
-    position: relative;
-    background-color: var(--bgSite) !important;
+body {
+  position: relative;
+  background-color: var(--bgSite) !important;
 }
-.header{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: var(--bgSite)
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--bgSite);
 }
-.main{
-    width: 100%;
-    background-color: var(--bgSite)
-
+.main {
+  width: 100%;
+  background-color: var(--bgSite);
 }
 .foto__perfil {
   width: 65px;
   height: 65px;
   border-radius: 50%;
   background-size: cover;
-  
 }
 .eventos {
-    display: flex;
-    text-align: left;
-    padding: 10px;
-    color:var(--destaque);
-    border:var(--borda);
-    margin: 10px 15px 0 15px;
+  display: flex;
+  text-align: left;
+  padding: 10px;
+  color: var(--destaque);
+  border: var(--borda);
+  margin: 10px 15px 0 15px;
 }
-  
 
 .eventos-outros {
   padding-right: 10px;
   margin-left: 10px;
   text-decoration: none;
-  color:var(--eventos)
+  color: var(--eventos);
 }
 .evento-escolhido {
-    text-decoration: none;
-    color: var(--selected);
-    padding-right: 5px;
-    font-weight: bold;
+  text-decoration: none;
+  color: var(--selected);
+  padding-right: 5px;
+  font-weight: bold;
 }
 
-.descricao-eventos{
-    max-width: 320px;
+.descricao-eventos {
+  max-width: 320px;
 }
 .descricao-eventos h3 {
   font-weight: bold;
@@ -53,64 +50,59 @@ body{
 }
 
 .descricao-eventos span {
-    font-weight: bold;
-    color: var(--text);
+  font-weight: bold;
+  color: var(--text);
 }
 .descricao-eventos p {
- 
   color: var(--text);
 }
 
-.principal__button{
-    margin-top: 20px;
-    color: var(--white);
-    width: 120px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color:var(--buttonColor);
-    border-radius: 20px;
-    margin-bottom: 10px;
+.principal__button {
+  margin-top: 20px;
+  color: var(--white);
+  width: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--buttonColor);
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
-.convidar__button{
-    margin-top: 20px;
-    color: var(--white);
-    width: 120px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color:var(--buttonColor);
-    border-radius: 20px;
-    margin-bottom: 10px;
+.convidar__button {
+  margin-top: 20px;
+  color: var(--white);
+  width: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--buttonColor);
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
-
-.post__lista_icons li{
-    display: inline-block;
-    margin-top: 5px;
-    justify-content: right;
-    
-}
-
-.mural{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    gap: 20px 20px;
-    padding: 10px;
-}
-
-
-.descricao-eventos {
-  max-width: 320px;
-}
-
 
 .post__lista_icons li {
   display: inline-block;
   margin-top: 5px;
   justify-content: right;
+}
 
+.mural {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 20px 20px;
+  padding: 10px;
+}
+
+.descricao-eventos {
+  max-width: 320px;
+}
+
+.post__lista_icons li {
+  display: inline-block;
+  margin-top: 5px;
+  justify-content: right;
 }
 
 .album-evento {
@@ -140,15 +132,14 @@ body{
   cursor: pointer;
 }
 
+@media (min-width: 1800px) {
+  .mural {
+    justify-content: flex-start;
+    padding: 30px;
+    margin: auto;
+  }
 
-@media(min-width:1800px){
-    .mural {
-        justify-content: flex-start;
-        padding: 30px;
-        margin: auto;
-      }
-      
-      .header {
+  .header {
     position: relative;
   }
 }

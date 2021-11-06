@@ -1,122 +1,121 @@
 .container-lg {
-    max-width: 1080px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .main {
-    padding: 0;
-    max-width: 350px;
-    width: 100%;
-    margin: 0 15px;
+  padding: 0;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 15px;
 }
 
 .main .ajudaLogar {
-    text-align: left;
-    margin-top: 10px;
-    margin-bottom: 25vh;
-    font-size: 15px;
-    color:var(--text);
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 25vh;
+  font-size: 15px;
+  color: var(--text);
 }
 
 .main h1 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5vh;
-    color:var(--text);
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5vh;
+  color: var(--text);
 }
 
 .main h3 {
-    font-size: 14px;
-    margin-bottom: 5vh;
-    color:var(--text);
+  font-size: 14px;
+  margin-bottom: 5vh;
+  color: var(--text);
 }
 
 .main .forms {
-    margin: 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .main .forms div {
-    margin-top: 10px;
-    max-width: 600px;
-    width: 100%;
+  margin-top: 10px;
+  max-width: 600px;
+  width: 100%;
 }
 
 .main .forms input {
-    height: 40px;
-    width: 100%;
-    padding: 0;
-    padding-left: 8px;
-    background-color: var(--input-forms);
-    border: var(--borda-forms);
-    border-radius: 5.5px;
-    color: var(--white);
-    font-size: 14px;
+  height: 40px;
+  width: 100%;
+  padding: 0;
+  padding-left: 8px;
+  background-color: var(--input-forms);
+  border: var(--borda-forms);
+  border-radius: 5.5px;
+  color: var(--white);
+  font-size: 14px;
 }
 
 .main .forms input::-webkit-input-placeholder {
-    color:var(--white);
-    font: 400 14px 'Roboto';
+  color: var(--white);
+  font: 400 14px "Roboto";
 }
 
 .main .forms .submit {
-    margin: 0;
-    margin-top: 10px;
+  margin: 0;
+  margin-top: 10px;
 }
 
-.main .forms .submit input{
-    height: 40px;
-    max-width: 150px;
-    width: 100%;
-    background-color: var(--buttonColor);
-    box-shadow: var(--box-form);
-    border-radius: 11px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
+.main .forms .submit input {
+  height: 40px;
+  max-width: 150px;
+  width: 100%;
+  background-color: var(--buttonColor);
+  box-shadow: var(--box-form);
+  border-radius: 11px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .main .login {
-    margin-top: 27vh;
-    margin-bottom: 10px;
+  margin-top: 27vh;
+  margin-bottom: 10px;
 }
 
 .main .login p {
-    font-size: 13px;
-    color:var(--text);
+  font-size: 13px;
+  color: var(--text);
 }
 
 .main .login a {
-    font-style: italic;
-    color: var(--link);
-    text-decoration: none;
+  font-style: italic;
+  color: var(--link);
+  text-decoration: none;
 }
 
 /*responsividade*/
 
-@media(min-width:1080px) {
-    
-    .main .forms div {
-        max-width: 500px;
-        width: 100%;
-    }
+@media (min-width: 1080px) {
+  .main .forms div {
+    max-width: 500px;
+    width: 100%;
+  }
 
-    .main .forms input {
-        height: 45px;
-    }
+  .main .forms input {
+    height: 45px;
+  }
 
-    .main .forms .submit input {
-        height: 40px;
-        max-width: 200px;
-    }
+  .main .forms .submit input {
+    height: 40px;
+    max-width: 200px;
+  }
 }

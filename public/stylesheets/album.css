@@ -1,51 +1,48 @@
-body{
-    position: relative;
+body {
+  position: relative;
 }
-.header{
-    position: sticky;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: var(--bgSite)
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--bgSite);
 }
-.main{
-    width: 100%;
-    background-color: var(--bgSite)
-
+.main {
+  width: 100%;
+  background-color: var(--bgSite);
 }
 
 .eventos {
-    display: flex;
-    text-align: left;
-    padding: 10px;
-    color:var(--destaque);
-    border:var(--borda);
+  display: flex;
+  text-align: left;
+  padding: 10px;
+  color: var(--destaque);
+  border: var(--borda);
 }
-    
+
 .eventos {
   display: flex;
   text-align: left;
   padding: 10px;
   color: var(--white);
   margin: 10px 15px 0 15px;
-
-  
 }
 .eventos-outros {
   padding-right: 10px;
   margin-left: 10px;
   text-decoration: none;
-  color:var(--eventos)
+  color: var(--eventos);
 }
 .evento-escolhido {
-    text-decoration: none;
-    color: var(--selected);
-    padding-right: 5px;
-    font-weight: bold;
+  text-decoration: none;
+  color: var(--selected);
+  padding-right: 5px;
+  font-weight: bold;
 }
 
-.descricao-eventos{
-    max-width: 320px;
+.descricao-eventos {
+  max-width: 320px;
 }
 .descricao-eventos h3 {
   font-weight: bold;
@@ -53,64 +50,61 @@ body{
 }
 
 .descricao-eventos span {
-    font-weight: bold;
-    color: var(--text);
+  font-weight: bold;
+  color: var(--text);
 }
 .descricao-eventos p {
- 
   color: var(--text);
 }
 
-.principal__button{
-    margin-top: 20px;
-    color: var(--white);
-    width: 120px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color:var(--buttonColor);
-    border-radius: 20px;
-    margin-bottom: 10px;
+.principal__button {
+  margin-top: 20px;
+  color: var(--white);
+  width: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--buttonColor);
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
-.convidar__button{
-    margin-top: 20px;
-    color: var(--white);
-    width: 120px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color:var(--buttonColor);
-    border-radius: 20px;
-    margin-bottom: 10px;
+.convidar__button {
+  margin-top: 20px;
+  color: var(--white);
+  width: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: var(--buttonColor);
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 
 .button_disponiveis {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-.post__lista_icons li{
-    display: inline-block;
-    margin-top: 5px;
-    justify-content: right;
-    
+.post__lista_icons li {
+  display: inline-block;
+  margin-top: 5px;
+  justify-content: right;
 }
 
-.mural{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px 20px;
-    padding: 10px;
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px 20px;
+  padding: 10px;
 }
-.album{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 15px;
-    border:var(--borda);
-    border-radius: 5px;
-    
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  border: var(--borda);
+  border-radius: 5px;
 }
 
 .descricao-eventos {
@@ -118,7 +112,7 @@ body{
 }
 .principal__button {
   margin-top: 20px;
-  color:var(--white);
+  color: var(--white);
   width: 120px;
   font-size: 18px;
   font-weight: bold;
@@ -128,7 +122,7 @@ body{
 }
 .convidar__button {
   margin-top: 20px;
-  color:var(--white);
+  color: var(--white);
   width: 120px;
   font-size: 18px;
   font-weight: bold;
@@ -140,7 +134,6 @@ body{
   display: inline-block;
   margin-top: 5px;
   justify-content: right;
-
 }
 .album {
   display: flex;
@@ -183,15 +176,14 @@ body{
     position: relative;
   }
 }
-@media(min-width:1800px){
-    .mural {
-        justify-content: flex-start;
-        padding: 30px;
-        margin: auto;
-      }
-      .album {
-        margin-bottom: 20px;
-        margin-right: 40px;
-     
-      }
+@media (min-width: 1800px) {
+  .mural {
+    justify-content: flex-start;
+    padding: 30px;
+    margin: auto;
+  }
+  .album {
+    margin-bottom: 20px;
+    margin-right: 40px;
+  }
 }

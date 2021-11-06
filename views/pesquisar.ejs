@@ -1,15 +1,15 @@
 <%- include('./partials/header')%>
-    <div class="container-lg">
-    <div class="search">
-        <% buscar.forEach(busca=>{ %>
-        <div class="search__wrapper">
-            <img class= search__foto src="<%=busca.photo_profile_path%>" alt="">
-            <span class="search__nome"><%=busca.pet_name%></span>
-            <a href="/manimal/perfilVisitante/<%=busca.id%>"><button class="principal__button">Ver Perfil</button></a>
-        </div>
-      
-        <% }) %>
+<div class="container-lg">
+  <div class="search">
+    <% buscar.forEach(busca=>{ %>
+    <div class="search__wrapper">
+      <img class="search__foto" src="<%=busca.photo_profile_path%>" alt="" />
+      <span class="search__nome"><%=busca.pet_name%></span>
+      <a href="/manimal/perfilVisitante/<%=busca.id%>"
+        ><button class="principal__button">Ver Perfil</button></a
+      >
     </div>
-</div>
 
-  
+    <% }) %>
+  </div>
+</div>

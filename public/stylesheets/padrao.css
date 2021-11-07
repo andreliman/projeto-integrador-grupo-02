@@ -24,19 +24,15 @@ body{
 .nav__city__temp {
   display:flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items:center;
+  flex-direction: column;
+  justify-content:space-around;
+  align-items:flex-end;
   width: 100%;
-  max-width: 150px;
+  max-width: 100px;
   font-size: 14px;
   font-style: italic;
   font-weight: bold;
   color: var(--destaque);
-}
-
-.nav__temp {
-  display: flex;
-  flex-direction: column;
 }
 
 .nav_icons {
@@ -247,6 +243,12 @@ button{
   }
 }
 
+@media (min-width: 560px){
+  .nav__city__temp {
+    align-items:flex-start;
+  }
+}
+
 @media (min-width: 1081px) {
   .body{
     width: 100%;
@@ -300,6 +302,11 @@ input[type=search]{
   display: flex;
   padding: 0 20px;
 }
+
+.nav__city__temp {
+  align-items:flex-start;
+}
+
 .post__foto{
   height: 750px;
   width: 100%;

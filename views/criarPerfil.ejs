@@ -43,7 +43,7 @@
               <select class="breed" name="breed_id">
                 <option value="" selected disabled hidden>Raça</option>
                 <% breeds.forEach(breed => { %>
-                  <option id="breed" value="<%= breed.id %>">
+                  <option id="breed" value="breed.kind_id">
                     <%= breed.name %>
                   </option>
                 <% }) %>

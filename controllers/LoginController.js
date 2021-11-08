@@ -1,19 +1,19 @@
-const bcrypt = require('bcryptjs');
-const LoginModel = require('../models/LoginModel');
+const bcrypt = require("bcryptjs");
+const LoginModel = require("../models/LoginModel");
 
 exports.logUser = async ({ email, password }) => {
-    const userBd = await LoginModel.findUserByEmail({ email });
-    const user = userBd[0];
-    
-    if (user === undefined) {
-        throw new Error ("User not found");
-    };
+  const userBd = await LoginModel.findUserByEmail({ email });
+  const user = userBd[0];
 
-    const isValidPassword = bcrypt.compareSync(password, user.password);
+  if (user === undefined) {
+    throw new Error("User not found");
+  }
 
-    if (!isValidPassword) {
-        throw new Error ("Incorrect password");
-    };
+  const isValidPassword = bcrypt.compareSync(password, user.password);
 
-    return user;
+  if (!isValidPassword) {
+    throw new Error("Incorrect password");
+  }
+
+  return user;
 };

@@ -1,224 +1,224 @@
 .container-lg {
-    max-width: 1080px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .main {
-    padding: 0;
-    padding-bottom: 15px;
-    margin: 0 8px;
+  padding: 0;
+  padding-bottom: 15px;
+  margin: 0 8px;
 }
 .main .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    align-items: center;
-}
-  
-.main .header p {
-    font-size: 12px;
-    font-style: italic;
-}
-  
-.main .header span {
-    color: var(--buttonColor);
-    font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.main .header p {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.main .header span {
+  color: var(--buttonColor);
+  font-weight: bold;
+}
 
 .main .logout {
-    height: 50px;
-    margin-top: 5px;
+  height: 50px;
+  margin-top: 5px;
 }
-  
+
 .main .logout a {
-    margin-top: 5px;
-    height: 50px;
-    font-style: italic;
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--buttonColor);
+  margin-top: 5px;
+  height: 50px;
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--buttonColor);
 }
-  
+
 .main .logout .fa-sign-out {
-    font-size: 35px;
+  font-size: 35px;
 }
 
 .main .forms {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-items:center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.main .forms form{
-    max-width: 350px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-items:center;
-
+.main .forms form {
+  max-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.main .forms .form-control{
-    display: none;
+.main .forms .form-control {
+  display: none;
 }
 
-.main .forms .textarea{
-    max-width: 300px;
-    width: 100%;
+.main .forms .textarea {
+  max-width: 300px;
+  width: 100%;
 }
 
-.main .forms .textarea textarea{
-    margin: 10px 0 5px 0;
-    max-width: 300px;
-    width: 100%;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--input-forms);
-    border: var(--borda-forms);
-    border-radius: 5.5px;
-    color: var(--white);
+.main .forms .textarea textarea {
+  margin: 10px 0 5px 0;
+  max-width: 300px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--input-forms);
+  border: var(--borda-forms);
+  border-radius: 5.5px;
+  color: var(--white);
 }
 
 .main .forms .fields {
-    margin-bottom: 10px;
-    margin-left: 8px;
-    max-width: 250px;
-    width: 100%;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  max-width: 250px;
+  width: 100%;
 }
 
 .main .forms .char-count {
-    display: block;
-    text-align: left;
-    color: var(--balck);
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    margin: 0 0 9px 50px;
+  display: block;
+  text-align: left;
+  color: var(--balck);
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  margin: 0 0 9px 50px;
 }
 
 .main .forms .birthday {
-    display: block;
-    text-align: left;
-    color: var(--destaque);
-    font-family: 'Roboto', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    margin: 0 0 9px 4px;
+  display: block;
+  text-align: left;
+  color: var(--destaque);
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 9px 4px;
 }
 
 .main .forms .fa-user-plus {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    font-size: 80px;
-    color: var(--destaque);
-    cursor: pointer;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: 80px;
+  color: var(--destaque);
+  cursor: pointer;
 }
 
-.main .forms input, select {
-    height: 30px;
-    width: 96%;
-    padding: 0;
-    padding-left: 8px;
-    background-color: var(--input-forms);
-    border: var(--borda-forms);
-    border-radius: 5.5px;
-    color: var(--white);
-    font-size: 14px;
+.main .forms input,
+select {
+  height: 30px;
+  width: 96%;
+  padding: 0;
+  padding-left: 8px;
+  background-color: var(--input-forms);
+  border: var(--borda-forms);
+  border-radius: 5.5px;
+  color: var(--white);
+  font-size: 14px;
 }
 
 .main .forms input::-webkit-input-placeholder {
-    color:var(--white);
-    font: 400 14px 'Roboto';
+  color: var(--white);
+  font: 400 14px "Roboto";
 }
 
-.main .forms select{
-    max-width: 250px;
-    width: 100%;
-    cursor:pointer;
+.main .forms select {
+  max-width: 250px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .main .forms .submit {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
-.main .forms .submit input{
-    height: 40px;
-    width: 150px;
-    background-color: var(--buttonColor);
-    box-shadow: var(--box-form);
-    border-radius: 11px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
+.main .forms .submit input {
+  height: 40px;
+  width: 150px;
+  background-color: var(--buttonColor);
+  box-shadow: var(--box-form);
+  border-radius: 11px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .main .profile {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .main .profile p {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .main .profile a {
-    font-style: italic;
-    color: var(--link);
-    text-decoration: none;
+  font-style: italic;
+  color: var(--link);
+  text-decoration: none;
 }
 
 /*responsividade*/
 
-@media(min-width:1080px) {
-    .main .forms form{
-        max-width: 500px;    
-    }
-    .main .forms .fields {
-        max-width: 300px;
-    }
+@media (min-width: 1080px) {
+  .main .forms form {
+    max-width: 500px;
+  }
+  .main .forms .fields {
+    max-width: 300px;
+  }
 
-    .main .forms input, select {
-        height: 40px;
-    }
+  .main .forms input,
+  select {
+    height: 40px;
+  }
 
-    .main .forms select {
-        max-width: 300px;
-        width: 100%;
-    }
+  .main .forms select {
+    max-width: 300px;
+    width: 100%;
+  }
 
-    .main .forms .fa-user-plus {
-        padding-top: 30px;
-        padding-bottom: 50px;
-        font-size: 100px;
-    }
+  .main .forms .fa-user-plus {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    font-size: 100px;
+  }
 
-    .main .forms .submit {
-        margin-top: 20px;
-        margin-bottom: 25px;
-    }
+  .main .forms .submit {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
 
-    .main .profile {
-        font-size: 15px;
-    }
+  .main .profile {
+    font-size: 15px;
+  }
 
-    .main .forms .textarea{
-        max-width: 500px;
-    }
+  .main .forms .textarea {
+    max-width: 500px;
+  }
 
-    .main .forms .textarea textarea{
-        max-width: 400px;
-    }
-    .main .logout {
-        font-size: 14px;
-    }
-    
-    .main .header p {
-        font-size: 14px;
-    }
-    
-    .main .logout .fa-sign-out {
-        font-size: 50px;
-    }
+  .main .forms .textarea textarea {
+    max-width: 400px;
+  }
+  .main .logout {
+    font-size: 14px;
+  }
+
+  .main .header p {
+    font-size: 14px;
+  }
+
+  .main .logout .fa-sign-out {
+    font-size: 50px;
+  }
 }

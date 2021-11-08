@@ -1,138 +1,137 @@
 .container-lg {
-    max-width: 1080px;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .main {
-    padding: 0;
-    padding-bottom: 25px;
-    margin: 0 8px;
+  padding: 0;
+  padding-bottom: 25px;
+  margin: 0 8px;
 }
 
 .main img {
-    max-width: 700px;
-    width: 100%;
-    margin-top: 30px;
+  max-width: 700px;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .main .forms {
-    margin: 20px 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .main .forms div {
-    margin: 10px 0;
-    max-width: 300px;
-    width: 100%;
+  margin: 10px 0;
+  max-width: 300px;
+  width: 100%;
 }
 
 .main .forms input {
-    height: 40px;
-    width: 96%;
-    padding: 0;
-    padding-left: 8px;
-    background-color: var(--input-forms);
-    border: var(--borda-forms);
-    border-radius: 5.5px;
-    color: var(--white);
-    font-size: 13px;
+  height: 40px;
+  width: 96%;
+  padding: 0;
+  padding-left: 8px;
+  background-color: var(--input-forms);
+  border: var(--borda-forms);
+  border-radius: 5.5px;
+  color: var(--white);
+  font-size: 13px;
 }
 
 .main .forms input::-webkit-input-placeholder {
-    color: var(--white);
-    font: 400 13px 'Roboto';
+  color: var(--white);
+  font: 400 13px "Roboto";
 }
 
-.main .forms .password{
-    position: relative;
+.main .forms .password {
+  position: relative;
 }
 
 .main .forms .password .fa-eye {
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    cursor: pointer;
-    color: var(--white);
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--white);
 }
 
 .main .forms .password .fa-eye:active {
-    color: var(--black);
+  color: var(--black);
 }
 
 .main .forms .submit {
-    margin: 0;
-    margin-top: 10px;
+  margin: 0;
+  margin-top: 10px;
 }
 
-.main .forms .submit button{
-    height: 40px;
-    width: 175px;
-    background-color: var(--buttonColor);
-    color: var(--white);
-    box-shadow: var(--box-form);
-    border-radius: 11px;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: bold;
+.main .forms .submit button {
+  height: 40px;
+  width: 175px;
+  background-color: var(--buttonColor);
+  color: var(--white);
+  box-shadow: var(--box-form);
+  border-radius: 11px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-.main .help{
-    margin-bottom: 70px;
-    font-size: 13px;
+.main .help {
+  margin-bottom: 70px;
+  font-size: 13px;
 }
 
 .main .help a {
-    font-weight: bold;
-    color: var(--text);
-    text-decoration: none;
+  font-weight: bold;
+  color: var(--text);
+  text-decoration: none;
 }
 
 .main .cadastro {
-    margin-bottom: 10px;
-    font-size: 13px;
+  margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .main .cadastro a {
-    font-style: italic;
-    color:var(--link);
-    text-decoration: none;
+  font-style: italic;
+  color: var(--link);
+  text-decoration: none;
 }
 
 /*responsividade*/
 
-@media(min-width:1080px) {
+@media (min-width: 1080px) {
+  .main img {
+    margin-top: 0;
+  }
 
-    .main img {
-        margin-top: 0;
-    }
-    
-    .main .forms div {
-        max-width: 500px;
-        width: 100%;
-    }
+  .main .forms div {
+    max-width: 500px;
+    width: 100%;
+  }
 
-    .main .forms input {
-        height: 50px;
-        font-size: 14px;
-    }
-    
-    .main .forms input::-webkit-input-placeholder {
-        font-size: 14px;
-    }
+  .main .forms input {
+    height: 50px;
+    font-size: 14px;
+  }
 
-    .main .forms .password .fa-eye {
-        top: 17px;
-        right: 15px;
-    }
+  .main .forms input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
 
-    .main .forms .submit {
-        margin-top: 20px;
-    }
+  .main .forms .password .fa-eye {
+    top: 17px;
+    right: 15px;
+  }
+
+  .main .forms .submit {
+    margin-top: 20px;
+  }
 }

@@ -16,6 +16,7 @@
     <script defer src="https://kit.fontawesome.com/72b828f62d.js" crossorigin="anonymous"></script>
     <script defer src="/js/like.js"></script>
     <script defer src="/js/weather.js"></script>
+    <script defer src="/js/preview.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Página Padrão</title>
   </head>
@@ -35,9 +36,8 @@
           </form>
           <div class="menu__desktop">
             <ul class="menu__desktop__lista">
-              <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
-              <li><a href="/manimal/album/<%=searchProfile.id%>"><i class="far fa-images menu__icon"></i></a></li>
-              <li><a href="/manimal/event/criar"><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></a></li>
+              <li ><a href="/manimal/event/criar"><i class="fa fa-calendar-plus menu__icon" aria-hidden="true"></i></a></li>
+              <li ><a href="/manimal/event/list"><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></a></li>
               <li><i class="fa fa-sun-o menu__icon" aria-hidden="true" id="theme"></i></li>
               <li><a href="/manimal/profile/logout" title="logout"><i class="fa fa-sign-out menu__icon" aria-hidden="true"></i></a></li>
             </ul>

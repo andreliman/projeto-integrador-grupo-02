@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  align-items:stretch;
+  align-items: stretch;
 }
 
 .main .profile {
@@ -25,14 +25,13 @@
   align-items: center;
 }
 
-.main .profile .profilePicture .btn{
+.main .profile .profilePicture .btn {
   margin: 15px 0;
   display: flex;
   justify-content: space-evenly;
-
 }
 
-.main .profile .profilePicture .btn button{
+.main .profile .profilePicture .btn button {
   height: 20px;
   width: 60px;
   background-color: var(--buttonColor);
@@ -48,12 +47,12 @@
   border-radius: 100%;
   height: 100px;
   width: 100px;
-  object-fit: cover;  
+  object-fit: cover;
 }
 
 .main .profile .profilePicture h2 {
   font-size: 15px;
-  color:var(--destaque);
+  color: var(--destaque);
   font-weight: bold;
   margin-top: 10px;
 }
@@ -74,7 +73,7 @@
 .main .header {
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -111,7 +110,7 @@
 @media (min-width: 1080px) {
   .main .profile .profilePicture img {
     height: 150px;
-    width: 150px; 
+    width: 150px;
   }
 
   .main .profile .profilePicture h2 {
@@ -136,7 +135,7 @@
     font-size: 50px;
   }
 
-  .main .profile .profilePicture .btn button{
+  .main .profile .profilePicture .btn button {
     height: 25px;
     width: 65px;
     font-size: 12px;

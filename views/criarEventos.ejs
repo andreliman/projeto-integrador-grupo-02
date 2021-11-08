@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/stylesheets/criarEventos.css" />
     <script defer src="/js/eventvalidations.js"></script>
     <script defer src="/js/weather.js"></script>
+    <script defer src="/js/preview.js"></script>
   </head>
   <body class="body">
     <div class="container_eventos">
@@ -111,14 +112,14 @@
             ></textarea>
             <span class="error-message"></span>
           </div>
-
-          <label for="eventPhoto" class="label_form"
-            >Adicionar Foto do Evento</label
-          >
-          <input type="file" name="photo" />
-
-          <button type="submit" class="form_btn">Criar</button>
+          <div class="button__wraper">
+            <label for="photo" class="label_form"><i class="fa fa-camera img_fotografia" aria-hidden="true"></i></label>
+            <input type="file" name="photo" id="photo" />
+            <button type="submit" class="form_btn">Criar</button>
+          </div>
+          
         </form>
+        <img class="preview" src="" alt="" id="preview" />
       </section>
       <script src="/js/darkMode.js"></script>
     </div>

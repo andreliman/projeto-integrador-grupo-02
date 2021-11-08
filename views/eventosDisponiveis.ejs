@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/stylesheets/reset.css" />
     <link rel="stylesheet" href="/stylesheets/header.css" />
     <link rel="stylesheet" href="/stylesheets/disposicaoEventos.css" />
+    <link rel="stylesheet" href="/stylesheets/padrao.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -33,11 +34,7 @@
             alt=""
             class="foto__perfil"
           />
-        </div>
-        <div class="info__wrapper">
-          <div class="box__nome__aniversario">
-            <span class="info"><%= profile.pet_name %></span>
-          </div>
+          <span class="info"><%= profile.pet_name %></span>
         </div>
         <div class="eventos">
           <a href="" class="evento-escolhido">Eventos Disponíveis</a>
@@ -51,7 +48,7 @@
           <% todosEventos.forEach(eventos => { %>
           <div class="album-evento">
             <img
-              src="<%= eventos.photo_events_path %>"
+              src="<%= eventos.photo_event_path %>"
               alt=""
               class="album__capa"
             />

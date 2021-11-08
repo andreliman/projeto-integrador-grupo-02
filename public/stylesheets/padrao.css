@@ -240,6 +240,13 @@ button {
   object-position: top;
   margin: auto;
 }
+.button__wraper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 /*Tratamento Responsivo*/
 

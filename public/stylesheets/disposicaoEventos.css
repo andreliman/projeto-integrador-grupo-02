@@ -13,11 +13,24 @@ body {
   width: 100%;
   background-color: var(--bgSite);
 }
+.info__foto {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .foto__perfil {
-  width: 65px;
-  height: 65px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-size: cover;
+  margin-right: 5px;
+}
+.info {
+  color: var(--destaque);
+  font-size: 16px;
+  font-weight: bold;
 }
 .eventos {
   display: flex;

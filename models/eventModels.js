@@ -1,6 +1,6 @@
 const { Event } = require("../database/models");
 
-exports.criarUmEvento = ({
+exports.criarUmEvento = async ({
   event_id,
   profile_id,
   name,
@@ -13,7 +13,7 @@ exports.criarUmEvento = ({
   photo_event_path,
   photo_id,
 }) =>
-  Event.create({
+  await Event.create({
     event_id,
     profile_id,
     name,

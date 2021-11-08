@@ -3,10 +3,8 @@
     <a href="/manimal/inicial/<%=searchProfile.id%>"><div class="nav__logo"></div></a>
     <div class="nav__city__temp">
       <span class="nav__city"><%=searchProfile.local%></span>
-      <div class="nav__temp">
-        <span class="nav__temp_max">máx: 35°C </span>
-        <span class="nav__temp_min">min: 17°C</span>
-      </div>
+      <span class="nav__temp_max"></span>
+      <span class="nav__temp_min"></span>
     </div>
     <form  class='pesquisar' action="/manimal/search" method="GET" >
       <input type="search" name="key" id="key">
@@ -14,12 +12,12 @@
     </form>
     <div class="menu__desktop">
       <ul class="menu__desktop__lista">
-        <li ><a href="/manimal/event/criar"><i class="fa fa-calendar-plus menu__icon" aria-hidden="true"></i></a></li>
-        <li ><a href="/manimal/event/list"><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></a></li>
-        <li><i class="fa fa-sun-o menu__icon" aria-hidden="true" id="theme"></i></li>
+        <li ><a href="/manimal/event/criar" title="Criar evento"><i class="fa fa-calendar-plus menu__icon" aria-hidden="true"></i></a></li>
+        <li ><a href="/manimal/event/list" title="Listar eventos"><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></a></li>
+        <li><i class="fa fa-sun-o menu__icon" aria-hidden="true" id="theme" title="Modo noturno"></i></li>
         <li><a href="/manimal/profile/logout" title="logout"><i class="fa fa-sign-out menu__icon" aria-hidden="true"></i></a></li>
       </ul>
-      <a href="/manimal/perfilUser/<%=searchProfile.id%>"><div class="foto__perfil"><img class="foto__perfil" src="<%=searchProfile.photo_profile_path%>" alt=""></div></a>
+      <a href="/manimal/perfilUser/<%=searchProfile.id%>" title="Perfil usuário"><div class="foto__perfil"><img class="foto__perfil" src="<%=searchProfile.photo_profile_path%>" alt=""></div></a>
     </div>
     
     <div class="nav_icons">

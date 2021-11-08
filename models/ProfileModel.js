@@ -83,8 +83,8 @@ exports.editProfile = (
 };
 exports.deleteProfile = (id) => db.Profile.destroy({ where: { id } });
 
-exports.findUserProfile = (profile_id) => {
-  const profile = db.Profile.findOne({
+exports.findUserProfile = async (profile_id) => {
+  const profile = await db.Profile.findOne({
     where: {
       id: profile_id,
     },

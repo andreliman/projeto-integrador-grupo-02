@@ -1,14 +1,12 @@
 <header class="header">
   <nav class="nav">
-    <a href="/manimal/inicial/<%=searchProfile.id%>"
-      ><div class="nav__logo"></div
-    ></a>
+    <a href="/manimal/inicial/<%=searchProfile.id%>">
+    <div class="nav__logo"></div>
+    </a>
     <div class="nav__city__temp">
       <span class="nav__city"><%=searchProfile.local%></span>
-      <div class="nav__temp">
-        <span class="nav__temp_max">máx: 35°C </span>
-        <span class="nav__temp_min">min: 17°C</span>
-      </div>
+      <span class="nav__temp_max"></span>
+      <span class="nav__temp_min"></span>
     </div>
     <form class="pesquisar" action="/manimal/search" method="GET">
       <input type="search" name="key" id="key" />

@@ -71,6 +71,7 @@ body {
 }
 
 .principal__button {
+  justify-self:flex-end;
   margin-top: 20px;
   color: var(--white);
   width: 120px;
@@ -121,7 +122,9 @@ body {
 .album-evento {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: left;
+  height: 600px;
   border: var(--borda);
   border-radius: 5px;
   padding: 3px;
@@ -129,7 +132,8 @@ body {
 }
 .album__capa {
   width: 320px;
-  height: 320px;
+  height: 250px;
+  object-fit:cover;
   cursor: pointer;
   filter: brightness(50%);
 }

@@ -2,6 +2,16 @@ const form = document.querySelector(".form");
 const kind = document.querySelector(".kind");
 const breed = document.querySelector(".breed");
 const genre = document.querySelector(".genre");
+const kindOption = document.querySelector("#kind");
+const breedOption = document.querySelector("#breed");
+
+// //Validação kindOption
+// kindOption.addEventListener("change", function () {
+//   if(kindOption.value == 1) {
+//     breedOption.value = 1;
+//     breedOption.innerText = 
+//   };
+// });
 
 const {
   photo,

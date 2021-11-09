@@ -45,7 +45,7 @@ router.post('/criar', multer(multerConfig).single('photo'), async(req, res) => {
   res.redirect(`/manimal/event/list/${profile_id}`);
   });
   
-  router.get('/list/:id', verificarProfileLogado, async(req, res) => {
+  router.get('/list/:id', verificarProfileLogado, async (req, res) => {
     const { profile } = req.session;
     const { id } = req.params;
     const profile_id = profile.id;

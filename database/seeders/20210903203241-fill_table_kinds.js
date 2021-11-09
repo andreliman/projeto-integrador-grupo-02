@@ -7,6 +7,7 @@ module.exports = {
       { kind: 'Cão' },
       { kind: 'Gato' },
       { kind: 'Peixe' },
+      { kind: 'Primata' },
       { kind: 'Réptil' },
       { kind: 'Roedor' },
       { kind: 'Outro' },

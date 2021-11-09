@@ -1,9 +1,14 @@
-.body {
-  height: 100%;
+body {
+  position: relative;
   background-color: var(--bgSite) !important;
 }
-.container_eventos {
-  background-color: var(--bgSite) !important;
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--bgSite);
 }
 
 .container__total {
@@ -15,6 +20,7 @@
 .section__info {
   margin-top: 20px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   padding: 20px 20px;
   justify-content: flex-start;
@@ -25,6 +31,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .info__wrapper {
   display: flex;
@@ -193,6 +200,10 @@ textarea {
     font-size: 18px;
     margin-bottom: 10px;
     margin-top: 10px;
+  }
+
+  .header {
+    position: relative;
   }
 }
 

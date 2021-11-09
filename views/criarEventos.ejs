@@ -14,21 +14,21 @@
     <link rel="stylesheet" href="/stylesheets/reset.css" />
     <link rel="stylesheet" href="/stylesheets/header.css" />
     <link rel="stylesheet" href="/stylesheets/padrao.css" />
+    <link rel="stylesheet" href="/stylesheets/disposicaoEventos.css" />
+    <link rel="stylesheet" href="/stylesheets/criarEventos.css" />
     <script
       defer
       src="https://kit.fontawesome.com/72b828f62d.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/stylesheets/criarEventos.css" />
     <script defer src="/js/eventvalidations.js"></script>
     <script defer src="/js/weather.js"></script>
     <script defer src="/js/preview.js"></script>
     <script defer src="/js/menu.js"></script>
+    <script defer src="/js/darkMode.js"></script>
   </head>
-  <body class="body">
-    <div class="container_eventos">
-      <%- include('./partials/headerEventos')%>
-    </div>
+  <body>
+    <%- include('./partials/headerEventos')%>
     <div class="container__total">
       <section class="section__info">
         <div class="info__foto">
@@ -123,7 +123,6 @@
         </form>
         <img class="preview" src="" alt="" id="preview" />
       </section>
-      <script src="/js/darkMode.js"></script>
     </div>
   </body>
 </html>

@@ -135,14 +135,21 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   const { email, password } = req.body;
 
-  const { password: notUsedPassword, ...user } = await LoginController.logUser({
-    email,
-    password,
-  });
+  try {
+    const { password: notUsedPassword, ...user } = await LoginController.logUser({
+      email,
+      password,
+    });
+  
+    req.session.user = user;
+  
+    res.status(201).redirect("/manimal/profile/select");
+  } catch (error) {
 
-  req.session.user = user;
-
-  res.status(201).redirect("/manimal/profile/select");
+    const message = "Falha ao logar. Por favor, tente novamente!";
+    
+    return res.status(400).render("error", { error, message });
+  }  
 });
 // login
 router.get("/ajuda", (req, res) => {

@@ -42,7 +42,7 @@ function validatePassword() {
 
   if (!isPasswordWithinLimit) {
     password.style.borderColor = "red";
-    span.innerText = "A senha deve conter no mínimo 8 caracteres!";
+    span.innerText = "Por favor insira a senha corretamente!";
     span.style.cssText =
       "display:block; text-align:left; margin:5px; padding-left:5px; font-size:12px; font-weight:bold; color:red";
     divPassword.insertAdjacentElement("afterend", span);
@@ -77,4 +77,4 @@ window.addEventListener("load", function(){
       alert(`Preencha corretamente o campo SENHA!`);
     }  
   })
-});  
+});

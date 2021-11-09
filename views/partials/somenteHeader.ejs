@@ -19,23 +19,16 @@
       </ul>
       <a href="/manimal/perfilUser/<%=searchProfile.id%>" title="Perfil usuário"><div class="foto__perfil"><img class="foto__perfil" src="<%=searchProfile.photo_profile_path%>" alt=""></div></a>
     </div>
-    
-    <div class="nav_icons">
-      <a href=""
-        ><i class="fa fa-paw nav__icons__notify" aria-hidden="true"></i
-      ></a>
-      <i class="fa fa-bars nav__icons__menu" aria-hidden="true"></i>
+    <div class="menu__mobile" id="menu__mobile">
+      <ul class="menu__mobile__lista">
+        <li ><a href="/manimal/event/criar"><i class="fa fa-calendar-plus menu__icon__mobile" aria-hidden="true"></i></a></li>
+        <li ><a href="/manimal/event/list"><i class="fa fa-calendar-o menu__icon__mobile" aria-hidden="true"></i></a></li>
+        <li><a href="/manimal/profile/logout" title="logout"><i class="fa fa-sign-out menu__icon__mobile" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <div class="nav_icons" id="menu__mobile__icon">
+      <i class="fa fa-bars nav__icons__menu" id="menu__mobile" aria-hidden="true"></i>
     </div>
   </nav>
-        <div class="menu__mobile">
-          <ul class="menu__mobile__lista">
-            <li><i class="fa fa-plus menu__icon" aria-hidden="true"></i></li>
-            <li><i class="fa fa-search menu__icon" aria-hidden="true"></i></li>
-            <li><i class="fa fa-paper-plane-o menu__icon" aria-hidden="true"></i></li>
-            <li><i class="fa fa-comment menu__icon" aria-hidden="true"></i></li>
-            <li><i class="fa fa-calendar-o menu__icon" aria-hidden="true"></i></li>
-            <li><i class="fa fa-cogs menu__icon" aria-hidden="true"></i></li>
-          </ul>
-          <a href="<%= searchProfile.photo_profile_path %>"><div class="foto__perfil"></div></a>
-        </div>
+  
       </header>

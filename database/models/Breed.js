@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
     Breed.belongsTo(models.Kind, {
       foreignKey: "kind_id",
       as: "kind",
-    }),
-      Breed.hasMany(models.Profile, {
-        foreignKey: "breed_id",
-        as: "profiles",
-      });
+    });
+    Breed.hasMany(models.Profile, {
+      foreignKey: "breed_id",
+      as: "profiles",
+    });
   };
 
   return Breed;

@@ -44,17 +44,6 @@
               <span class="error-message"></span>
             </div>
             <div class="fields">
-              <select class="breed" name="breed_id">
-                <option value="" selected disabled hidden>Raça</option>
-                <% breeds.forEach(breed => { %>
-                  <option id="breed" value="breed.kind_id">
-                    <%= breed.name %>
-                  </option>
-                <% }) %>
-              </select>
-              <span class="error-message"></span>
-            </div>
-            <div class="fields">
               <select class="genre" name="genre">
                 <option value="" selected disabled hidden>Gênero do pet</option>
                 <option value="Macho">Macho</option>
@@ -71,11 +60,7 @@
               <input type="text" name="local" placeholder="Cidade. Ex: São Paulo">
               <span class="error-message"></span>
             </div>
-            <div class="textarea">
-              <textarea placeholder="Agora crie uma Bio bem legal para seu pet!" name="bio" cols="50" rows="6" maxlength="255"></textarea>
-              <span class="char-count">Restam 255 caracteres</span>
-              <span class="error-message"></span>
-            </div>
+            <span class="editProfile">Para completar o preenchimento das informações de perfil, vá para a seção Editar Perfil</span>
             <div class="submit">
               <input type="submit" name="submit" value="Prosseguir">
             </div>

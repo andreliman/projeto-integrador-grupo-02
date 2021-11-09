@@ -53,7 +53,7 @@
 }
 
 .main .forms form {
-  max-width: 350px;
+  max-width: 300px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +79,16 @@
   border: var(--borda-forms);
   border-radius: 5.5px;
   color: var(--white);
+}
+
+.main .forms .editProfile {
+  color: var(--buttonColor);
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  max-width: 350px;
+  width: 100%;
 }
 
 .main .forms .fields {
@@ -172,7 +182,7 @@ select {
 
 @media (min-width: 1080px) {
   .main .forms form {
-    max-width: 500px;
+    max-width: 350px;
   }
   .main .forms .fields {
     max-width: 300px;

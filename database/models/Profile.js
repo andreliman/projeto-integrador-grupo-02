@@ -6,10 +6,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      breed_id: {
+      kind_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      breed_id: DataTypes.INTEGER,
       pet_name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -44,6 +45,10 @@ module.exports = (sequelize, DataTypes) => {
     Profile.belongsTo(models.User, {
       foreignKey: "user_id",
       as: "user",
+    });
+    Profile.belongsTo(models.Kind, {
+      foreignKey: "kind_id",
+      as: "kind",
     });
     Profile.belongsTo(models.Breed, {
       foreignKey: "breed_id",

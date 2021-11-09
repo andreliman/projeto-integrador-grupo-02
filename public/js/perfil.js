@@ -5,14 +5,6 @@ const genre = document.querySelector(".genre");
 const kindOption = document.querySelector("#kind");
 const breedOption = document.querySelector("#breed");
 
-// //Validação kindOption
-// kindOption.addEventListener("change", function () {
-//   if(kindOption.value == 1) {
-//     breedOption.value = 1;
-//     breedOption.innerText = 
-//   };
-// });
-
 const {
   photo,
   pet_name: petName,
@@ -78,13 +70,16 @@ kind.addEventListener("change", function () {
 });
 
 //Validação breed
-breed.addEventListener("change", function () {
+if(breed != null){
+  breed.addEventListener("change", function () {
+
     const span = breed.nextElementSibling;
     span.innerText = "";
     span.style.cssText = "";
 
     breed.style.borderColor = "green";
-});
+  });
+}
 
 //Validação gênero
 genre.addEventListener("change", function () {
@@ -146,47 +141,49 @@ function validateLocal() {
 local.onblur = validateLocal;
 
 //Validação Bio
-function validateBio() {
-    const isBioWithinLimit = bio.value.length >= 3 && bio.value.length <= 400;
-    const charCount = document.querySelector(".char-count")
-  
-    const span = charCount.nextElementSibling;
-    span.innerText = "";
-    span.style.cssText = "";
-  
-    if (!isBioWithinLimit) {
-      bio.style.borderColor = "red";
-      span.innerText = "A bio deve ter entre 3 e 400 caracteres";
-      span.style.cssText =
-        "display:block; text-align:left; padding-left:50px; font-size:12px; font-weight:bold; color:red";
-      charCount.insertAdjacentElement("afterend", span);
-      return false;
-    }
-  
-    bio.style.borderColor = "green";
-    return true;
+if(bio != undefined) {
+  function validateBio() {
+      const isBioWithinLimit = bio.value.length >= 3 && bio.value.length <= 400;
+      const charCount = document.querySelector(".char-count")
+    
+      const span = charCount.nextElementSibling;
+      span.innerText = "";
+      span.style.cssText = "";
+    
+      if (!isBioWithinLimit) {
+        bio.style.borderColor = "red";
+        span.innerText = "A bio deve ter entre 3 e 400 caracteres";
+        span.style.cssText =
+          "display:block; text-align:left; padding-left:50px; font-size:12px; font-weight:bold; color:red";
+        charCount.insertAdjacentElement("afterend", span);
+        return false;
+      }
+    
+      bio.style.borderColor = "green";
+      return true;
+  }
+
+  bio.addEventListener("keyup", function () {
+      let span = bio.nextElementSibling;
+      let digitedChar = bio.value.length;
+      let remainingChar = 255 - digitedChar;
+
+      span.innerText = `Restam ${remainingChar} caracteres`;
+      bio.insertAdjacentElement("afterend", span);    
+  });
+    
+  bio.onblur = validateBio;
 }
-
-bio.addEventListener("keyup", function () {
-    let span = bio.nextElementSibling;
-    let digitedChar = bio.value.length;
-    let remainingChar = 255 - digitedChar;
-
-    span.innerText = `Restam ${remainingChar} caracteres`;
-    bio.insertAdjacentElement("afterend", span);    
-});
-  
-bio.onblur = validateBio;
 
 
 window.addEventListener("load", function () {
   form.addEventListener("submit", function (event) {
-    if (photo.value == "") {
+    if (photo.value === "") {
       event.preventDefault();
       alert(`Por gentileza insira uma foto!`);
     }
 
-    if (petName.value == "") {
+    if (petName.value === "") {
       event.preventDefault();
       alert(`O campo NOME DO PET deve ser preenchido!`);
     }
@@ -210,9 +207,11 @@ window.addEventListener("load", function () {
       alert(`O campo ESPÉCIE deve ser preenchido!`);
     }
 
-    if (breed.options[breed.selectedIndex].value == "") {
-        event.preventDefault();
-        alert(`O campo RAÇA deve ser preenchido!`);
+    if(breed != null){
+      if (breed.options[breed.selectedIndex].value == "") {
+          event.preventDefault();
+          alert(`O campo RAÇA deve ser preenchido!`);
+      }
     }
 
     if (genre.options[genre.selectedIndex].value == "") {
@@ -238,14 +237,15 @@ window.addEventListener("load", function () {
         alert(`Preencha corretamente o campo CIDADE`);
     }  
 
-    if (bio.value == "") {
-        event.preventDefault();
-        alert(`O campo BIO deve ser preenchido!`);
-    }
-  
-    if (bio.style.borderColor == "red") {
-        event.preventDefault();
-        alert(`Preencha corretamente o campo BIO`);
+    if(bio != undefined) {
+      if (bio.value == "") {
+          event.preventDefault();
+          alert(`O campo BIO deve ser preenchido!`);
+      }
+      if (bio.style.borderColor == "red") {
+          event.preventDefault();
+          alert(`Preencha corretamente o campo BIO`);
+      }
     }
   });
 });

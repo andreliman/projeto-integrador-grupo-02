@@ -74,6 +74,7 @@ module.exports = {
         { name: "Shih Tzu", kind_id: 2 },
         { name: "Staffordshire Bull Terrier", kind_id: 2 },
         { name: "Weimaraner", kind_id: 2 },
+        { name: "Whippet", kind_id: 2 },
         { name: "Yorkshire", kind_id: 2 },
         { name: "Abissínio", kind_id: 3 },
         { name: "Angorá", kind_id: 3 },

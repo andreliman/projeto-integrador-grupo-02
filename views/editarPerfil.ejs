@@ -30,18 +30,17 @@
             </div>
             <div class="fields">
               <select class="kind" name="kind_id">
-                <option value="" selected disabled hidden>Espécie</option>
-                <% kinds.forEach(kind => { %>
-                  <option id="kind" value="<%= kind.id %>">
-                  <%= kind.kind %>
-                  </option>
-                <% }) %>
+                <option value="<%=kind.id%>kind.id" selected disabled hidden><%=kind.kind%></option>
               </select>
               <span class="error-message"></span>
             </div>
             <div class="fields">
               <select class="breed" name="breed_id">
-                <option value="" selected disabled hidden>Raça</option>
+                <% if(profile.breed_id === null) {%>
+                  <option value="" selected disabled hidden>Raça</option>
+                <% } else { %>
+                  <option value="<%= breed.id %>" selected disabled hidden><%= breed.name %></option>
+                <% } %>
                 <% breeds.forEach(breed => { %>
                   <option id="breed" value="<%= breed.id %>">
                     <%= breed.name %>
@@ -60,7 +59,7 @@
             </div>
             <div class="fields">
               <label class="birthday" for="birthday">Data de nascimento:</label>
-              <input type="date" name="birthday" value="<%=profile.bithday%>">
+              <input type="date" name="birthday" value="<%=profile.birthday%>">
               <span class="error-message"></span>
             </div>
             <div class="fields">
@@ -68,8 +67,16 @@
               <span class="error-message"></span>
             </div>
             <div class="textarea">
-              <textarea name="bio" cols="50" rows="6" maxlength="255"><%=profile.bio%></textarea>
-              <span class="char-count">Restam <%=255 - profile.bio.length%> caracteres</span>
+              <% if(profile.bio === null) { %>
+                <textarea name="bio" cols="50" rows="6" maxlength="255" placeholder="Crie uma bio bem legal para seu pet!"></textarea>
+              <% } else { %>
+                <textarea name="bio" cols="50" rows="6" maxlength="255"><%=profile.bio%></textarea>
+              <% } %>
+              <% if(profile.bio === null) { %>
+                <span class="char-count">Restam 255 caracteres</span>                  
+              <% } else { %>
+                <span class="char-count">Restam <%=255 - profile.bio.length%> caracteres</span>
+              <% } %>                
               <span class="error-message"></span>
             </div>
             <div class="submit">

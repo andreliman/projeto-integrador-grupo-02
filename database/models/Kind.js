@@ -17,6 +17,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "kind_id",
       as: "breed",
     });
+    Kind.hasMany(models.Profile, {
+      foreignKey: "kind_id",
+      as: "profiles_kind",
+    });
   };
 
   return Kind;

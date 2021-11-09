@@ -7,7 +7,7 @@ module.exports = {
       [
         {
           name: "Neto Machado",
-          phone: "19.994397474",
+          phone: "(11)99439-7474",
           email: "neto@email.com",
           creation_date: "",
           password:
@@ -15,7 +15,7 @@ module.exports = {
         },
         {
           name: "André Nunes",
-          phone: "(11)9 9999-9999",
+          phone: "(11)99999-9999",
           email: "andre@email.com",
           creation_date: "",
           password:

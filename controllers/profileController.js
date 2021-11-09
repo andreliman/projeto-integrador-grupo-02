@@ -2,6 +2,9 @@ const ProfileModel = require("../models/ProfileModel");
 
 exports.listAllBreeds = () => ProfileModel.listAllBreeds();
 exports.listAllKinds = () => ProfileModel.listAllKinds();
+exports.findKindById = async (kindId) => await ProfileModel.findKindById(kindId);
+exports.findBreedsByKindId = async (kindId) => await ProfileModel.findBreedsByKindId(kindId);
+exports.findBreedById = async (breedId) => await ProfileModel.findBreedById(breedId);
 
 exports.findProfiles = async (id) => {
   const profile = await ProfileModel.findProfiles(id);
@@ -13,7 +16,7 @@ exports.findProfile = (id) => ProfileModel.findProfile(id);
 
 exports.createProfile = ({
   user_id,
-  breed_id,
+  kind_id,
   pet_name,
   birthday,
   genre,
@@ -27,7 +30,7 @@ exports.createProfile = ({
 
   const newProfile = ProfileModel.createProfile({
     user_id,
-    breed_id,
+    kind_id,
     pet_name,
     birthday,
     genre,

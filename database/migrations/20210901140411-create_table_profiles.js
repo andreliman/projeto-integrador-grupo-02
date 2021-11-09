@@ -17,9 +17,16 @@ module.exports = {
           key: "id",
         },
       },
-      breed_id: {
+      kind_id: {
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: false,
+        references: {
+          model: "kinds",
+          key: "id",
+        },
+      },
+      breed_id: {
+        type: Sequelize.INTEGER.UNSIGNED,
         references: {
           model: "breeds",
           key: "id",

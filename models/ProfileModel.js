@@ -4,6 +4,14 @@ const Op = Sequelize.Op;
 
 exports.listAllKinds = () =>
   db.Kind.findAll().then((rows) => rows.map((row) => row.dataValues));
+
+exports.findKindById = (kindId) => db.Kind.findOne({ where: { id: kindId } });
+
+exports.findBreedsByKindId = (kindId) =>
+db.Breed.findAll({ where: { kind_id: kindId } }).then((rows) => rows.map((row) => row.dataValues));
+
+exports.findBreedById = (breedId) => db.Breed.findOne({ where: { id: breedId } });
+
 exports.listAllBreeds = () =>
   db.Breed.findAll().then((rows) => rows.map((row) => row.dataValues));
 
@@ -15,13 +23,29 @@ exports.findProfiles = (id) => {
 };
 
 exports.findProfile = (id) => {
-  const profile = db.Profile.findByPk(id);
+  const profile = db.Profile.findByPk(id, {
+    attributes: [
+      'id',
+      'user_id',
+      'kind_id',
+      'breed_id',
+      'pet_name',
+      [Sequelize.fn('date_format', Sequelize.col('birthday'), '%Y-%m-%d'), 'birthday'],
+      'genre',
+      'local',
+      'nickname',
+      'bio',
+      'photo_profile_path',
+      'photo_id',
+      'night_mode',
+    ]
+  });
   return profile;
 };
 
 exports.createProfile = ({
   user_id,
-  breed_id,
+  kind_id,
   pet_name,
   birthday,
   genre,
@@ -34,7 +58,7 @@ exports.createProfile = ({
 }) => {
   const newProfile = db.Profile.create({
     user_id,
-    breed_id,
+    kind_id,
     pet_name,
     birthday,
     genre,

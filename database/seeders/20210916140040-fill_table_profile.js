@@ -7,9 +7,10 @@ module.exports = {
       [
         {
           user_id: 1,
-          breed_id: 1,
+          kind_id: 2,
+          breed_id: 70,
           pet_name: "Bono",
-          birthday: "",
+          birthday: "2020-05-14",
           genre: "Macho",
           local: "Campinas",
           nickname: "Bono",
@@ -20,9 +21,10 @@ module.exports = {
         },
         {
           user_id: 2,
-          breed_id: 1,
+          kind_id: 2,
+          breed_id: 26,
           pet_name: "Sabrino",
-          birthday: "",
+          birthday: "2020-05-14",
           genre: "Macho",
           local: "São Paulo",
           nickname: "Bino",
@@ -33,9 +35,10 @@ module.exports = {
         },
         {
           user_id: 2,
-          breed_id: 2,
+          kind_id: 2,
+          breed_id: 49,
           pet_name: "Polenta",
-          birthday: "",
+          birthday: "2020-05-14",
           genre: "Fêmea",
           local: "Rio de Janeiro",
           nickname: "Polentinha",

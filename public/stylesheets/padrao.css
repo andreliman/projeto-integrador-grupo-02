@@ -261,7 +261,19 @@ button {
   .pesquisar {
     padding: 10px;
   }
-  .nav_icons{
+  .search__wrapper {
+    max-width: 330px;
+  }
+  .search__foto {
+    width: 80px;
+    height: 80px;
+  }
+  .search__nome {
+    font-size: 16px;
+  }
+  .search__wrapper {
+  }
+  .nav_icons {
     display: block;
   }
   .menu__mobile__lista {
@@ -271,13 +283,13 @@ button {
     margin-bottom: 0 !important;
     margin-top: 5px !important;
   }
-  
-  .menu__mobile{
+
+  .menu__mobile {
     position: absolute;
     width: 35%;
-    top:135px;
+    top: 135px;
     left: 65%;
-    height:0px;
+    height: 0px;
     background-color: var(--bgSite);
     border: var(--borda);
     border-radius: 5px;
@@ -288,21 +300,19 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    
   }
-  .menu__icon__mobile{
+  .menu__icon__mobile {
     font-size: 40px;
     margin-bottom: 10px;
     color: var(--icons);
     cursor: pointer;
   }
-.active{
+  .active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:35vh;
-    transition: 0.5s ;
+    height: 35vh;
+    transition: 0.5s;
     visibility: visible;
   }
 }
@@ -313,7 +323,7 @@ button {
     margin: auto;
     position: relative;
   }
- 
+
   .new {
     color: var(--icons);
     display: block;
